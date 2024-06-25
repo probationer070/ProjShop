@@ -26,6 +26,7 @@
 		<div class="--navbar">
 			<ul class="m-0 p-0 d-inline-flex">
 				<li class="--nav-item dropdown"><a href="/main">Home</a></li>
+				<li class="--nav-item dropdown"><a href="/productList">item(지호)</a></li>
 				<li class="--nav-item dropdown"><a th:href="'/cart/'+@{${user.getId()}}">Cart</a></li>
 				<li class="--nav-item dropdown"><a href="/userInfo">MyPage</a></li>
 				<li class="--nav-item dropdown"><a>ADMINPAGE</a></li>
