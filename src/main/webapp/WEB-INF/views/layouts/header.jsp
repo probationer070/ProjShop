@@ -7,7 +7,8 @@
 <link rel="stylesheet" href="../css/swiper.css" />
 <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="js/zipCheck.js"></script>
+<script type="text/javascript" src="js/zipCheck.js"></script>
+<script type="text/javascript" src="js/member.js"></script>
 
 <!-- <input type="text" id="sample6_postcode" placeholder="우편번호">
 <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
@@ -25,16 +26,15 @@
 		</div>
 		<div class="--navbar">
 			<ul class="m-0 p-0 d-inline-flex">
-				<li class="--nav-item dropdown"><a href="/main">Home</a></li>
-				<li class="--nav-item dropdown"><a th:href="'/cart/'+@{${user.getId()}}">Cart</a></li>
-				<li class="--nav-item dropdown"><a href="/userInfo">MyPage</a></li>
+		
+				
 				<li class="--nav-item dropdown"><a>ADMINPAGE</a></li>
 				<li class="--nav-item dropdown"><a href="/memberFix">MemberFIX</a></li>
 				<li class="--nav-item dropdown"><a href="/deliveryFix">DeliveryFIX</a></li>
 				<li class="--nav-item dropdown"><a href="/itemFix">ItemFIX</a></li>	
-				<li class="--nav-item dropdown"><a href="/signin">Login</a></li>
-				<li class="--nav-item dropdown"><a href="/signup">Join</a></li>
-				<li class="--nav-item dropdown"><a href="/logout">Logout</a></li>
+				
+				<li class="--nav-item dropdown"><a href="/login">Login</a></li>
+				<li class="--nav-item dropdown"><a href="/join">Join</a></li>
 			</ul>
 		</div>
 	</div>
