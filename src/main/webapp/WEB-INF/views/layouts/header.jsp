@@ -32,6 +32,7 @@
 				<li class="--nav-item dropdown"><a href="/memberFix">MemberFIX</a></li>
 				<li class="--nav-item dropdown"><a href="/deliveryFix">DeliveryFIX</a></li>
 				<li class="--nav-item dropdown"><a href="/itemFix">ItemFIX</a></li>	
+				<li class="--nav-item dropdown"><a href="/noticeFIX">NoticeFIX</a></li>	
 				<li class="--nav-item dropdown"><a href="/signin">Login</a></li>
 				<li class="--nav-item dropdown"><a href="/signup">Join</a></li>
 				<li class="--nav-item dropdown"><a href="/logout">Logout</a></li>

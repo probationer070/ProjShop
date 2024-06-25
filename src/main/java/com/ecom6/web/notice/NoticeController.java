@@ -25,7 +25,7 @@ public class NoticeController {
 	@Autowired
 	NoticeService noticeService;
 	
-	@GetMapping(value={"/notice", "/admin/notice"})
+	@GetMapping(value={"/noticeFIX", "/admin/noticeFIX"})
 	public String noticeIndex(HttpServletRequest req, 
 							HttpServletResponse res,
 							NoticeVO nvo,
@@ -60,26 +60,13 @@ public class NoticeController {
 	public String NoticeInform(HttpServletRequest req, 
 								PageVO pageVO,
 								Model model) {
-		String page=null;
-		String url = null;
-		String msg = null;
-		HttpSession session = req.getSession();
-		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
-		if (ssKey != null && ssKey.getM_role().equals("admin")) {
-				model.addAttribute("content",  "../notice/NoticeInForm.jsp");
-				session.setAttribute("ssKey", ssKey);
-				page = "admin/Main";
-		} else {
-			msg = "로그인이 필요합니다.";
-			url = "/login";
-			page = "MsgPage";
-			model.addAttribute("url", url);
-			model.addAttribute("msg", msg);
-		}
-		return page;
+		String content= "notice/NoticeInForm.jsp";
+		
+		model.addAttribute("content", content);	
+		return "Main";
 	}
 	
-	@PostMapping("/admin/NoticeProc")
+	@PostMapping("admin/NoticeProc")
 	public String NoticeInformProc(HttpServletRequest req, 
 									HttpServletResponse res,
 									NoticeVO nvo, PageVO pageVO, 
@@ -87,21 +74,22 @@ public class NoticeController {
 		String page = null;
 		String msg = null;
 		String url = null;
-		HttpSession session = req.getSession();
-		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
-		if (ssKey != null && ssKey.getM_role().equals("admin")) {
-				session.setAttribute("ssKey", ssKey);
+//		HttpSession session = req.getSession();
+//		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
+//		if (ssKey != null && ssKey.getM_role().equals("admin")) {
+//				session.setAttribute("ssKey", ssKey);
 				int r = noticeService.noticeProc(nvo);
 				if (r > 0) {
 					msg="공지사항 등록성공!";
 				} else {
 					msg="공지사항 등록실패!";							
 				}
-				url = "/admin/notice";
-		} else {
-			msg = "잘못된 접근입니다";
-			url = "/login";
-		}
+//				url = "/admin/notice";
+				url = "../noticeFIX";
+//		} else {
+//			msg = "잘못된 접근입니다";
+//			url = "/login";
+//		}
 		model.addAttribute("msg", msg);
 		model.addAttribute("url", url);
 		page = "MsgPage";
