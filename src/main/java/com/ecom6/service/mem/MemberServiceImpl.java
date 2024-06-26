@@ -48,4 +48,10 @@ public class MemberServiceImpl implements MemberService {
 		return reSet;
 	}
 
+	@Override
+	public int memDeleteProc(MemberVO mvo) {
+		return memberDao.memDeleteProc(mvo);
+	}
+
+
 }

@@ -16,4 +16,7 @@ public interface MemberService {
 
 	Map<String, Object> getMemberList(MemberVO mvo);
 
+	int memDeleteProc(MemberVO mvo);
+
+
 }

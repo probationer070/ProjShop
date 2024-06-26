@@ -42,6 +42,7 @@ public class MemberController {
 			MemberVO ssKey = svo; 
 			msg=svo.getM_name()+"님 반갑습니다.";
 			session.setAttribute("ssKey", ssKey);	
+			log.info("ssKey======> "+ssKey);
 		} else {
 			msg = "비밀번호가 일치하지 않습니다.";
 		}
@@ -140,6 +141,27 @@ public class MemberController {
 		model.addAttribute("msg", msg);
 		return "MsgPage";
 	}
+	
+	@PostMapping("/memDelete")
+	   public String memDeleteProc(HttpServletRequest request,
+			   HttpServletResponse response,
+			   MemberVO mvo,
+			   Model model) {
+		   HttpSession session = request.getSession();
+		   String msg;
+		   int r = memberService.memDeleteProc(mvo);
+		   if(r>0) {
+			   msg = "회원정보가 삭제 되었습니다. \\n 재 로그인이 필요합니다.";
+		   }else {
+			   msg = "회원정보가 수정을 실패했습니다.\\n관리자에게 문의바랍니다.";
+		   }
+		   session.removeAttribute("ssKey");
+		   session.invalidate();
+		   model.addAttribute("msg", msg);
+		   model.addAttribute("url", "/");
+		   return "MsgPage";
+	   }
+	   
 	
 	@GetMapping("/memberMgt")
 	public String memberMgt(HttpServletRequest req, 
