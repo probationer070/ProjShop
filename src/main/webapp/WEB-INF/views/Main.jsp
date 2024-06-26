@@ -24,7 +24,7 @@
 				<c:import url="${content}"></c:import>			
 			</div>
 		</div>
-		<c:import url="./footer.jsp" />
+		<c:import url="layouts/footer.jsp" />
 	</div>
 </body>
 </html>

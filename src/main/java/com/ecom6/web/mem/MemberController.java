@@ -142,6 +142,27 @@ public class MemberController {
 		return "MsgPage";
 	}
 	
+	@PostMapping("/memDelete")
+	   public String memDeleteProc(HttpServletRequest request,
+			   HttpServletResponse response,
+			   MemberVO mvo,
+			   Model model) {
+		   HttpSession session = request.getSession();
+		   String msg;
+		   int r = memberService.memDeleteProc(mvo);
+		   if(r>0) {
+			   msg = "회원정보가 삭제 되었습니다. \\n 재 로그인이 필요합니다.";
+		   }else {
+			   msg = "회원정보가 수정을 실패했습니다.\\n관리자에게 문의바랍니다.";
+		   }
+		   session.removeAttribute("ssKey");
+		   session.invalidate();
+		   model.addAttribute("msg", msg);
+		   model.addAttribute("url", "/");
+		   return "MsgPage";
+	   }
+	   
+	
 	@GetMapping("/memberMgt")
 	public String memberMgt(HttpServletRequest req, 
 							HttpServletResponse res,

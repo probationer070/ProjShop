@@ -41,12 +41,18 @@
 				  </c:otherwise>
 		        </c:choose> --%>
 				<c:choose>
-		        <c:when test="${ssKey!=null}">
-		     
+		        <c:when test="${ssKey!=null and ssKey.m_role=='admin'}">
 					<li class="--nav-item dropdown"><a>ADMINPAGE</a></li>
 					<li class="--nav-item dropdown"><a href="/memberFix">MemberFIX</a></li>
 					<li class="--nav-item dropdown"><a href="/deliveryFix">DeliveryFIX</a></li>
-					<li class="--nav-item dropdown"><a href="/itemFix">ItemFIX</a></li>	
+					<li class="--nav-item dropdown"><a href="/itemFix">ItemFIX</a></li>
+					<li class="--nav-item dropdown"><a href="/logoutProc">Logout</a></li>	
+				</c:when>
+		        <c:when test="${ssKey!=null and ssKey.m_role=='mem'}">
+					<li class="--nav-item dropdown"><a href="/main">Home</a></li>
+					<li class="--nav-item dropdown"><a href="/cart">Cart</a></li>
+					<li class="--nav-item dropdown"><a href="/info">MyPage</a></li>
+					<li class="--nav-item dropdown"><a href="/logoutProc">Logout</a></li>
 				</c:when>
 				<c:otherwise>
 					<li class="--nav-item dropdown"><a href="/login">Login</a></li>

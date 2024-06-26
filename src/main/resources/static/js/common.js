@@ -9,6 +9,7 @@ $().ready(function(){
 	
 	$('.submit2').on('click', function(){
 		var choice = this.name;
+		alert(choice)
 		// 팝업을 띄우고 비밀번호 확인
 		var _left = Math.ceil((window.screen.width - 600) / 2);
 		var _top = Math.ceil((window.screen.height - 200) / 2);
@@ -18,7 +19,7 @@ $().ready(function(){
 		if(choice == 'memUpdate') {
 			$('form[name=form1]').attr('action', "memUpdateForm");
 		} else if (choice == 'memDelete') {
-			if(confirm("정말로 삭제하시겠습니까?")==true){
+			if(confirm("정말로 삭제하시겠습니까?")){
 				$('form[name=form1]').attr('action', "memDelete");			
 				$('form[name=form1]').submit();
 			} else {			

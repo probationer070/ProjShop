@@ -59,4 +59,7 @@
 		WHERE RN >= 1 AND RN <= 6
 		]]>
 	</select>
+	<delete id="memDeleteProc" parameterType="mvo">
+      DELETE FROM member WHERE MEM_ID=#{mem_id}
+    </delete>
 </mapper>
