@@ -64,11 +64,11 @@
 			</c:choose>
 		</tbody>
 	</table>
+	<c:if test="${ssKey.getM_role()=='admin'}">
 	<div class="btnArea" align="right">
    		<input name="newForm" type="button" 
    		class="btn-primary" onclick="location.href='/NoticeInForm'" value="공지사항 등록">
    	</div>
-	<c:if test="${ssKey.getM_role()=='admin'}">
 	</c:if>
 </div>
 			

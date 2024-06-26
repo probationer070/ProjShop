@@ -78,7 +78,7 @@ public class MemberController {
 			HttpServletResponse res,
 			MemberVO mvo, Model model) {
 		String msg = null;
-		String url = "/";
+		String url = "/login";
 		
 		int r = memberService.memberJoin(mvo);
 		if (r>0) {

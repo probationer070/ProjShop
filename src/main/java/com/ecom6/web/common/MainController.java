@@ -46,7 +46,7 @@ public class MainController {
 		if(session.getAttribute("ssKey")!=null) {
 			ssKey = (MemberVO) session.getAttribute("ssKey");
 			if (ssKey.getM_role().equals("admin")) {
-				page = "admin/index";				
+				page = "layouts/index";				
 			} else {
 				page = "redirect:/";
 			}
