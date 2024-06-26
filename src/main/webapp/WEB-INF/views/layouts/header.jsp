@@ -26,15 +26,33 @@
 		</div>
 		<div class="--navbar">
 			<ul class="m-0 p-0 d-inline-flex">
-		
-				
-				<li class="--nav-item dropdown"><a>ADMINPAGE</a></li>
-				<li class="--nav-item dropdown"><a href="/memberFix">MemberFIX</a></li>
-				<li class="--nav-item dropdown"><a href="/deliveryFix">DeliveryFIX</a></li>
-				<li class="--nav-item dropdown"><a href="/itemFix">ItemFIX</a></li>	
-				
-				<li class="--nav-item dropdown"><a href="/login">Login</a></li>
-				<li class="--nav-item dropdown"><a href="/join">Join</a></li>
+				<%-- <p>${ssKey}</p>
+				<c:choose>
+		          <c:when test="${ssKey!=null and ssKey.m_role=='admin'}">
+		            <c:if test="${ssKey!=null}">
+						<li class="--nav-item dropdown"><a href="/main">Home</a></li>
+						<li class="--nav-item dropdown"><a href="/cart">Cart</a></li>
+						<li class="--nav-item dropdown"><a href="/userInfo">MyPage</a></li>
+						<li class="--nav-item dropdown"><a href="/logout">Logout</a></li>
+		            </c:if>
+			      </c:when>
+				  <c:otherwise>
+				    <c:redirect url="/"  context="/" />
+				  </c:otherwise>
+		        </c:choose> --%>
+				<c:choose>
+		        <c:when test="${ssKey!=null}">
+		     
+					<li class="--nav-item dropdown"><a>ADMINPAGE</a></li>
+					<li class="--nav-item dropdown"><a href="/memberFix">MemberFIX</a></li>
+					<li class="--nav-item dropdown"><a href="/deliveryFix">DeliveryFIX</a></li>
+					<li class="--nav-item dropdown"><a href="/itemFix">ItemFIX</a></li>	
+				</c:when>
+				<c:otherwise>
+					<li class="--nav-item dropdown"><a href="/login">Login</a></li>
+					<li class="--nav-item dropdown"><a href="/join">Join</a></li>
+				</c:otherwise>
+				</c:choose>
 			</ul>
 		</div>
 	</div>
