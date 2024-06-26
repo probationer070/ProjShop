@@ -10,6 +10,13 @@
 		 FROM PRODUCT	
 	</select>
 	
+	<select id="productDetail" resultType="pvo" parameterType="int">
+		 SELECT P_NO, STOCK, PRICE, P_NAME, DETAIL, PR_DATE, IMAGE, PATH
+		 FROM PRODUCT
+		 WHERE P_NO=#{p_no}
+	</select>
+	
+	
 	<insert id="insertProduct" parameterType="pvo">
 		<selectKey keyProperty="p_no" order="BEFORE" resultType="int">
 			SELECT NVL(MAX(P_NO),0)+1 FROM PRODUCT
@@ -17,13 +24,6 @@
 		INSERT INTO PRODUCT(P_NO, STOCK, PRICE, P_NAME, DETAIL, PR_DATE, IMAGE, PATH)
 		VALUES(#{p_no}, #{stock}, #{price}, #{p_name}, #{detail}, SYSDATE, #{image}, #{path})
 	</insert>
-	
-	<select id="productDetail" resultType="pvo" parameterType="int">
-		 SELECT P_NO, STOCK, PRICE, P_NAME, DETAIL, PR_DATE, IMAGE, PATH
-		 FROM PRODUCT
-		 WHERE P_NO=#{p_no}
-	</select>
-	
 	<update id="updateStocks">
 		<foreach collection="list" item="ovo" index="index" 
 			separator=";" open="DECLARE BEGIN" close="; END;">

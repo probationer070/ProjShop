@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Detail</title>
-<link rel="stylesheet" type="text/css" href="./css/ProductMgt.css" />
+<link rel="stylesheet" type="text/css" href="./css/product.css" />
 <script type="text/javascript" src="./js/product.js"></script>
 </head>
 <body>

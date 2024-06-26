@@ -41,9 +41,8 @@
 		</tr>
 		<tr>
 			<th class="col1">이메일</th>
-			<th class="col2"><input type="text" name="m_email" class="chk"
-				placeholder="aaa@himedia.co.kr">
-			</th>
+			<th class="col2"><input type="text" name="m_email" class="chk" title="이메일"
+			placeholder="aaa@himedia.co.kr">
 		</tr>
 		<tr>
 			<th class="col1">전화번호</th>

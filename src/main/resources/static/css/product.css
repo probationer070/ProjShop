@@ -5,6 +5,28 @@
 	width:80%;
 	height: 500px;
 }
+#productmgt .w-btn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    background-color: aliceblue;
+    color: #1e6b7b;
+}
+
+
+#productmgt .btnArea{
+	margin-top: 20px;
+	text-align: center;
+	width:80%;
+}
+
 #productmgt h3{
 	color:#0e6d1d;
 	text-align: center;
@@ -14,11 +36,7 @@
 
 #productmgt table{
 	margin-top: 20px;
-	width:80%;
-}
-#productmgt .btnArea{
-	margin-top: 20px;
-	text-align: center;
+	margin-left: 100px;
 	width:80%;
 }
 
@@ -58,7 +76,7 @@
 }
 
 #product table{
-	margin-top: 20px;
+	margin-left: 50px;
 	width:100%;
 }
 #product .pcol1{
@@ -73,8 +91,10 @@
 	vertical-align: middle;
 }
 #product .pcol3{
-	width: 15%;
+	width: 10%;
+	text-align: center;
 	vertical-align: middle;
+	padding: 3px 3px 3px 3px; 
 }
 #product .pcol4{
 	width: 25%;

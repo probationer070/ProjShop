@@ -42,6 +42,7 @@ public class MemberController {
 			MemberVO ssKey = svo; 
 			msg=svo.getM_name()+"님 반갑습니다.";
 			session.setAttribute("ssKey", ssKey);	
+			log.info("ssKey======> "+ssKey);
 		} else {
 			msg = "비밀번호가 일치하지 않습니다.";
 		}
@@ -78,8 +79,7 @@ public class MemberController {
 			HttpServletResponse res,
 			MemberVO mvo, Model model) {
 		String msg = null;
-		String url = "/";
-		
+		String url = "/login";
 		int r = memberService.memberJoin(mvo);
 		if (r>0) {
 			msg = "회원가입 성공";
