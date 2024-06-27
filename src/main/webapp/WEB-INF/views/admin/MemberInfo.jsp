@@ -7,6 +7,8 @@
 <meta charset="UTF-8">
 <title>MYINFO</title>
 <link rel="stylesheet" type="text/css" href="../css/signup.css" />
+<script type="text/javascript" src="js/member.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
 </head>
 <body>
 
@@ -20,11 +22,8 @@
 			<th class="col2">
 				<input type="text" name="mem_id" id="idchk" 
 				title="ID" class="chk" value="${mvo.mem_id}" readonly="readonly">
-				<input type="hidden" name="m_passwd" id="check1" 
-				title="password" class="chk" value="${mvo.m_passwd}" readonly="readonly">
 			</th>
 		</tr>
-		<c:if test="${ssKey.m_role=='mem'}">
 		<tr>
 			<th class="col1">패스워드</th>
 			<th class="col2">
@@ -32,7 +31,6 @@
 				title="password" class="chk" value="${mvo.m_passwd}" readonly="readonly">
 			</th>
 		</tr>
-		</c:if>
 		<tr>
 			<th class="col1">이름</th>
 			<th class="col2"><input type="text" name="m_name" 

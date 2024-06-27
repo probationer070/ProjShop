@@ -24,6 +24,8 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
+	// 로그인 DB 수정 필요 -> mem_id 외의 식별자 필요, mem_id 수정 불가능
+	
 	@PostMapping("/loginProc")
 	public String loginProc(HttpServletRequest req, 
 							HttpServletResponse res, 
@@ -45,6 +47,7 @@ public class MemberController {
 			log.info("ssKey======> "+ssKey);
 		} else {
 			msg = "비밀번호가 일치하지 않습니다.";
+			url = "/login";
 		}
 		model.addAttribute("url", url);
 		model.addAttribute("msg", msg);
@@ -69,7 +72,8 @@ public class MemberController {
 	public String joinMember(HttpServletRequest req, 
 							HttpServletResponse res, 
 							MemberVO mvo, Model model) {
-		return "member/MemberJoin";
+		model.addAttribute("content", "member/Register.jsp");
+		return "Main";
 	}
 	
 	@Transactional
@@ -111,9 +115,15 @@ public class MemberController {
 	@GetMapping("/info")
 	public String infoView(HttpServletRequest req, Model model) {
 		HttpSession session = req.getSession();
-		MemberVO mvo = (MemberVO) session.getAttribute("ssKey");
-		model.addAttribute("mvo", mvo);
-		model.addAttribute("content", "member/MemberInfo.jsp"); 
+		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
+		
+
+		if(ssKey!=null) {
+			model.addAttribute("mvo", ssKey);
+			model.addAttribute("content", "member/MemberInfo.jsp"); 
+		} else {
+			return "redirect:/";
+		}
 		return "Main";
 	}
 	
@@ -141,27 +151,6 @@ public class MemberController {
 		model.addAttribute("msg", msg);
 		return "MsgPage";
 	}
-	
-	@PostMapping("/memDelete")
-	   public String memDeleteProc(HttpServletRequest request,
-			   HttpServletResponse response,
-			   MemberVO mvo,
-			   Model model) {
-		   HttpSession session = request.getSession();
-		   String msg;
-		   int r = memberService.memDeleteProc(mvo);
-		   if(r>0) {
-			   msg = "회원정보가 삭제 되었습니다. \\n 재 로그인이 필요합니다.";
-		   }else {
-			   msg = "회원정보가 수정을 실패했습니다.\\n관리자에게 문의바랍니다.";
-		   }
-		   session.removeAttribute("ssKey");
-		   session.invalidate();
-		   model.addAttribute("msg", msg);
-		   model.addAttribute("url", "/");
-		   return "MsgPage";
-	   }
-	   
 	
 	@GetMapping("/memberMgt")
 	public String memberMgt(HttpServletRequest req, 
@@ -349,4 +338,25 @@ public class MemberController {
 		return "MsgPage";
 
 	}
+	
+	@PostMapping("/memDeleteProc")
+	public String memDeleteProc(HttpServletRequest request,
+								HttpServletResponse response,
+								MemberVO mvo,
+								Model model) {
+		   HttpSession session = request.getSession();
+		   MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
+		   String msg=null;
+		   int r = memberService.memDeleteProc(mvo);
+		   if(r>0) {
+			   msg = "회원정보가 삭제 되었습니다. \\n 재 로그인이 필요합니다.";
+		   }else {
+			   msg = "회원정보가 수정을 실패했습니다.\\n관리자에게 문의바랍니다.";
+		   }
+		   session.removeAttribute("ssKey");
+		   session.invalidate();
+		   model.addAttribute("msg", msg);
+		   model.addAttribute("url", "/");
+		   return "MsgPage";
+	   }
 }

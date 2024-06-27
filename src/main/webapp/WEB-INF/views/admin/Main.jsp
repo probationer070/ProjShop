@@ -10,23 +10,21 @@
 
 </head>
 <body>	
-	
-	<div class="BigConatiner">
-		<c:import url="./header.jsp" />
-        <div class="container">
-        	<div class="AsideSign">
-		        <aside>					
-	            	<c:import url="./Aside.jsp"/>
-				</aside>
-        	</div>
-			<div class="MainCont">
-	            <div id="contents">
-	            	<c:import url="${content}"></c:import>
-	            </div>
+	<div class="large-container">
+		<div class="container" style="">
+		<c:choose>
+			<c:when test="${ssKey.m_role=='admin'}">
+				<c:import url="../layouts/header.jsp" />
+			</c:when>
+			<c:otherwise>
+            	<c:import url="../layouts/header.jsp" />
+       		</c:otherwise>
+		</c:choose>
+			<div class="content">
+				<c:import url="../${content}"></c:import>			
 			</div>
-        </div>
-    </div>
-    <div class="clear"></div>
-	<c:import url="./footer.jsp" />
+		</div>
+		<c:import url="../layouts/footer.jsp" />
+	</div>
 </body>
 </html>

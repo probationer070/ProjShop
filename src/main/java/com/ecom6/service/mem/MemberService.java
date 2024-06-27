@@ -18,5 +18,4 @@ public interface MemberService {
 
 	int memDeleteProc(MemberVO mvo);
 
-
 }

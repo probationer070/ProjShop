@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+#productmgt{
+	margin: 0 auto;
+	width:80%;
+	height: 500px;
+}
+#productmgt .w-btn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    background-color: aliceblue;
+    color: #1e6b7b;
+}
+
+
+#productmgt .btnArea{
+	margin-top: 20px;
+	text-align: center;
+	width:80%;
+}
+
+#productmgt h3{
+	color:#0e6d1d;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+#productmgt table{
+	margin-top: 20px;
+	margin-left: 100px;
+	width:80%;
+}
+
+#productmgt .pcol1{
+	width: 10%;
+	text-align: center;
+	vertical-align: middle;
+	padding: 3px 3px 3px 3px; 
+}
+#productmgt .pcol2{
+	padding: 3px 3px 3px 10px;
+	text-align: left; 
+	vertical-align: middle;
+}
+#productmgt .pcol3{
+	width: 15%;
+	vertical-align: middle;
+}
+#productmgt .pcol4{
+	width: 25%;
+	vertical-align: middle;
+}
+#productmgt .pcol5{
+	width: 10%;
+	vertical-align: middle;
+}
+
+#product{
+	margin: 0 auto;
+	height: 100%;
+}
+#product h3{
+	color:#0e6d1d;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+#product table{
+	margin-left: 50px;
+	width:100%;
+}
+#product .pcol1{
+	width: 10%;
+	text-align: center;
+	vertical-align: middle;
+	padding: 3px 3px 3px 3px; 
+}
+#product .pcol2{
+	padding: 3px 3px 3px 10px;
+	text-align: left; 
+	vertical-align: middle;
+}
+#product .pcol3{
+	width: 10%;
+	text-align: center;
+	vertical-align: middle;
+	padding: 3px 3px 3px 3px; 
+}
+#product .pcol4{
+	width: 25%;
+	vertical-align: middle;
+}
+#product .pcol5{
+	width: 10%;
+	vertical-align: middle;
+}
+#product .pcol6{
+	width: 8%;
+	vertical-align: middle;
+}
+#product .pcol7{
+	width: 17%;
+	vertical-align: middle;
+}
+#product .pcol8{
+	width: 20%;
+	vertical-align: middle;
+}
+
+#product .tableinfo{
+	width:90%;
+}
+
+#product .cols{
+	width: 30%;
+	text-align: center;
+}
+#product .tableinfo table{
+   margin-top: 30px;
+}
+
+#product .btnArea{
+	display:flex;
+	justify-content: space-evenly;
+    margin-top: 20px;
+	text-align: center;
+
+}
+#product .pcol1-1{
+	padding-bottom: 30px;
+}
+#product .pcol2-1{
+	padding-bottom: 30px;
+}
+
+#product .pcol2-2{
+	text-align: center;
+	padding-top: 300px;
+}
+#product .adcol1{
+	width:3%;
+	vertical-align: middle;
+}
+#product .adcol2{
+	width:8%;
+	vertical-align: middle;
+}
+#product .adcol3{
+/* 	width:15%; */
+	vertical-align: middle;
+}
+#product .adcol4{
+	width:6%;
+	vertical-align: middle;
+}
+#product .adcol5{
+	width:8%;
+	vertical-align: middle;
+}
+#product .adcol6{
+	width:10%;
+	vertical-align: middle;
+}
+#product .adcol7{
+	width:13%;
+	vertical-align: middle;
+}
+#product .adcol8{
+	width:10%;
+	vertical-align: middle;
+}
+#product .adcol9{
+	width:15%;
+	vertical-align: middle;
+}
+#product .valign{
+	vertical-align: middle;
+}

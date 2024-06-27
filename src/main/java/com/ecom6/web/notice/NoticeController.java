@@ -39,7 +39,7 @@ public class NoticeController {
 		if(ssKey!=null) {
 			session.setAttribute("ssKey", ssKey);
 			if(ssKey.getM_role().equals("admin")) {
-				content = "../notice/NoticeList.jsp";
+				content = "notice/NoticeList.jsp";
 				page = "admin/Main";
 			} else {
 				content = "notice/NoticeList.jsp";
@@ -97,7 +97,7 @@ public class NoticeController {
 				} else {
 					msg="공지사항 등록실패!";							
 				}
-				url = "/admin/noticeFIX";
+				url = "/admin/notice";
 		} else {
 			msg = "잘못된 접근입니다";
 			url = "/login";
@@ -122,7 +122,7 @@ public class NoticeController {
 		NoticeVO notice = noticeService.noticeDetail(nvo);
 		if (ssKey != null && ssKey.getM_role().equals("admin")) {
 			session.setAttribute("ssKey", ssKey);
-			content =  "../notice/NotiDetail.jsp";
+			content =  "notice/NotiDetail.jsp";
 			page = "admin/Main";
 		} else {
 			session.setAttribute("ssKey", ssKey);
@@ -148,9 +148,9 @@ public class NoticeController {
 		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
 		if (ssKey != null && ssKey.getM_role().equals("admin")) {
 			session.setAttribute("ssKey", ssKey);
-			model.addAttribute("content", "../notice/NoticeUpForm.jsp");
+			model.addAttribute("content", "notice/NoticeUpForm.jsp");
 			model.addAttribute("notice", nvo);
-			page = "admin/Main";
+			page = "Main";
 		} else {
 			url = "/login";
 			msg = "세션이 종료되었습니다. \\n 로그인이 필요합니다.";
