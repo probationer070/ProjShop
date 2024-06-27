@@ -34,7 +34,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public int memberUpdate(MemberVO mvo) {
-		return  memberDao.memberUpdate(mvo);
+		return memberDao.memberUpdate(mvo);
 	}
 
 	@Override

@@ -49,10 +49,10 @@
    	</table>
    	<div class="btnArea" align="center">
    		<c:if test='${ssKey.m_role=="mem" or ssKey.m_role==null}'>
-   			<button type="button" class="btn-second btn-primary" onclick="location.href='/notice'">공지사항목록</button>
+   			<button type="button" class="btn-second btn-primary" onclick="location.href='/noticeFIX'">공지사항목록</button>
    		</c:if>
    		<c:if test='${ssKey.m_role=="admin"}'>
-   			<button type="button" class="btn-second btn-primary" onclick="location.href='/admin/notice'">공지사항목록</button>
+   			<button type="button" class="btn-second btn-primary" onclick="location.href='/admin/noticeFIX'">공지사항목록</button>
    			<button type="button" name="update" class="btn-primary notisubmit">수정</button>
    			<button type="button" name="delete" class="btn-primary notisubmit">삭제</button>
    		</c:if>

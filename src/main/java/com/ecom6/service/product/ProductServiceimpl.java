@@ -84,7 +84,7 @@ public class ProductServiceimpl implements ProductService {
 			if (originalFileNm==null || originalFileNm.length()==0)
 				pvo.setImage("ready.gif");
 		} else {			
-			if (originalFileNm!=null || originalFileNm.length()>0) {
+			if (originalFileNm!=null && originalFileNm.length()>0) {
 				pvo.setImage(originalFileNm);
 				destinationFile = new File(pvo.getPath()+originalFileNm);
 				// 실제 파일 전송

@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/signup.css" />
+<script type="text/javascript" src="../js/common.js"></script>
 </head>
 <body>
 <form action="memUpdateProc" name="form1" method="post">
@@ -18,7 +18,7 @@
 			<th class="col1">아이디</th>
 			<th class="col2">
 				<input type="text" name="mem_id"
-					title="ID" class="chk" value="${mvo.mem_id}">
+					title="ID" class="chk" value="${mvo.mem_id}" readonly="readonly">
 			</th>
 			<th class="input-state"><font id="warning" size="2" color="red"></font></th>
 		</tr>
@@ -80,10 +80,21 @@
 			<th class="col1">직업</th>
 			<th class="col2">
 				<select name="m_job" class="chk selector">
-					<option value="">선택하시오</option>
-					<option value="회사원">회사원</option>
-					<option value="기술자">기술자</option>
-					<option value="학생">학생</option>
+					 <option value="">선택하시오.</option>
+		             <option value="회사원">회사원</option>
+					 <option value="기술사">기술사</option>
+					 <option value="연구전문직">연구전문직</option>
+					 <option value="학생">학생</option>
+					 <option value="교수">교수</option>
+					 <option value="일반자영업">일반자영업</option>
+					 <option value="공무원">공무원</option>
+					 <option value="의료인">의료인</option>
+					 <option value="전문직">전문직(법률,회계)</option>
+					 <option value="종교,언론,예술인">종교.언론/예술인</option>
+					 <option value="농,축,수산,광업인">농/축/수산/광업인</option>
+					 <option value="주부">주부</option>
+					 <option value="무직">무직</option>
+					 <option value="기타">기타</option>
 				</select>
 				<script type="text/javascript">
 					$(function(){

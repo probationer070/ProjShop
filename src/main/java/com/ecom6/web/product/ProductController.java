@@ -35,31 +35,33 @@ public class ProductController {
 	
 	// 어드민 전용
 	@GetMapping("/productMgt")
-	public String productMgt(HttpServletRequest req, 
-							HttpServletResponse res,
-							Model model, PageVO pgVo) {
-		String page=null;
-		MemberVO ssKey = null;
-		HttpSession session = req.getSession();
-		if (session.getAttribute("ssKey") != null) {
-			ssKey = (MemberVO) session.getAttribute("ssKey");
-			// session이 있을 때 받아서 저장
-			session.setAttribute("ssKey", ssKey);
-			if (ssKey.getM_role().equals("admin")) {
-				page = "admin/productMgt";
-			} else {
-				page = "redirect:/";	// 최초 화면으로 이동
-			}
-		} else {
-			page = "redirect:/";
-		}
-		Map<String, Object> reSet = productService.getProductsList(pgVo);
-		
-		model.addAttribute("pcnt", reSet.get("pcnt"));
-		model.addAttribute("productList", reSet.get("productList"));
-		model.addAttribute("pgVo", pgVo);
-		return page;
-	}
+	 public String productMgt(HttpServletRequest request,
+			 	              HttpServletResponse response,
+			 	              Model model, ProductVO pvo,
+			 	              PageVO pgVo) {
+		 String page=null;
+		 MemberVO ssKey = null;
+		 String content = null;
+		 HttpSession session = request.getSession();
+		 if(session.getAttribute("ssKey")!=null) {
+			 ssKey = (MemberVO) session.getAttribute("ssKey");
+			 session.setAttribute("ssKey", ssKey);
+			 if(ssKey.getM_role().equals("admin")) {
+				 content="admin/productMgt.jsp";
+				 page = "admin/Main";
+			 }else {
+				 page="redirect:/";//최초화면으로 이동
+			 }
+		 }else {
+			 page="redirect:/";
+		 }
+		 Map<String, Object> reSet =productService.getProductsList(pgVo);
+		 model.addAttribute("content", content);
+		 model.addAttribute("pcnt", reSet.get("pcnt"));
+		 model.addAttribute("productList", reSet.get("productList"));
+		 model.addAttribute("pgVo", pgVo);
+		 return page;
+	   }
 	
 	// 고객전용
 	@GetMapping("/productList")
@@ -84,27 +86,29 @@ public class ProductController {
 	}
 	
 	@GetMapping("/productInForm")
-	public String productInForm(HttpServletRequest req, 
-								HttpServletResponse res,
-								Model model, PageVO pgVo) {
-		String page=null;
-		MemberVO ssKey = null;
-		HttpSession session = req.getSession();
-		if (session.getAttribute("ssKey") != null) {
-			ssKey = (MemberVO) session.getAttribute("ssKey");
-			// session이 있을 때 받아서 저장
-			session.setAttribute("ssKey", ssKey);
-			if (ssKey.getM_role().equals("admin")) {
-				model.addAttribute("content", "ProductInForm.jsp");
-				page = "admin/Main";
-			} else {
-				page = "redirect:/";	// 최초 화면으로 이동
-			}
-		} else {
-			page = "redirect:/";
-		}
-		return page;
-	}
+	   public String productInForm(HttpServletRequest request,
+	            HttpServletResponse response,
+	            Model model,
+	            PageVO pgVo) {
+		  
+		     String page=null;
+			 MemberVO ssKey = null;
+			 HttpSession session = request.getSession();
+			 if(session.getAttribute("ssKey")!=null) {
+				 ssKey = (MemberVO) session.getAttribute("ssKey");
+				 //session이 있을 때 받아서 저장
+				 session.setAttribute("ssKey", ssKey);
+				 if(ssKey.getM_role().equals("admin")) {
+					 model.addAttribute("content", "ProductInForm.jsp");
+					 page="admin/Main";
+				 }else {
+					 page="redirect:/";//최초화면으로 이동
+				 }
+			 }else {
+				 page="redirect:/";
+			 }
+			 return page;
+	       }
 	
 	@PostMapping("productMgtProc")
 	public String productInProc(HttpServletRequest req, 
@@ -174,7 +178,7 @@ public class ProductController {
 			// session이 있을 때 받아서 저장
 			session.setAttribute("ssKey", ssKey);
 			if (ssKey.getM_role().equals("admin")) {
-				content = "productDetail.jsp";
+				content = "admin/productDetail.jsp";
 				model.addAttribute("content", content);
 				page = "admin/Main";
 			} else {
@@ -210,7 +214,7 @@ public class ProductController {
 			// session이 있을 때 받아서 저장
 			session.setAttribute("ssKey", ssKey);
 			if (ssKey.getM_role().equals("admin")) {
-				content = "ProductUpdateForm.jsp";
+				content = "admin/ProductUpdateForm.jsp";
 				model.addAttribute("content", content);
 				page = "admin/Main";
 			} else {

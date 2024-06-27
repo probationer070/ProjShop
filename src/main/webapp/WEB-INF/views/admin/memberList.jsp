@@ -14,7 +14,7 @@
 <body>
 	
 <div id="productmgt">
-	<h2>상품목록</h2>
+	<h2>회원관리</h2>
 	<div class="totalitem" align="right">총 회원수 : ${memTot}</div>
 	<table>
 		<thead>
