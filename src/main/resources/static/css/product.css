@@ -5,7 +5,7 @@
 	width:80%;
 	height: 500px;
 }
-#productmgt .w-btn {
+.w-btn {
     position: relative;
     border: none;
     display: inline-block;
@@ -20,7 +20,10 @@
     color: #1e6b7b;
 }
 
-
+.w-btn-indigo {
+    background-color: aliceblue;
+    color: #1e6b7b;
+}
 #productmgt .btnArea{
 	margin-top: 20px;
 	text-align: center;

@@ -6,8 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link type="text/css" rel="stylesheet" href="/css/product.css"> 
-<script type="text/javascript" src="/js/product.js"></script> 
+<link type="text/css" rel="stylesheet" href="./css/product.css"> 
+<script type="text/javascript" src="./js/product.js"></script> 
 </head>
 <body>
     <div id="productmgt">

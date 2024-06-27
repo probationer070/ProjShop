@@ -8,18 +8,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link type="text/css" rel="stylesheet" href="/css/product.css"> 
-<script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
-<script type="text/javascript" src="/js/product.js"></script> 
-<title>희수네 쇼핑몰</title>
+<script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="./js/product.js"></script> 
+<title>쇼핑몰</title>
 </head>
 <body>
-  <div style="width:100%">
+  <div style="width:90%">
    <div id="product">
+     <h3>상품목록</h3>
+     <div style="text-align:right; margin-right:200px;">
+       <button class="btn btn-secondary">상품수: ${pcnt}</button>
+     </div>
      <table class="table table-hover text-center table-bordered">
        <thead>
          <tr>
-            <th class = "pcol1 textBold alignCenter">아이폰</th>
-		    <th class = "pcol3 textBold alignCenter">갤럭시</th>
+            <th class = "pcol1 textBold alignCenter">상품번호</th>
+		    <th class = "textBold alignCenter">상품명</th>
+		    <th class = "pcol3 textBold alignCenter">상품가격</th>
+		    <th class = "pcol4 textBold alignCenter">등록일</th>
+		    <th class = "pcol5 textBold alignCenter">재고</th>
          </tr>
        </thead>
        <tbody>
@@ -34,11 +41,24 @@
              <tr>
                 <th class = "pcol1">
                  <input type="text" name="p_no" value="${product.p_no}" 
-                     class="form-control-plaintext textBold alignCenter">
+                     class="form-control-plaintext textBold alignCenter" readonly="readonly">
                  </th>
+			    <th class = "pcol2">
+			     <input type="text" name="p_name" value=" ${product.p_name}" 
+                     class="form-control-plaintext textBold pDetail" readonly="readonly">
+                </th>
 			    <th class = "pcol3" >
 			     <input type="text" name="price" value="${product.price}" 
-                     class="form-control-plaintext alignRight textBold num">
+                     class="form-control-plaintext alignRight textBold num" readonly="readonly">
+			   </th>
+			    <th class = "pcol4">
+			     <input type="text" name="pr_date" value=" ${product.pr_date}" 
+                     class="form-control-plaintext textBold alignCenter" readonly="readonly">
+			   </th>
+			    <th class = "pcol5">
+			     <input type="text" name="stock" value=" ${product.stock}" 
+                     class="form-control-plaintext textBold alignRight num" readonly="readonly">
+			    </th>
              </tr>
             </c:forEach>
           </c:when>

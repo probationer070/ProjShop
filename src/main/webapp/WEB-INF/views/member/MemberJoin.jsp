@@ -12,12 +12,8 @@
 </head>
 <body>
 <div class="BigConatiner">
-	<c:import url="../layouts/header.jsp" />
+		<c:import url="../layouts/header.jsp" />
         <div class="container">
-        	<div class="AsideSign">
-		        <aside>
-				</aside>
-        	</div>
 			<div class="MainCont">
 	            <div id="contents">
 					<c:import url="Register.jsp" />

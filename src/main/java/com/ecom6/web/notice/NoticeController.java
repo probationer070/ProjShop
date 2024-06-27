@@ -25,7 +25,7 @@ public class NoticeController {
 	@Autowired
 	NoticeService noticeService;
 	
-	@GetMapping(value={"/notice", "/admin/notice"})
+	@GetMapping(value={"/noticeFIX", "/admin/noticeFIX"})
 	public String noticeIndex(HttpServletRequest req, 
 							HttpServletResponse res,
 							NoticeVO nvo,
@@ -39,7 +39,7 @@ public class NoticeController {
 		if(ssKey!=null) {
 			session.setAttribute("ssKey", ssKey);
 			if(ssKey.getM_role().equals("admin")) {
-				content = "../notice/NoticeList.jsp";
+				content = "notice/NoticeList.jsp";
 				page = "admin/Main";
 			} else {
 				content = "notice/NoticeList.jsp";
@@ -122,7 +122,7 @@ public class NoticeController {
 		NoticeVO notice = noticeService.noticeDetail(nvo);
 		if (ssKey != null && ssKey.getM_role().equals("admin")) {
 			session.setAttribute("ssKey", ssKey);
-			content =  "../notice/NotiDetail.jsp";
+			content =  "notice/NotiDetail.jsp";
 			page = "admin/Main";
 		} else {
 			session.setAttribute("ssKey", ssKey);
@@ -148,9 +148,9 @@ public class NoticeController {
 		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
 		if (ssKey != null && ssKey.getM_role().equals("admin")) {
 			session.setAttribute("ssKey", ssKey);
-			model.addAttribute("content", "../notice/NoticeUpForm.jsp");
+			model.addAttribute("content", "notice/NoticeUpForm.jsp");
 			model.addAttribute("notice", nvo);
-			page = "admin/Main";
+			page = "Main";
 		} else {
 			url = "/login";
 			msg = "세션이 종료되었습니다. \\n 로그인이 필요합니다.";
@@ -181,7 +181,7 @@ public class NoticeController {
 			} else {
 				msg="공지사항 수정 실패!";							
 			}
-			url = "/admin/notice";
+			url = "/admin/noticeFIX";
 		} else {
 			url = "/login";
 			msg = "세션이 종료되었습니다. \\n 로그인이 필요합니다.";
@@ -211,7 +211,7 @@ public class NoticeController {
 			} else {
 				msg="공지사항 삭제 실패!";							
 			}
-			url = "/admin/notice";
+			url = "/admin/noticeFIX";
 		} else {
 			url = "/login";
 			msg = "세션이 종료되었습니다. \\n 로그인이 필요합니다.";

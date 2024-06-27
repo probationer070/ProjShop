@@ -52,7 +52,7 @@ public class OrderController {
 		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
 		Hashtable<Integer, OrderVO> hCartList = null;
 		if(ssKey!=null) {
-			hCartList = cartService.getCartList();
+			// hCartList = cartService.getCartList();
 			HashMap<String, Object> reMap = orderWrapper.orderProc(ovo, hCartList);
 			msg = (String) reMap.get("msg");
 			url = (String) reMap.get("url");

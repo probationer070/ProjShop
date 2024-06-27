@@ -17,13 +17,12 @@
 	<div class="container" style="">
 		<c:import url="../layouts/header.jsp" />
 		<div class="content">
-			<c:import url="../layouts/swiper.jsp" />	
 			<div class="site-desc">
 				<section class="site-desc-direction">
 					<div class="TwoColumn-Sec">
 						<div class="TwoColumn-Sec-Col">
 							<div class="TwoCol-Sec-MediaContainer">
-								<img class="colimg" src="images/cont2.jpg">
+								<img class="colimg" src="../images/cont2.jpg">
 							</div>
 						</div>
 						<div class="TwoColumn-Sec-Col">
@@ -33,7 +32,7 @@
 								</div>
 								<div class="Cols-event-Item">
 									<div class="Cols-icon">
-										<img src="images/icon1.png">
+										<img src="../images/icon1.png">
 									</div>
 									<div class="Cols-context mb-1">
 										<h2>IMPACT PROTECTION</h2>
@@ -42,7 +41,7 @@
 								</div>
 								<div class="Cols-event-Item">
 									<div class="Cols-icon">
-										<img src="images/icon2.png">
+										<img src="../images/icon2.png">
 									</div>
 									<div class="Cols-context mb-1">
 										<h2>SUSTAINABILITY</h2>
@@ -51,7 +50,7 @@
 								</div>
 								<div class="Cols-event-Item">
 									<div class="Cols-icon">
-										<img src="images/icon3.png">
+										<img src="../images/icon3.png">
 									</div>
 									<div class="Cols-context mb-1">
 										<h2>DESIGN INNOVATION</h2>
@@ -65,23 +64,7 @@
 				</section>
 			</div>
 			<div>
-				<div class="Item-container">
-					<div class="Item-card iDetail" th:each="item : ${items}">
-						<input name="iid" type="hidden" th:value="${item.getId()}">
-						<!-- <a class="goto-item" th:href="@{itemView/{id}(id=${item.getId()})}"></a> -->
-						<div class="item-img-contain">
-							<img class="item-img" th:src="@{${item.getImgPath()}}" alt="..." />
-						</div>
-						<div class="item-text">
-							<p class="item-kind item-context" th:text="${item.getKind()}"></p>
-							<p class="item-name item-context" th:text="${item.getName()}"></h3>
-							<p class="item-value item-context" th:text="'$'+${item.getItem_price()}"></p>
-						</div>
-						
-					</div>
-					
-					
-				</div>
+				
 				<div align="right">
 					<!-- <a href="/itemNew">
 						<button type="button" id="AddItem">Add Item</button>

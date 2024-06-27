@@ -7,14 +7,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link type="text/css" rel="stylesheet" href="/css/product.css"> 
 <script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="./js/product.js"></script> 
-<title>희수네 쇼핑몰</title>
+<title>쇼핑몰</title>
 </head>
 <body>
   <div style="width:100%">
-  <c:import url="../layouts/header.jsp"/>
    <div id="productmgt">
      <h3>상품목록</h3>
      <div style="text-align:right; margin-right: 20px;">
@@ -73,7 +71,6 @@
      </div>
    </div>
   <div class="clear"></div>
-  <c:import url="../layouts/footer.jsp"/>
   </div>
 </body>
 </html>

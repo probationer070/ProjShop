@@ -34,7 +34,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public int memberUpdate(MemberVO mvo) {
-		return  memberDao.memberUpdate(mvo);
+		return memberDao.memberUpdate(mvo);
 	}
 
 	@Override
@@ -46,6 +46,11 @@ public class MemberServiceImpl implements MemberService {
 		reSet.put("memTot", cnt);
 		reSet.put("members", members);
 		return reSet;
+	}
+
+	@Override
+	public int memDeleteProc(MemberVO mvo) {
+		return memberDao.memDeleteProc(mvo);
 	}
 
 }

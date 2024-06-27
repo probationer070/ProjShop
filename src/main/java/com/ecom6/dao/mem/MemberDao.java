@@ -22,4 +22,6 @@ public interface MemberDao {
 
 	List<OrderVO> getMemberList(MemberVO mvo);
 
+	int memDeleteProc(MemberVO mvo);
+
 }
