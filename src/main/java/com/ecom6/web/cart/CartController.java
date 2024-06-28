@@ -94,12 +94,13 @@ public class CartController {
 			ssKey = (MemberVO) session.getAttribute("ssKey");
 			session.setAttribute("ssKey", ssKey);
 			cvo.setMem_id(ssKey.getMem_id());
+			
+			log.info("cvo ===> "+cvo);
 			Boolean isCartExisted = cartService.findCart(cvo);
 			log.info("카트 생성 여부 ===> "+isCartExisted);
 			
 			Map<String, Object> reSet = cartService.getCartItemList(cvo);				
-			if (isCartExisted != null) {
-			}
+			
 			content = "custom/CartList.jsp";
 			model.addAttribute("content", content);
 			model.addAttribute("Cartcnt", reSet.get("Cartcnt"));

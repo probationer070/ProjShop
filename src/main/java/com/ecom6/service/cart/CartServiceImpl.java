@@ -49,7 +49,7 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public void addCart(CartVO cvo) {
 		log.info("cvo111 ======> "+cvo);
-		int p_no = cvo.getP_no();
+		//int p_no = cvo.getP_no();
 		int quantity = cvo.getQuantity();
 		if (cvo.getStock()<quantity) {
 			cvo.setQuantity(quantity);
