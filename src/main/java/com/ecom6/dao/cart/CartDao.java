@@ -23,7 +23,7 @@ public interface CartDao {
 
 	int countCart(CartVO cvo);
 
-	List<CartVO> getCartItemList(String mem_id);
+	List<OrderVO> getCartItemList(String mem_id);
 
 	void deleteCart(String mem_id);
 	

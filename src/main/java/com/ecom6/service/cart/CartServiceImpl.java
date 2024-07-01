@@ -26,45 +26,45 @@ public class CartServiceImpl implements CartService {
 	@Autowired
 	private CartDao cartDao;
 	
-	public Map<String, Object> getCartItemList(CartVO cvo, PageVO pgVo) { 
-		Map<String, Object> reSet = new HashMap<String, Object>(); 
-		int cnt = cartDao.getCartItemCnt();
-	
-		//page 계산
-		if(pgVo.getCurBlock()<=0) pgVo.setCurBlock(1);
-		if(pgVo.getCurPg()<=0) pgVo.setCurPg(1);
-
-		int start = (pgVo.getCurPg()-1)*PageInfo.ROW_OF_PAGE+1;
-		int end = (pgVo.getCurPg()*PageInfo.ROW_OF_PAGE)>cnt?
-					cnt : pgVo.getCurPg()*PageInfo.ROW_OF_PAGE;
-		cvo.setStart(start);
-		cvo.setEnd(end);
-
-		//페이지 수 계산
-		int pgCnt = (cnt%PageInfo.ROW_OF_PAGE==0)?
-					cnt/PageInfo.ROW_OF_PAGE:
-					cnt/PageInfo.ROW_OF_PAGE+1;
-		pgVo.setPgCnt(pgCnt);
-		//페이지 블록 계산
-		int blockCnt = (pgCnt%PageInfo.PAGE_OF_BLOCK==0)?
-				       pgCnt/PageInfo.PAGE_OF_BLOCK:
-				       pgCnt/PageInfo.PAGE_OF_BLOCK+1;
-
-		pgVo.setBlockCnt(blockCnt);
-		//startPg
-		int startPg = (pgVo.getCurBlock()-1)*PageInfo.PAGE_OF_BLOCK+1;
-		//endPg
-		int endPg = pgVo.getCurBlock()*PageInfo.PAGE_OF_BLOCK>pgCnt?
-				    pgCnt:pgVo.getCurBlock()*PageInfo.PAGE_OF_BLOCK;
-		pgVo.setStartPage(startPg);
-		pgVo.setEndPage(endPg);
-
-		List<CartVO> cartList = cartDao.getCartItemList(cvo);
-		reSet.put("pgvo", pgVo);
-		reSet.put("cartTot", cnt);
-		reSet.put("cartList", cartList);
-		return reSet;
-	}
+//	public Map<String, Object> getCartItemList(CartVO cvo, PageVO pgVo) { 
+//		Map<String, Object> reSet = new HashMap<String, Object>(); 
+//		int cnt = cartDao.getCartItemCnt();
+//	
+//		//page 계산
+//		if(pgVo.getCurBlock()<=0) pgVo.setCurBlock(1);
+//		if(pgVo.getCurPg()<=0) pgVo.setCurPg(1);
+//
+//		int start = (pgVo.getCurPg()-1)*PageInfo.ROW_OF_PAGE+1;
+//		int end = (pgVo.getCurPg()*PageInfo.ROW_OF_PAGE)>cnt?
+//					cnt : pgVo.getCurPg()*PageInfo.ROW_OF_PAGE;
+//		cvo.setStart(start);
+//		cvo.setEnd(end);
+//
+//		//페이지 수 계산
+//		int pgCnt = (cnt%PageInfo.ROW_OF_PAGE==0)?
+//					cnt/PageInfo.ROW_OF_PAGE:
+//					cnt/PageInfo.ROW_OF_PAGE+1;
+//		pgVo.setPgCnt(pgCnt);
+//		//페이지 블록 계산
+//		int blockCnt = (pgCnt%PageInfo.PAGE_OF_BLOCK==0)?
+//				       pgCnt/PageInfo.PAGE_OF_BLOCK:
+//				       pgCnt/PageInfo.PAGE_OF_BLOCK+1;
+//
+//		pgVo.setBlockCnt(blockCnt);
+//		//startPg
+//		int startPg = (pgVo.getCurBlock()-1)*PageInfo.PAGE_OF_BLOCK+1;
+//		//endPg
+//		int endPg = pgVo.getCurBlock()*PageInfo.PAGE_OF_BLOCK>pgCnt?
+//				    pgCnt:pgVo.getCurBlock()*PageInfo.PAGE_OF_BLOCK;
+//		pgVo.setStartPage(startPg);
+//		pgVo.setEndPage(endPg);
+//
+//		List<CartVO> cartList = cartDao.getCartItemList(cvo);
+//		reSet.put("pgvo", pgVo);
+//		reSet.put("cartTot", cnt);
+//		reSet.put("cartList", cartList);
+//		return reSet;
+//	}
 
 	@Override
 	public Map<String, Object> getCartItemList(String mem_id) { 
@@ -72,16 +72,12 @@ public class CartServiceImpl implements CartService {
 		 Map<String, Object> reSet = new HashMap<String, Object>(); 
 		 int cnt = cartDao.getCartItemCnt();
 		 
-		 CartVO cvo = new CartVO();
-		 cvo.setMem_id(mem_id);
-		 cvo.setStart(1);
-		 cvo.setEnd(1);
-		 
 		 // 페이지 계산로직 
-		 List<CartVO> CartList = cartDao.getCartItemList(cvo);
+		 List<OrderVO> cartList = cartDao.getCartItemList(mem_id);
+		 log.info("CartList ====> "+cartList); 
 		 
-		 reSet.put("Cartcnt", cnt); 
-		 reSet.put("CartList", CartList);
+		 reSet.put("cartTot", cnt);
+		 reSet.put("cartList", cartList);
 		 
 		 return reSet; 
 	 }

@@ -21,7 +21,7 @@ public interface CartService {
 
 	void deleteCartItem(CartVO cvo);
 
-	Map<String, Object> getCartItemList(CartVO cvo, PageVO pgVo);
+	// Map<String, Object> getCartItemList(CartVO cvo, PageVO pgVo);
 
 	Map<String, Object> getCartItemList(String mem_id);
 

@@ -53,10 +53,10 @@ public class OrderController {
 		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
 		if(ssKey!=null) {
 			Map<String, Object> reSet = cartService.getCartItemList(ssKey.getMem_id());
-			ArrayList<CartVO> CartList = (ArrayList<CartVO>) reSet.get("CartList");
+			ArrayList<CartVO> CartList = (ArrayList<CartVO>) reSet.get("cartList");
 			log.info("cartList=======> "+CartList);
 			HashMap<String, Object> reMap = 
-					orderWrapper.orderProc(ovo,CartList);
+					orderWrapper.orderProc(ovo, CartList);
 			msg = (String) reMap.get("msg");
 			url = (String) reMap.get("url");
 			// 주문하고 재고는 하나 줄고

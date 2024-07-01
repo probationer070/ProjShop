@@ -99,7 +99,7 @@ public class CartController {
 			Boolean isCartExisted = cartService.findCart(cvo);
 			log.info("카트 생성 여부 ===> "+isCartExisted);
 			
-			Map<String, Object> reSet = cartService.getCartItemList(cvo, pgVo);				
+			Map<String, Object> reSet = cartService.getCartItemList(cvo.getMem_id());				
 			
 			content = "custom/CartList.jsp";
 			model.addAttribute("content", content);
