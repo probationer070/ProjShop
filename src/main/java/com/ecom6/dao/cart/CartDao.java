@@ -13,8 +13,8 @@ public interface CartDao {
 
 	int getCartItemCnt();
 
-	List<OrderVO> getCartItemList(CartVO cvo);
-
+	List<CartVO> getCartItemList(CartVO cvo);
+	
 	Boolean findCart(CartVO cvo);
 
 	int insertCart(CartVO cvo);
@@ -22,5 +22,10 @@ public interface CartDao {
 	int updateCart(CartVO cvo);
 
 	int countCart(CartVO cvo);
+
+	void deleteCartItem(CartVO cvo);
+
+	void updateCartItem(CartVO cvo);
+
 
 }

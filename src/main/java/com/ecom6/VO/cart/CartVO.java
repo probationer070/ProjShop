@@ -17,4 +17,6 @@ public class CartVO {
 	private String m_name;
 	private String m_role;
 	private String image;
+	private int start;
+	private int end;
 }

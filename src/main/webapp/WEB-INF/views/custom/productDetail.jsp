@@ -60,7 +60,7 @@
 				   	</table>
 				   	<div class="btnArea">
 				   		<button type="button" class="btn-second cartAdd">장바구니 담기</button>
-				   		<button type="button" class="btn-second" onclick="javascript:location.href='/productMgt'"
+				   		<button type="button" class="btn-second" onclick="javascript:location.href='/productList'"
 				   		        style="margin-left: 10px;">상품목록</button>
 				   	</div>
    				</td>

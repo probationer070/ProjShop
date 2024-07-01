@@ -1,5 +1,5 @@
 package com.ecom6.service.cart;
-
+import com.ecom6.common.vo.PageInfo;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
@@ -25,20 +25,46 @@ public class CartServiceImpl implements CartService {
 	private CartDao cartDao;
 	
 	@Override
-	public Map<String, Object> getCartItemList(CartVO cvo) { 
-	  
-		 Map<String, Object> reSet = new HashMap<String, Object>(); 
-		 int cnt = cartDao.getCartItemCnt();
+	public Map<String, Object> getCartItemList(CartVO cvo, PageVO pgVo) { 
+		Map<String, Object> reSet = new HashMap<String, Object>(); 
+		int cnt = cartDao.getCartItemCnt();
 		 
-		 // 페이지 계산로직 
-		 List<OrderVO> CartList = cartDao.getCartItemList(cvo);
-		 log.info("CartList ====> "+CartList); 
-		 
-		 reSet.put("Cartcnt", cnt); 
-		 reSet.put("CartList", CartList);
-		 
-		 return reSet; 
-	 }
+			//page 계산
+		if(pgVo.getCurBlock()<=0) pgVo.setCurBlock(1);
+		if(pgVo.getCurPg()<=0) pgVo.setCurPg(1);
+		
+		int start = (pgVo.getCurPg()-1)*PageInfo.ROW_OF_PAGE+1;
+		int end = (pgVo.getCurPg()*PageInfo.ROW_OF_PAGE)>cnt?
+					cnt : pgVo.getCurPg()*PageInfo.ROW_OF_PAGE;
+		cvo.setStart(start);
+		cvo.setEnd(end);
+		
+		//페이지 수 계산
+		int pgCnt = (cnt%PageInfo.ROW_OF_PAGE==0)?
+					cnt/PageInfo.ROW_OF_PAGE:
+					cnt/PageInfo.ROW_OF_PAGE+1;
+		pgVo.setPgCnt(pgCnt);
+		//페이지 블록 계산
+		int blockCnt = (pgCnt%PageInfo.PAGE_OF_BLOCK==0)?
+				       pgCnt/PageInfo.PAGE_OF_BLOCK:
+				       pgCnt/PageInfo.PAGE_OF_BLOCK+1;
+		
+		pgVo.setBlockCnt(blockCnt);
+		//startPg
+		int startPg = (pgVo.getCurBlock()-1)*PageInfo.PAGE_OF_BLOCK+1;
+		//endPg
+		int endPg = pgVo.getCurBlock()*PageInfo.PAGE_OF_BLOCK>pgCnt?
+				    pgCnt:pgVo.getCurBlock()*PageInfo.PAGE_OF_BLOCK;
+		pgVo.setStartPage(startPg);
+		pgVo.setEndPage(endPg);
+		
+		List<CartVO> cartList = cartDao.getCartItemList(cvo);
+		reSet.put("cartTot", cnt);
+		reSet.put("pgvo", pgVo);
+		reSet.put("cartList", cartList);
+		return reSet;
+	}
+
 
 	@Override
 	public Boolean findCart(CartVO cvo) {
@@ -48,23 +74,34 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public void addCart(CartVO cvo) {
-		log.info("cvo111 ======> "+cvo);
-		//int p_no = cvo.getP_no();
 		int quantity = cvo.getQuantity();
 		if (cvo.getStock()<quantity) {
 			cvo.setQuantity(quantity);
 		}
-		log.info("cvo222 ======> "+cvo);
 		int cnt = cartDao.countCart(cvo);
-		if (cnt==0) {
-			log.info("cvo444 ======> "+cvo);			
+		if (cnt==0) {		
 			cartDao.insertCart(cvo);
 		}
 		else {
-			log.info("cvo333 ======> "+cvo);	
 			cartDao.updateCart(cvo);
 		}
 	}
+
+	@Override
+	public void updateCart(CartVO cvo) {
+		cartDao.updateCartItem(cvo);
+	}
+
+	@Override
+	public void deleteCart(CartVO cvo) {
+		cartDao.deleteCartItem(cvo);
+	}
+
+
+
+
+
+
 
 
 //	@Override

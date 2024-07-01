@@ -17,7 +17,7 @@
 	
 <div id="productMgt">
 	<h2 class="head-title">장바구니목록</h2>
-	<p>${Cartcnt}</p>
+	<p>${cartTot}</p>
 	<table>
 		<thead>
 			<tr>
@@ -31,14 +31,14 @@
 		</thead>
 		<tbody>
 			<c:choose>
-				<c:when test="${fn:length(CartList)==0}">
+				<c:when test="${fn:length(cartList)==0}">
 					<tr>
 						<th colspan="6">장바구니에 등록된 상품이 없습니다.</th>
 					</tr>	
-					<p>${hCartList}</p>
+					<p>${cartTot}</p>
 				</c:when>
-				<c:when test="${fn:length(CartList)>0}">
-					<c:forEach var="cart" items="${CartList}">
+				<c:when test="${fn:length(cartList)>0}">
+					<c:forEach var="cart" items="${cartList}">
 						<tr>
 	    				<td class="pcol1">
 		   					<input type="hidden" name="p_no" value="${cart.p_no}" class="" readonly="readonly">
@@ -48,7 +48,9 @@
      						<input type="text" name="price" value="${cart.price}" class="number" readonly="readonly">
 		   				</td>
 	     				<td class="pcol3">	
-	     					<input type="text" name="quantity" value="${cart.quantity}">
+						        <button type ="button" onclick="fnCalCount('p',this);">+</button>
+	     						<input type="text" name="quantity" value="${cart.quantity}">
+						        <button type="button" onclick="fnCalCount('m', this);">-</button>
 	     					<input type="hidden" name="stock" value="${cart.stock}">
 		   				</td>
 		   				<td class="pcol4">
@@ -60,7 +62,7 @@
 		   					<input type="button" onclick="javaScript:cartUpdate('D', this)" value="삭제">
 		   				</td><!-- 수정/삭제 -->
 		   				<td class="pcol6">
-		   					<input type="button" class="" value="상세" onclick="javascript:location.href='productDetail?p_no=${order.value.p_no}'">
+		   					<input type="button" class="" value="상세" onclick="javascript:location.href='productDetail?p_no=${cart.p_no}'">
 		   				</td><!-- 상세보기 -->
 		   				</tr>
 					</c:forEach> 

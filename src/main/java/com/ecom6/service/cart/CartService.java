@@ -9,11 +9,15 @@ import com.ecom6.common.vo.PageVO;
 
 public interface CartService {
 
-	Map<String, Object> getCartItemList(CartVO cvo);
-
 	Boolean findCart(CartVO cvo);
 
 	void addCart(CartVO cvo);
+
+	void updateCart(CartVO cvo);
+
+	void deleteCart(CartVO cvo);
+
+	Map<String, Object> getCartItemList(CartVO cvo, PageVO pgVo);
 
 
 

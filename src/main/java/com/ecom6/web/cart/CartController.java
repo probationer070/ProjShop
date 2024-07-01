@@ -53,14 +53,14 @@ public class CartController {
 					cartService.addCart(cvo);
 					msg="장바구니에 추가했습니다";
 					break;
-//				case "update": 
-//					CartList = cartService.updateCart(cvo);
-//					msg="장바구니에 수정했습니다";
-//					break;
-//				case "delete": 
-//					cartService.deleteCart(cvo);
-//					msg="장바구니에 삭제했습니다";
-//					break;
+				case "update": 
+					cartService.updateCart(cvo);
+					msg="장바구니에 수정했습니다";
+					break;
+				case "delete": 
+					cartService.deleteCart(cvo);
+					msg="장바구니에 삭제했습니다";
+					break;
 				}
 			}
 		} else {
@@ -99,12 +99,12 @@ public class CartController {
 			Boolean isCartExisted = cartService.findCart(cvo);
 			log.info("카트 생성 여부 ===> "+isCartExisted);
 			
-			Map<String, Object> reSet = cartService.getCartItemList(cvo);				
+			Map<String, Object> reSet = cartService.getCartItemList(cvo, pgVo);				
 			
 			content = "custom/CartList.jsp";
 			model.addAttribute("content", content);
-			model.addAttribute("Cartcnt", reSet.get("Cartcnt"));
-			model.addAttribute("CartList", reSet.get("CartList"));
+			model.addAttribute("cartTot", reSet.get("cartTot"));
+			model.addAttribute("cartList", reSet.get("cartList"));
 		} else {
 			return "redirect:/";
 		}
