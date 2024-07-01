@@ -77,9 +77,9 @@ public class ProductController {
 			session.setAttribute("ssKey", ssKey);
 		}
 		Map<String, Object> reSet = productService.getProductsList(pgVo);
-		model.addAttribute("pcnt", reSet.get("pcnt"));
 		content = "custom/productList.jsp";
 		model.addAttribute("content", content);
+		model.addAttribute("pcnt", reSet.get("pcnt"));
 		model.addAttribute("productList", reSet.get("productList"));
 		model.addAttribute("pgVo", pgVo);
 		return "Main";
@@ -88,27 +88,32 @@ public class ProductController {
 	@GetMapping("/productInForm")
 	   public String productInForm(HttpServletRequest request,
 	            HttpServletResponse response,
-	            Model model,
+	            Model model, ProductVO pvo,
 	            PageVO pgVo) {
 		  
-		     String page=null;
+		    	 String page=null;
 			 MemberVO ssKey = null;
+			 String content =null;
 			 HttpSession session = request.getSession();
 			 if(session.getAttribute("ssKey")!=null) {
 				 ssKey = (MemberVO) session.getAttribute("ssKey");
-				 //session이 있을 때 받아서 저장
 				 session.setAttribute("ssKey", ssKey);
 				 if(ssKey.getM_role().equals("admin")) {
-					 model.addAttribute("content", "ProductInForm.jsp");
+					content= "admin/ProductInForm.jsp";
 					 page="admin/Main";
 				 }else {
-					 page="redirect:/";//최초화면으로 이동
+					 page="redirect:/";
 				 }
 			 }else {
 				 page="redirect:/";
 			 }
-			 return page;
-	       }
+			 Map<String, Object> reSet =productService.getProductsList(pgVo);
+		 model.addAttribute("content", content);
+		 model.addAttribute("pcnt", reSet.get("pcnt"));
+		 model.addAttribute("productList", reSet.get("productList"));
+		 model.addAttribute("pgVo", pgVo);
+		 return page;
+	   }
 	
 	@PostMapping("productMgtProc")
 	public String productInProc(HttpServletRequest req, 

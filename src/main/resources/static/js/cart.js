@@ -40,4 +40,18 @@ function cartUpdate(f, obj) {
 	function msgAler() {
 		alert("처리완료했습니다.");
 	}
+	
+}
+
+function fnCalCount(type, ths) {
+    var $input = $(ths).parents("td").find("input[name='quantity']");
+    var tCount = Number($input.val());
+
+    if(type == 'p'){
+        $input.val(Number(tCount) + 1);
+    } else {
+        if(tCount > 1) {
+            $input.val(Number(tCount) - 1);
+        }
+    }
 }

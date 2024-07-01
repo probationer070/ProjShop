@@ -11,8 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ecom6.VO.cart.CartVO;
 import com.ecom6.VO.order.OrderVO;
 import com.ecom6.dao.order.OrderDao;
+import com.ecom6.wrapper.order.OrderWrapper;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,14 +25,6 @@ public class OrderServiceImpl implements OrderService {
 	@Autowired
 	private OrderDao orderDao;
 	
-	@Override
-	public int insertOrders(Hashtable<Integer, OrderVO> hCartList) {
-		List<OrderVO> list = new ArrayList<OrderVO>(hCartList.keySet().size());
-		for (int key : hCartList.keySet()) {
-			list.add(hCartList.get(key));
-		}
-		return orderDao.insertOrders(list);
-	}
 	
 	@Transactional
 	@Override
@@ -107,6 +101,19 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public int deleteOrder(OrderVO ovo) {
 		return orderDao.deleteOrder(ovo);
+	}
+
+	@Override
+	public int insertOrders(ArrayList<CartVO> cartList) {
+		List<OrderVO> list = new ArrayList<OrderVO>(cartList.size());
+		for(CartVO cartItem : cartList) {
+			OrderVO order = OrderWrapper.convertCartToOrder(cartItem);
+			log.info("order ====> "+order);
+			list.add(order);			
+		}
+		log.info("orderList ====> "+list);
+		
+	    return orderDao.insertOrders(list);
 	}
 
 }

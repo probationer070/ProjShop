@@ -17,6 +17,7 @@
         <typeAlias alias="pvo" type="com.ecom6.VO.product.ProductVO" />
         <typeAlias alias="ovo" type="com.ecom6.VO.order.OrderVO" />
         <typeAlias alias="nvo" type="com.ecom6.VO.notice.NoticeVO" />
+        <typeAlias alias="cvo" type="com.ecom6.VO.cart.CartVO" />
         <typeAlias alias="pgVo" type="com.ecom6.common.vo.PageVO" />
     </typeAliases>   
 </configuration>

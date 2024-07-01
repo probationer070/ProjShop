@@ -8,8 +8,10 @@
 </head>
 <body>
 <form action="registerProc" name="form1" method="post">
+<div id="join">
 	<table class="signup-main">
-		<tr>
+	<h3>회원가입</h3>
+	<tr>
       <th class="col1" >아이디</th>
       <th class="col2"><input type="text"  name="mem_id" id="idchk" title="아이디" 
          class="chk form-control" placeholder="아이디를 입력하시오">
@@ -31,11 +33,11 @@
       <th class="col3">&nbsp;</th>
     </tr>
      <tr>
-       <td class="col1">이름</td>
-       <td class="col2">
+       <th class="col1">이름</th>
+       <th class="col2">
          <input type="text" name="m_name" class="chk form-control" title="이름"
             placeholder="이름을 입력하시오.">
-       </td>
+       </th>
        <td class="col3">&nbsp;</td>
       </tr>
       <tr>
@@ -102,7 +104,6 @@
         </td>
         <td class="col3">&nbsp;</td>
       </tr>
-		
 		<tfoot>
 		<tr>
 			<td colspan="3">
@@ -113,5 +114,6 @@
 	</table>
 	
 </form>
+</div>
 </body>
 </html>

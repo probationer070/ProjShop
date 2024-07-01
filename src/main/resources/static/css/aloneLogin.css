@@ -29,15 +29,21 @@ form {
     align-items: center;
 	margin: 20px auto;
 	padding: 20px;
-	border: 1px solid #eee;
 	border-radius: 10px;
 	background-color: f3f3f3;
+}
+
+#Large-login-box h1{
+	margin-top: 200px;
+	margin-right: 50px;
+
 }
 
 
 
 .large-login-input input {
 	margin-top: 15px;
+	margin-right: 50px;
 	border: 1px solid #000;
 	border-radius: 10px;
 	font-size: 25px;
@@ -49,10 +55,14 @@ form {
 .login-btn {
 	text-align: center;
 	margin-top: 20px;
+	margin-right: 50px;
 	font-size: 25px; 
 }
 
 .login-btn:hover {
 	background-color: #fff;
 	color: #000;
+}
+.large-login-input li{
+	list-style: none;
 }

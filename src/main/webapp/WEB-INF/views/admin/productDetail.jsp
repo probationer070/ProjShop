@@ -58,7 +58,7 @@
    	<div class="btnArea">
    		<button type="button" name="update" class="btn-primary">상품수정</button>
    		<button type="button" name="delete" class="btn-second psubmit">상품삭제</button>
-   		<button type="button" class="btn-second" onclick="javascript:location.href='/productMgt'">상품목록</button>
+   		<button type="button" class="btn-second" onclick="location.href='/productList'">
    	</div>
 	</form>
 </div>

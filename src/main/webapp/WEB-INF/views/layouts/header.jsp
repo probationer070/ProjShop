@@ -5,10 +5,10 @@
 <link rel="stylesheet" href="../css/bootstrap.min.css" /> 
 <link rel="stylesheet" href="../css/layouts.css" />
 <link rel="stylesheet" href="../css/swiper.css" />
-<script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script type="text/javascript" src="js/zipCheck.js"></script>
-<script type="text/javascript" src="js/member.js"></script>
+<script type="text/javascript" src="../js/zipCheck.js"></script>
+<script type="text/javascript" src="../js/member.js"></script>
 
 <!-- <input type="text" id="sample6_postcode" placeholder="우편번호">
 <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
@@ -35,8 +35,8 @@
 					<li class="--nav-item dropdown"><a href="/logoutProc">Logout</a></li>	
 				</c:when>
 		        <c:when test="${ssKey!=null and ssKey.m_role=='mem'}">
-					<li class="--nav-item dropdown"><a href="/main">Home</a></li>
-					<li class="--nav-item dropdown"><a href="/cart">Cart</a></li>
+					<li class="--nav-item dropdown"><a href="/">Home</a></li>
+					<li class="--nav-item dropdown"><a href="/cartlist">Cart</a></li>
 					<li class="--nav-item dropdown"><a href="/info">MyPage</a></li>
 					<li class="--nav-item dropdown"><a href="/noticeFIX">Notice</a></li>
 					<li class="--nav-item dropdown"><a href="/logoutProc">Logout</a></li>

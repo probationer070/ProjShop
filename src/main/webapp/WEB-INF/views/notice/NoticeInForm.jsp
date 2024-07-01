@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>상품 등록</title>
 <link rel="stylesheet" type="text/css" href="/css/notice.css" />
-<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="./js/notice.js"></script>
 </head>
 <body>

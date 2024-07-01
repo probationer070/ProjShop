@@ -13,10 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.ecom6.VO.cart.CartVO;
 import com.ecom6.VO.order.OrderVO;
 import com.ecom6.VO.product.ProductVO;
 import com.ecom6.common.vo.PageVO;
 import com.ecom6.dao.product.ProductDao;
+import com.ecom6.wrapper.order.OrderWrapper;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -66,15 +68,7 @@ public class ProductServiceimpl implements ProductService {
 	public ProductVO productDetail(ProductVO pvo) {
 		return productDao.productDetail(pvo.getP_no());
 	}
-
-	@Override
-	public void updateStocks(Hashtable<Integer, OrderVO> hCartList) {
-		List<OrderVO> list = new ArrayList<OrderVO>(hCartList.keySet().size());
-		for (int key : hCartList.keySet()) {
-			list.add(hCartList.get(key));
-		}
-		productDao.updateStocks(list);
-	}
+	
 
 	@Override
 	public int updateProduct(ProductVO pvo, MultipartFile file) {
@@ -123,5 +117,15 @@ public class ProductServiceimpl implements ProductService {
 	@Override
 	public int updateStock(OrderVO ovo) {
 		return productDao.updateStock(ovo);
+	}
+
+	@Override
+	public void updateProdStock(ArrayList<CartVO> cartList) {
+		List<OrderVO> list = new ArrayList<OrderVO>(cartList.size());
+		for(CartVO cartItem : cartList) {
+			OrderVO order = OrderWrapper.convertCartToOrder(cartItem);
+			list.add(order);			
+		}
+		productDao.updateProdStock(cartList);
 	}
 }

@@ -1,18 +1,32 @@
 package com.ecom6.service.cart;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
+import java.util.Map;
 
+import com.ecom6.VO.cart.CartVO;
 import com.ecom6.VO.order.OrderVO;
+import com.ecom6.common.vo.PageVO;
 
 public interface CartService {
-	// DB 테이블 역할
-	void setCartList(Hashtable<Integer, OrderVO> hCartList);
 
-	Hashtable<Integer, OrderVO> addCart(OrderVO ovo);
+	Boolean findCart(CartVO cvo);
 
-	Hashtable<Integer, OrderVO> updateCart(OrderVO ovo);
+	void addCart(CartVO cvo);
 
-	Hashtable<Integer, OrderVO> deleteCart(OrderVO ovo);
+	void deleteCart(ArrayList<CartVO> cartList);
 
-	Hashtable<Integer, OrderVO> getCartList();
+	void updateCartItem(CartVO cvo);
+
+	void deleteCartItem(CartVO cvo);
+
+	Map<String, Object> getCartItemList(CartVO cvo, PageVO pgVo);
+
+	Map<String, Object> getCartItemList(String mem_id);
+
+
+
+
+
 }

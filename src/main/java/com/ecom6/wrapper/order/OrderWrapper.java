@@ -1,6 +1,7 @@
 package com.ecom6.wrapper.order;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
@@ -9,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ecom6.VO.cart.CartVO;
 import com.ecom6.VO.order.OrderVO;
+import com.ecom6.service.cart.CartService;
 import com.ecom6.service.order.OrderService;
 import com.ecom6.service.product.ProductService;
 
@@ -21,30 +24,36 @@ public class OrderWrapper {
 	
 	@Autowired
 	private ProductService productService;
-
-	@Transactional
-	public HashMap<String, Object> orderProc(OrderVO ovo, 
-											 Hashtable<Integer, OrderVO> hCartList) {
-		
-		String url;
-		String msg;
-		int r = orderService.insertOrders(hCartList);
-		if (r>0) {
-			productService.updateStocks(hCartList);
-			msg = "주문완료했습니다.";
-			url = "orderlist";
-			hCartList.clear();
-		} else {
-			msg = "주문 실패.";
-			url = "cartList";
-		}
-		HashMap<String, Object> reMap = new HashMap<>();
-		reMap.put("msg", msg);
-		reMap.put("url", url);
-		reMap.put("hCartList", hCartList);
-		
-		return reMap;
-	}
+	
+	@Autowired
+	private CartService cartService;
+	
+	
+	
+//	@Transactional
+//	public HashMap<String, Object> orderProc(OrderVO ovo, 
+//											 Hashtable<Integer, OrderVO> hCartList) {
+//		
+//		String url;
+//		String msg;
+//		int r = orderService.insertOrders(CartList);
+//		if (r>0) {
+//			productService.updateStocks(hCartList);
+//			msg = "주문완료했습니다.";
+//			url = "orderlist";
+//			hCartList.clear();
+//			cartService.deleteCart(ovo.getMem_id());
+//		} else {
+//			msg = "주문 실패.";
+//			url = "cartList";
+//		}
+//		HashMap<String, Object> reMap = new HashMap<>();
+//		reMap.put("msg", msg);
+//		reMap.put("url", url);
+//		reMap.put("hCartList", hCartList);
+//		
+//		return reMap;
+//	}
 	
 	@Transactional
 	public Map<String, Object> orderDelete(OrderVO ovo) {
@@ -79,5 +88,40 @@ public class OrderWrapper {
 			
 		return reMap;
 	}
+
+
+
+	public HashMap<String, Object> orderProc(OrderVO ovo, ArrayList<CartVO> cartList) {
+		String url=null;
+		String msg=null;
+		
+		int r = orderService.insertOrders(cartList);
+		if(r>0) {
+			productService.updateProdStock(cartList);
+			msg="주문완료했습니다.";
+			url = "orderList";
+			cartService.deleteCart(cartList);
+		}else {
+			msg="주문을 실패했습니다.\\n 관리자에게 문의바랍니다.";
+			url="cartList";
+		}
+		HashMap<String, Object> reMap = new HashMap<String, Object>();
+        reMap.put("msg", msg);		
+        reMap.put("url", url);		
+        reMap.put("cartList", cartList);		
+		return reMap;
+	}
 	
+	public static OrderVO convertCartToOrder(CartVO cart) {
+        OrderVO order = new OrderVO();
+
+        order.setStock(cart.getStock()); 
+        order.setP_name(cart.getP_name());
+        order.setP_no(cart.getP_no());
+        order.setQuantity(cart.getQuantity());
+        order.setPrice(cart.getPrice());
+        order.setMem_id(cart.getMem_id());
+
+        return order;
+    }
 }

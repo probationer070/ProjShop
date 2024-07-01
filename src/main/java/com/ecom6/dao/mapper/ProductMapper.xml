@@ -24,7 +24,7 @@
 		 WHERE P_NO=#{p_no}
 	</select>
 	
-	<update id="updateStocks">
+	<update id="updateProdStock">
 		<foreach collection="list" item="ovo" index="index" 
 			separator=";" open="DECLARE BEGIN" close="; END;">
 			UPDATE PRODUCT

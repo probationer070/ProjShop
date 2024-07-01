@@ -2,7 +2,6 @@ package com.ecom6.web.order;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.ecom6.VO.cart.CartVO;
 import com.ecom6.VO.mem.MemberVO;
 import com.ecom6.VO.order.OrderVO;
+import com.ecom6.common.vo.PageVO;
 import com.ecom6.service.cart.CartService;
 import com.ecom6.service.order.OrderService;
 import com.ecom6.wrapper.order.OrderWrapper;
@@ -44,16 +45,18 @@ public class OrderController {
 	@GetMapping("/orderProc")
 	public String orderProc(HttpServletRequest req,
 						   HttpServletResponse res,
-						   OrderVO ovo,
+						   OrderVO ovo, PageVO pgVo,
 						   Model model) {
 		HttpSession session = req.getSession();
 		String msg = null;
 		String url = null;
 		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
-		Hashtable<Integer, OrderVO> hCartList = null;
 		if(ssKey!=null) {
-			hCartList = cartService.getCartList();
-			HashMap<String, Object> reMap = orderWrapper.orderProc(ovo, hCartList);
+			Map<String, Object> reSet = cartService.getCartItemList(ssKey.getMem_id());
+			ArrayList<CartVO> CartList = (ArrayList<CartVO>) reSet.get("CartList");
+			log.info("cartList=======> "+CartList);
+			HashMap<String, Object> reMap = 
+					orderWrapper.orderProc(ovo,CartList);
 			msg = (String) reMap.get("msg");
 			url = (String) reMap.get("url");
 			// 주문하고 재고는 하나 줄고
@@ -64,38 +67,7 @@ public class OrderController {
 		model.addAttribute("url", url);
 		model.addAttribute("msg", msg);
 		session.setAttribute("ssKey", ssKey);
-		session.setAttribute("hCartList", hCartList);
 		return "MsgPage";
-	}
-	
-	@GetMapping("orderlist")
-	public String orderList(HttpServletRequest req,
-						   HttpServletResponse res,
-						   OrderVO ovo,
-						   Model model) {
-		
-		String msg;
-		String url;
-		String page="Main";
-		HttpSession session = req.getSession();
-		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
-		if(ssKey!=null) {
-			// 데이터 받아서 저장
-			ovo.setMem_id(ssKey.getMem_id());
-			ovo.setM_role(ssKey.getM_role());
-			Map<String, Object> reSet = orderService.getOrders(ovo);
-			model.addAttribute("orders", reSet.get("orders"));
-			model.addAttribute("orderTot", reSet.get("orderTot"));
-			model.addAttribute("content", "custom/OrderList.jsp");
-		} else {
-			msg = "로그인이 필요합니다.";
-			url = "/login";
-			page = "MsgPage";
-			model.addAttribute("url", url);
-			model.addAttribute("msg", msg);
-		}
-		session.setAttribute("ssKey", ssKey);
-		return page;
 	}
 	
 	@PostMapping("/custOrderDetail")

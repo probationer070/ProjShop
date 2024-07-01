@@ -66,7 +66,7 @@ public class NoticeController {
 		HttpSession session = req.getSession();
 		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
 		if (ssKey != null && ssKey.getM_role().equals("admin")) {
-				model.addAttribute("content",  "../notice/NoticeInForm.jsp");
+				model.addAttribute("content",  "/notice/NoticeInForm.jsp");
 				session.setAttribute("ssKey", ssKey);
 				page = "admin/Main";
 		} else {
@@ -97,7 +97,7 @@ public class NoticeController {
 				} else {
 					msg="공지사항 등록실패!";							
 				}
-				url = "/admin/notice";
+				url = "/admin/noticeFIX";
 		} else {
 			msg = "잘못된 접근입니다";
 			url = "/login";

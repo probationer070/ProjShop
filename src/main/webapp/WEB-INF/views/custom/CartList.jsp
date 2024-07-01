@@ -17,6 +17,7 @@
 	
 <div id="productMgt">
 	<h2 class="head-title">장바구니목록</h2>
+	<p>${cartTot}</p>
 	<table>
 		<thead>
 			<tr>
@@ -30,28 +31,30 @@
 		</thead>
 		<tbody>
 			<c:choose>
-				<c:when test="${fn:length(hCartList)==0}">
+				<c:when test="${fn:length(cartList)==0}">
 					<tr>
 						<th colspan="6">장바구니에 등록된 상품이 없습니다.</th>
 					</tr>	
-					<p>${hCartList}</p>
 				</c:when>
-				<c:when test="${fn:length(hCartList)>0}">
-					<c:forEach var="order" items="${hCartList}">
+				<c:when test="${fn:length(cartList)>0}">
+					<c:forEach var="cart" items="${cartList}">
 						<tr>
 	    				<td class="pcol1">
-		   					<input type="hidden" name="p_no" value="${order.value.p_no}" class="" readonly="readonly">
-							<input type="text" name="p_name" value="${order.value.p_name}" class="" readonly="readonly">
+		   					<input type="hidden" name="p_no" value="${cart.p_no}" class="" readonly="readonly">
+							<input type="text" name="p_name" value="${cart.p_name}" class="" readonly="readonly">
 						</td>
 	     				<td class="pcol2">
-     						<input type="text" name="price" value="${order.value.price}" class="number" readonly="readonly">
+     						<input type="text" name="price" value="${cart.price}" class="number" readonly="readonly">
 		   				</td>
 	     				<td class="pcol3">	
-	     					<input type="text" name="quantity" value="${order.value.quantity}">
-	     					<input type="hidden" name="stock" value="${order.value.stock}">
+	     					<button type ="button" onclick="fnCalCount('p',this);">+</button>
+     						<input type="text" name="quantity" value="${cart.quantity}">
+					        <button type="button" onclick="fnCalCount('m',this);">-</button>
+	     					
+	     						<input type="hidden" name="stock" value="${cart.stock}">
 		   				</td>
 		   				<td class="pcol4">
-	   						<input type="text" name="amount" value="${order.value.price * order.value.quantity}" class="" readonly="readonly">
+	   						<input type="text" name="amount" value="${cart.price * cart.quantity}" class="" readonly="readonly">
 		   				</td>
 		   				
 		   				<td class="pcol7">
@@ -59,7 +62,7 @@
 		   					<input type="button" onclick="javaScript:cartUpdate('D', this)" value="삭제">
 		   				</td><!-- 수정/삭제 -->
 		   				<td class="pcol6">
-		   					<input type="button" class="" value="상세" onclick="javascript:location.href='productDetail?p_no=${order.value.p_no}'">
+		   					<input type="button" class="" value="상세" onclick="javascript:location.href='productDetail?p_no=${cart.p_no}'">
 		   				</td><!-- 상세보기 -->
 		   				</tr>
 					</c:forEach> 

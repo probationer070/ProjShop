@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Map;
 
+import com.ecom6.VO.cart.CartVO;
 import com.ecom6.VO.order.OrderVO;
 
 public interface OrderService {
-
-	int insertOrders(Hashtable<Integer, OrderVO> hCartList);
 
 	Map<String, Object> getOrders(OrderVO ovo);
 
@@ -21,5 +20,8 @@ public interface OrderService {
 	int updateState(OrderVO ovo);
 
 	int deleteOrder(OrderVO ovo);
+
+	int insertOrders(ArrayList<CartVO> cartList);
+
 
 }

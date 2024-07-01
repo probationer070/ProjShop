@@ -152,7 +152,7 @@ public class MemberController {
 		return "MsgPage";
 	}
 	
-	@GetMapping("/memberMgt")
+	@GetMapping("/memberFix")
 	public String memberMgt(HttpServletRequest req, 
 							HttpServletResponse res,
 							MemberVO mvo, Model model) {
@@ -189,7 +189,7 @@ public class MemberController {
 		return page;
 	}
 	
-	@PostMapping("/memberMgt")
+	@PostMapping("/memberFix")
 	public String memberMgtPost(HttpServletRequest req, 
 			HttpServletResponse res,
 			MemberVO mvo, Model model) {
@@ -253,7 +253,7 @@ public class MemberController {
 		if(ssKey!=null) {
 			if(ssKey.getM_role().equals("admin")) {
 				model.addAttribute("mvo", ssKey);	
-				model.addAttribute("content", "../admin/MemberInfo.jsp");	
+				model.addAttribute("content", "/admin/MemberInfo.jsp");	
 				page = "admin/Main";
 			} else {
 				session.removeAttribute("ssKey");
@@ -281,7 +281,7 @@ public class MemberController {
 		if(ssKey!=null) {
 			if(ssKey.getM_role().equals("admin")) {
 				model.addAttribute("mvo", ssKey);	
-				model.addAttribute("content", "../admin/UpdateForm.jsp"); 
+				model.addAttribute("content", "/admin/UpdateForm.jsp"); 
 				page = "admin/Main";
 			} else {
 				session.removeAttribute("ssKey");

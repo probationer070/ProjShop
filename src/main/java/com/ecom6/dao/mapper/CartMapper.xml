@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecom6.dao.cart.CartDao">
+	<select id="getCartItemCnt" resultType="int">
+		SELECT COUNT(P_NO) FROM CART
+	</select>
+	
+	<select id="findCart" resultType="boolean" parameterType="cvo">
+		SELECT COUNT(*) FROM CART
+		WHERE MEM_ID = #{mem_id}
+	</select>
+	
+	<select id="getCartItemList" resultType="cvo" parameterType="cvo">
+<!-- 	SELECT CNO, STOCK, C_PRICE, C_QUANTITY, P_NO, P.P_NAME, MEM_ID
+		FROM CART C
+		INNER JOIN PRODUCT P
+		ON C.P_NO = P.P_NO
+		WHERE MEM_ID = #{String} -->
+		
+		SELECT * FROM (
+		SELECT ROWNUM RN, A.* FROM (
+		SELECT C.CNO, P.STOCK, P.PRICE, C.QUANTITY, C.P_NO, P.P_NAME, M.MEM_ID,
+				M.M_NAME, M.M_ROLE, P.IMAGE
+		        FROM CART C
+		        INNER JOIN PRODUCT P
+		        ON C.P_NO = P.P_NO
+		        INNER JOIN MEMBER M
+		        ON M.MEM_ID = C.MEM_ID
+		        ORDER BY C.CNO DESC) A 
+		) 
+        WHERE MEM_ID = #{mem_id}
+         <![CDATA[
+		AND RN >= #{start} AND RN <= #{end}
+		]]>
+	</select>
+	
+	<select id="countCart" parameterType="cvo" resultType="int">
+		SELECT COUNT(*) FROM CART
+		WHERE P_NO = #{p_no} AND MEM_ID=#{mem_id}
+	</select>
+	
+	<insert id="insertCart" parameterType="cvo">
+		<selectKey keyProperty="cno" order="BEFORE" resultType="int">
+			SELECT NVL(MAX(CNO),0)+1 FROM CART
+		</selectKey>
+		INSERT INTO CART(CNO, PRICE, QUANTITY, P_NO, MEM_ID)
+		VALUES(#{cno}, #{price}, #{quantity}, #{p_no}, #{mem_id})
+	</insert>
+	
+	<update id="updateCart" parameterType="cvo">
+		UPDATE CART
+		SET QUANTITY= QUANTITY + #{quantity}
+		WHERE P_NO = #{p_no} AND MEM_ID=#{mem_id}
+	</update>
+	
+	<update id="updateCartItem" parameterType="cvo">
+		UPDATE CART
+		SET QUANTITY= #{quantity}
+		WHERE P_NO = #{p_no} AND MEM_ID=#{mem_id}
+	</update>
+
+	<delete id="deleteCartItem" parameterType="cvo">
+		DELETE FROM CART
+		WHERE P_NO = #{p_no} AND MEM_ID = #{mem_id}
+	</delete>
+	
+	<delete id="deleteCart" parameterType="String">
+	DELETE FROM CART
+	WHERE MEM_ID = #{mem_id}
+	</delete>
+</mapper>
