@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ecom6.VO.cart.CartVO;
 import com.ecom6.VO.mem.MemberVO;
+import com.ecom6.VO.notice.NoticeVO;
 import com.ecom6.VO.order.OrderVO;
+import com.ecom6.common.vo.PageInfo;
 import com.ecom6.common.vo.PageVO;
 import com.ecom6.service.cart.CartService;
 import com.ecom6.service.order.OrderService;
@@ -168,7 +170,7 @@ public class OrderController {
 		}
 	}
 	
-	@PostMapping("/orDetailMgt")
+	@PostMapping("/OrDetailMgt")
 	public String orderDetail(HttpServletRequest req,
 							  HttpServletResponse res,
 							  OrderVO ovo,
@@ -185,7 +187,7 @@ public class OrderController {
 				log.info("+===>"+ovo);
 				OrderVO order = orderService.getOrder(ovo);
 				model.addAttribute("order", order);
-				model.addAttribute("content", "./OrderDetail.jsp");		
+				model.addAttribute("content", "admin/OrderDetail.jsp");		
 			} else {
 				session.removeAttribute("ssKey");
 				session.invalidate();
@@ -287,4 +289,79 @@ public class OrderController {
 		return page;
 	}
 	
+	@GetMapping("orderList")
+	public String orderList(HttpServletRequest request,
+			                HttpServletResponse response,
+			                OrderVO ovo,
+			                Model model,
+			                PageVO pgvo) {
+		
+		String msg;
+		String url;
+		String page="Main";
+		HttpSession session = request.getSession();
+		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
+		if(ssKey!=null) {
+			//데이터 받아서 저장
+			ovo.setMem_id(ssKey.getMem_id());
+			ovo.setM_role(ssKey.getM_role());
+			Map<String, Object> reSet = orderService.getOrders(ovo,pgvo);
+			model.addAttribute("orders", reSet.get("orders"));
+			model.addAttribute("orderTot", reSet.get("orderTot"));
+			model.addAttribute("content", "custom/OrderList.jsp");
+			model.addAttribute("PBlock", PageInfo.PAGE_OF_BLOCK);
+			model.addAttribute("pgvo", reSet.get("pgvo"));
+		}else {
+		  msg="로그인이 필요합니다.";
+	      url = "/login";
+	      page="MsgPage";
+	      model.addAttribute("msg", msg);
+	      model.addAttribute("url", url);
+		}
+		session.setAttribute("ssKey", ssKey);
+		return page;
+	}
+	
+	@GetMapping(value={"/orderFIX"})
+	public String orderFIX(HttpServletRequest req, 
+							HttpServletResponse res,
+							OrderVO ovo,
+							PageVO pgVo,
+							Model model) {
+		String page = null;
+		String msg = null;
+		String url = null;
+		HttpSession session = req.getSession();
+		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
+		if(ssKey!=null) {
+//			session.setAttribute("ssKey", ssKey);
+			if(ssKey.getM_role().equals("admin")) {
+				ovo.setM_role(ssKey.getM_role());
+				Map<String, Object> reSet = orderService.getOrderList(ovo);
+				model.addAttribute("orders", reSet.get("orders"));
+				model.addAttribute("orderTot", reSet.get("orderTot"));
+				model.addAttribute("content", "admin/OrderList.jsp");
+				model.addAttribute("PBlock", PageInfo.PAGE_OF_BLOCK);
+				model.addAttribute("pgvo", reSet.get("pgvo"));
+				page = "admin/Main";
+			} else {
+				 session.removeAttribute("ssKey");
+				 session.invalidate();
+				 msg="접근이 올바르지 않습니다.";
+				 url = "/login";
+				 page="MsgPage";
+				 model.addAttribute("msg", msg);
+				 model.addAttribute("url", url);
+				}
+			  }else {
+			    session.removeAttribute("ssKey");
+				session.invalidate();
+				msg="세션이 종료되었습니다.\\n 재로그인 필요합니다.";
+			    url = "/login";
+			    page="MsgPage";
+			    model.addAttribute("msg", msg);
+			    model.addAttribute("url", url);
+			  }
+		return page;
+	}
 }

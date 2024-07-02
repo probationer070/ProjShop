@@ -12,7 +12,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ecom6.VO.cart.CartVO;
+import com.ecom6.VO.notice.NoticeVO;
 import com.ecom6.VO.order.OrderVO;
+import com.ecom6.common.vo.PageInfo;
+import com.ecom6.common.vo.PageVO;
 import com.ecom6.dao.order.OrderDao;
 import com.ecom6.wrapper.order.OrderWrapper;
 
@@ -52,7 +55,7 @@ public class OrderServiceImpl implements OrderService {
 	public Map<String, Object> getOrderList(OrderVO ovo) {
 		Map<String, Object> reSet = new HashMap<>();
 		
-		int cnt = orderDao.getTotalOrders(null);
+		int cnt = orderDao.getTotalOrders(ovo);
 		List<OrderVO> orders = orderDao.getOrderList(ovo);
 		log.info("OrderTot =====> "+cnt);
 		reSet.put("orderTot", cnt);
@@ -116,4 +119,89 @@ public class OrderServiceImpl implements OrderService {
 	    return orderDao.insertOrders(list);
 	}
 
-}
+	@Override
+	public Map<String, Object> getOrders(OrderVO ovo, PageVO pgvo) {
+		Map<String, Object> reSet = new HashMap<>();
+    	//total
+    	int cnt = orderDao.getTotalOrders(ovo);
+    	//페이지 계산
+    	if(pgvo.getCurBlock()<=0) pgvo.setCurBlock(1);
+		if(pgvo.getCurPg()<=0) pgvo.setCurPg(1);
+		int start = (pgvo.getCurPg()-1)*PageInfo.ROW_OF_PAGE+1;
+		int end = (pgvo.getCurPg()*PageInfo.ROW_OF_PAGE)>cnt?
+				   cnt : pgvo.getCurPg()*PageInfo.ROW_OF_PAGE;
+		ovo.setStart(start);
+		ovo.setEnd(end);
+		//페이지 수 계산
+		int pgCnt = (cnt%PageInfo.ROW_OF_PAGE==0)?
+				     cnt/PageInfo.ROW_OF_PAGE:
+					 cnt/PageInfo.ROW_OF_PAGE+1;
+		pgvo.setPgCnt(pgCnt);
+		
+		//페이지 블록 계산
+		int blockCnt = (pgCnt%PageInfo.PAGE_OF_BLOCK==0)?
+				       pgCnt/PageInfo.PAGE_OF_BLOCK:
+				       pgCnt/PageInfo.PAGE_OF_BLOCK+1;
+		
+		pgvo.setBlockCnt(blockCnt);
+		//startPg
+		int startPg = (pgvo.getCurBlock()-1)*PageInfo.PAGE_OF_BLOCK+1;
+		//endPg
+		int endPg = pgvo.getCurBlock()*PageInfo.PAGE_OF_BLOCK>pgCnt?
+				    pgCnt:pgvo.getCurBlock()*PageInfo.PAGE_OF_BLOCK;
+		pgvo.setStartPage(startPg);
+		pgvo.setEndPage(endPg);
+		
+    	// 리스트 구하는 거
+    	List<OrderVO> orders = orderDao.getOrders(ovo);
+    	reSet.put("orderTot", cnt);
+		//페이지 저장
+    	reSet.put("pgvo", pgvo);
+    	reSet.put("orders", orders);
+		return reSet;
+	}
+
+	@Override
+	public Map<String, Object> getOrderList(OrderVO ovo, PageVO pgVo) {
+		Map<String, Object> reSet = new HashMap<>();
+    	//total
+    	int cnt = orderDao.getTotalOrders(ovo);
+    	//페이지 계산
+    	if(pgVo.getCurBlock()<=0) pgVo.setCurBlock(1);
+		if(pgVo.getCurPg()<=0) pgVo.setCurPg(1);
+		int start = (pgVo.getCurPg()-1)*PageInfo.ROW_OF_PAGE+1;
+		int end = (pgVo.getCurPg()*PageInfo.ROW_OF_PAGE)>cnt?
+				   cnt : pgVo.getCurPg()*PageInfo.ROW_OF_PAGE;
+		ovo.setStart(start);
+		ovo.setEnd(end);
+		//페이지 수 계산
+		int pgCnt = (cnt%PageInfo.ROW_OF_PAGE==0)?
+				     cnt/PageInfo.ROW_OF_PAGE:
+					 cnt/PageInfo.ROW_OF_PAGE+1;
+		pgVo.setPgCnt(pgCnt);
+		
+		//페이지 블록 계산
+		int blockCnt = (pgCnt%PageInfo.PAGE_OF_BLOCK==0)?
+				       pgCnt/PageInfo.PAGE_OF_BLOCK:
+				       pgCnt/PageInfo.PAGE_OF_BLOCK+1;
+		
+		pgVo.setBlockCnt(blockCnt);
+		//startPg
+		int startPg = (pgVo.getCurBlock()-1)*PageInfo.PAGE_OF_BLOCK+1;
+		//endPg
+		int endPg = pgVo.getCurBlock()*PageInfo.PAGE_OF_BLOCK>pgCnt?
+				    pgCnt:pgVo.getCurBlock()*PageInfo.PAGE_OF_BLOCK;
+		pgVo.setStartPage(startPg);
+		pgVo.setEndPage(endPg);
+		
+    	// 리스트 구하는 거
+    	List<OrderVO> orders = orderDao.getOrderList(ovo);
+    	reSet.put("orderTot", cnt);
+		//페이지 저장
+    	reSet.put("pgvo", pgVo);
+    	reSet.put("orders", orders);
+		return reSet;
+	}
+	}
+
+

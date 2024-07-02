@@ -20,6 +20,6 @@ public class OrderVO {
 	private String image; // 외래?
 	private int p_no;	// 외래키
 	private String p_name;
-	private int startRow;
-	private int endRow;
+	private int start;
+	private int end;
 }

@@ -5,7 +5,9 @@ import java.util.Hashtable;
 import java.util.Map;
 
 import com.ecom6.VO.cart.CartVO;
+import com.ecom6.VO.notice.NoticeVO;
 import com.ecom6.VO.order.OrderVO;
+import com.ecom6.common.vo.PageVO;
 
 public interface OrderService {
 
@@ -22,6 +24,11 @@ public interface OrderService {
 	int deleteOrder(OrderVO ovo);
 
 	int insertOrders(ArrayList<CartVO> cartList);
+
+	Map<String, Object> getOrders(OrderVO ovo, PageVO pgvo);
+
+	Map<String, Object> getOrderList(OrderVO ovo, PageVO pgVo);
+
 
 
 }

@@ -29,7 +29,7 @@
 		       <c:when test="${ssKey!=null and ssKey.m_role=='admin'}">
 					<li class="--nav-item dropdown"><a>ADMINPAGE</a></li>
 					<li class="--nav-item dropdown"><a href="/memberFix">MemberFIX</a></li>
-					<li class="--nav-item dropdown"><a href="/deliveryFix">DeliveryFIX</a></li>
+					<li class="--nav-item dropdown"><a href="/orderFIX">OrderFIX</a></li>
 					<li class="--nav-item dropdown"><a href="/productMgt">ProductFIX</a></li>
 					<li class="--nav-item dropdown"><a href="/admin/noticeFIX">NoticeFIX</a></li>
 					<li class="--nav-item dropdown"><a href="/logoutProc">Logout</a></li>	

@@ -25,7 +25,7 @@ public class NoticeController {
 	@Autowired
 	NoticeService noticeService;
 	
-	@GetMapping(value={"/noticeFIX", "/admin/noticeFIX"})
+	@GetMapping(value={"/noticeFIX", "admin/noticeFIX"})
 	public String noticeIndex(HttpServletRequest req, 
 							HttpServletResponse res,
 							NoticeVO nvo,

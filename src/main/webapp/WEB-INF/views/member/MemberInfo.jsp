@@ -85,7 +85,7 @@
 		<c:if test="${ssKey.m_role=='admin'}">
 		<tr>
 			<td colspan="3" style="padding-top: 20px; text-align: center;">
-				<button type="button" class="btn-primary" onclick="location.href='/memberMgt'">멤버 목록</button>
+				<button type="button" class="btn-primary" onclick="location.href='/memberFix'">멤버 목록</button>
 			</td>
 		</tr>
 		</c:if>

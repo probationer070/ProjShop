@@ -103,7 +103,7 @@
 			</th>
 		</tr>
 	</table>
-	<form action="orDetailMgt" name="form1" method="post">
+	<form action="OrDetailMgt" name="form1" method="post">
 		<input type="text" name="p_no" value="">
 		<input type="text" name=o_no value="">
 		<input type="text" name="mem_id" value="">
