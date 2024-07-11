@@ -174,8 +174,8 @@ public class NoticeController {
 		HttpSession session = req.getSession();
 		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
 		if (ssKey != null && ssKey.getM_role().equals("admin")) {
-			session.setAttribute("ssKey", ssKey);
 			int r = noticeService.noticeUpProc(nvo);
+			/* log.info("nvo==>"+nvo); */
 			if (r > 0) {
 				msg="공지사항 수정 성공!";
 			} else {

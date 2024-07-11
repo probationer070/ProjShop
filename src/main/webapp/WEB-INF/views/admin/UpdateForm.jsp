@@ -110,7 +110,7 @@
 		<tr>
 			<td colspan="3">
 				<button type="button" id="submit3" class="btn-primary">정보수정</button>
-				<button type="button" id="cancel2" class="btn-primary">취소</button>
+				<button type="button" id="cancel" class="btn-primary">취소</button>
 			</td>
 		</tr>
 		</tfoot>

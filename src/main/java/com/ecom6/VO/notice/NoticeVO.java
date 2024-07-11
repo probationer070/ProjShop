@@ -21,5 +21,4 @@ public class NoticeVO {
 	private String state;
 	private int start;
 	private int end;
-	private String M_role;
 }

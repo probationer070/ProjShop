@@ -11,19 +11,19 @@ function cartUpdate(f, obj) {
 	var price = $(obj).closest('div').parent().find('input[name=price]').val();
 	var pno = $(obj).closest('div').parent().find('input[name=p_no]').val();
 	var stock = $(obj).closest('div').parent().find('input[name=stock]').val();
-	var q = quantity.replace(/[,]/g, '');
-	var p = price.replace(/[,]/g, '');
-	var s = stock.replace(/[,]/g, '');
+	var q = quantity.replace(/[,]/g, "");
+	var p = price.replace(/[,]/g, "");
+	var s = stock.replace(/[,]/g, "");
 	if(f == 'D'){
 		url = 'cartProc?flag=delete';
-		$(obj).closest('li').remove();
+		$(obj).closest('tr').remove();
 	} else if(f == 'U') {
 		if(parseInt(q)>parseInt(s)) {
-			alert('재고가 부족합니다');
+			alert("재고가 부족합니다");
 			return false;
 		}
 		var a = parseInt(q)*parseInt(p);
-		$(obj).closest('li').find('input[name=total]').val(numberWithCommas(a));
+		$(obj).closest('tr').find('input[name=amount]').val(numberWithCommas(a));
 		url = 'cartProc?flag=update';
 	}
 	$.ajax({

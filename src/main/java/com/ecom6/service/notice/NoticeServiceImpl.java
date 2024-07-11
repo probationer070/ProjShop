@@ -94,6 +94,7 @@ public class NoticeServiceImpl implements NoticeService {
 		return noticeDao.deleteNotice(nvo);
 	}
 
+
 //	@Override
 //	public int noticeDelProc(NoticeVO nvo) {
 //		return noticeDao.noticeDelProc(nvo);

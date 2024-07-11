@@ -48,16 +48,17 @@
 					<c:choose>
 						 <c:when test="${ssKey!=null and ssKey.m_role=='admin'}">
 						 	<li class="--nav-item dropdown"><a href="/admin/info">AdminPage</a></li>
+						 	<li class="--nav-item dropdown"><a href="/memberFIX">MemberFIX</a></li>
+							<li class="--nav-item dropdown"><a href="/orderFIX">OrderFIX</a></li>
 							<li class="--nav-item dropdown"><a href="/productFIX">ProductFIX</a></li>
 							<li class="--nav-item dropdown"><a href="/noticeFIX">NoticeFIX</a></li>
-						 	<li class="--nav-item dropdown"><a href="/memberFIX">MemberFIX</a></li>
 						  	<li class="--nav-item dropdown"><a href="/logoutProc">Logout</a></li>
 						 </c:when>
 					     <c:when test="${ssKey!=null and ssKey.m_role=='mem'}">
-							<li class="--nav-item dropdown"><a href="/info">MyPage</a></li>
-					      	<li class="--nav-item dropdown"><a href="/orderList">Order</a></li>
-							<li class="--nav-item dropdown"><a href="/notice">Notice</a></li>
 					      	<li class="--nav-item dropdown"><a href="/logoutProc">Logout</a></li>
+					      	<li class="--nav-item dropdown"><a href="/orderList">Order</a></li>
+							<li class="--nav-item dropdown"><a href="/info">MyPage</a></li>
+							<li class="--nav-item dropdown"><a href="/notice">Notice</a></li>
 					     </c:when>
 					     <c:otherwise>
 							<li class="--nav-item dropdown"><a href="/login">Login</a></li>
@@ -68,23 +69,9 @@
 				    </div>
 				</div>
 				<div class="header__cart-btn-wrapper">
-					<c:choose>
-						 <c:when test="${ssKey!=null and ssKey.m_role=='admin'}">
-							<a class="header__cart-btn btn btn-icon" href="/orderFIX" aria-label="0 item(s) in your bag">
-							<img class="cart-icon" src="../images/cart2.svg">
-							</a>
-						 </c:when>
-					     <c:when test="${ssKey!=null and ssKey.m_role=='mem'}">
-							<a class="header__cart-btn btn btn-icon" href="/cartlist" aria-label="0 item(s) in your bag">
-							<img class="cart-icon" src="../images/cart2.svg">
-							</a>
-					     </c:when>
-					     <c:otherwise>
-							<a class="header__cart-btn btn btn-icon" href="/cartlist" aria-label="0 item(s) in your bag">
-							<img class="cart-icon" src="../images/cart2.svg">
-							</a>
-					     </c:otherwise>
-					</c:choose>
+					<a class="header__cart-btn btn btn-icon" href="/orderFIX" aria-label="0 item(s) in your bag">
+						<img class="cart-icon" src="../images/cart2.svg">
+					</a>
 					<span class="header__cart-count" id="bagBtnCount" style="display: none;">
 					 	0
 					</span>

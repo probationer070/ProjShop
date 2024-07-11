@@ -36,7 +36,8 @@
 			<tr>
 				<th class="ncol1d">내용</th>
 				<th class="ncol2d">
-					<textarea rows="10" cols="50" name="content" title="내용" class="chk" title="내용">${notice.content}</textarea>
+					<textarea rows="10" cols="50" name="content" title="내용" class="chk"
+					          >${notice.content}</textarea>
 				</th>
 				
   			</tr>

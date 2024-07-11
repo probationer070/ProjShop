@@ -62,7 +62,7 @@
                   </tr>
                   <tr>
                     <td>
-                      <div class="pwCheck2">
+                      <div class="submit2">
                         <div id="large_login_btn">새비밀번호 설정</div>
                       </div>
                     </td>

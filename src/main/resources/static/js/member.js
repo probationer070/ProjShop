@@ -127,7 +127,7 @@ $().ready(function(){
 		$("form[name=tabForm1]").submit();
 	});
 
-    $('.pwCheck2').on('click',function(){
+    $('.submit2').on('click',function(){
 		var flen = $("form[name=tabForm2] .chk2").length;
 	 	for(var i=0; i<flen; i++){
 			if($('.chk2').eq(i).val()=="" ||

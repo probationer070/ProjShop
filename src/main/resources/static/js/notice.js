@@ -15,7 +15,9 @@ $().ready(function(){
 			$("form[name=form1]").attr('action', 'NotiUpProc');
 			$("form[name=form1]").submit();
 		}
+		
 	})
+	
 	
 	$('.notisubmit').on('click', function() {
 		var nm = this.name;
@@ -23,12 +25,16 @@ $().ready(function(){
 
 		if(nm=='update') {
 			$('form[name=form1]').attr("action", "NotiUpForm");
+		    $("form[name=form1]").submit();
+			
 		} else if(nm=='delete') {
 			if(confirm('정말 삭제하시겠습니다?')) {
 				$('form[name=form1]').attr("action", "NotiDelProc");
-			} else return false;
+		        $("form[name=form1]").submit();
+			} else {
+				return false;
 		}
-		$("form[name=form1]").submit();
+		}
 	})
 	
 	$('.noticeDetail').on('click', function() {
