@@ -421,7 +421,6 @@ public class OrderController {
 			Map<String, Object> reSet = cartService.getCartItemList(ssKey.getMem_id());
 			
 			mav.addObject("cart",reSet.get("cartList"));
-			mav.addObject("cartTot",reSet.get("cartTot"));
 			mav.addObject("SubTot",reSet.get("subTotal"));
 			mav.addObject("url", url);
 		} else {

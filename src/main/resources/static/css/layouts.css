@@ -35,13 +35,8 @@ div.contents {
 .theme03, .theme03 input, .theme03 select, .theme03 textarea, .theme03 code, .theme03 button {
 font-family: "Poppins", "Noto Sans KR",
               Arial,sans-serif !important;
-    
-    border: none;
 }
-.btn{
-	background-color: #ffeded;
-	font-weight: bold;
-}
+
 
 
 body{
@@ -433,7 +428,8 @@ a {
 }
 
 #header .inner .top_nav_box .top_category .sub_cate01{
-	top: 83px;	
+	margin-top: 200px;
+	margin-left: 30px;
 }
 
 #header .inner .top_nav_box .top_category .sub_cate01 li, #header .inner .top_nav_box .top_category .sub-category li {
@@ -449,7 +445,6 @@ a {
     display: block;
     padding: 10px 20px 10px 10px;
     white-space: nowrap;
-    
 }
 
 
@@ -541,13 +536,6 @@ style attribute {
     --mobile-height: 850px;
     cursor: default;
 }
-
-.dropdown:hover {
-	margin-bottom: 5px;
-	border-bottom: 1px solid #ce4a4a;
-	color: #000;
-}
-
 .footer_margin {
     margin-top: 100px;
 }

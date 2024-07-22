@@ -74,7 +74,7 @@
 					text-decoration: none; font-size: 20px;">아이폰</a>
 			      <ul class="sub_cate01 dropdown-content">
 			       <li class="noChild">
-			         <a href="/productList">아이폰 버전</a>
+			         <a href="/category/Hard/28/">아이폰 버전</a>
 			       </li>
 			       <li class="noChild">
 			         <a href="/category/Hard/28/">아이폰 버전</a>

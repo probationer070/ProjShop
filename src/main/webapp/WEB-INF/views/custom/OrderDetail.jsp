@@ -9,7 +9,7 @@
 <title>쇼핑몰</title>
 <!-- <link rel="stylesheet" type="text/css" href="./css/ProductList.css" /> -->
 <link rel="stylesheet" type="text/css" href="../css/OrderDetail.css" />
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<!-- <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> -->
 <script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
 <script src="../js/product.js" defer="defer"></script>
 <script src="../js/cart.js" defer="defer"></script>
@@ -90,7 +90,7 @@ function jsf__pay() {
 					"장바구니"
 						<span class="count EC-Layout_Basket-count-display">
 							<span class="EC-Layout-Basket-count">
-								${cartTot}
+							1
 							</span>
 						</span>
 					</a>
@@ -357,9 +357,7 @@ function jsf__pay() {
 									<div class="ec-base-prdInfo xans-record-">
 					                    <div class="prdBox">
 					                        <div class="displaynone"><input id="chk_order_cancel_list0" name="chk_order_cancel_list_basic0" value="49:0BZL:F:6218" type="checkbox" disabled=""></div>
-					                        <div class="thumbnail">
-					                        	<img src="/upload/${cart.image}" alt="Sandwich" style="width:100%; height: 5.5rem;">
-					                        </div>
+					                        <div class="thumbnail"><a href="/product/detail.html?product_no=49&amp;cate_no=24"><img src="//mo-di.co.kr/web/product/tiny/202204/eab6306948211a7627f9f6d00efc5bd8.jpg" alt="" width="90" height="90"></a></div>
 					                        <div class="description">
 					                            <strong class="prdName" title="상품명"> <a href="/product/mini-checker-board/49/category/24/" class="ec-product-name">mini checker board</a></strong>
 					                            <ul class="info">
