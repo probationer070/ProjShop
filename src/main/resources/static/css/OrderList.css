@@ -6,10 +6,12 @@
 	width:80%;
 }
 
+
 #productMgt h2{
 	text-align: center;
 	margin-top: 10px;
 }	
+
 #productMgt h3{
 	color:#0e6d1d;
 	text-align: center;
@@ -47,6 +49,7 @@
 	vertical-align: middle;
 } */
 
+
 .ocol0 { width: 5%; }
 .ocol1 { width: 5%; }
 .ocol2 { width: 10%; }
@@ -67,12 +70,13 @@
 .ocol7 input{ width: 100%; }
 .ocol8 input{ width: 100%; }
 
+
 table, th, tr, td {
 	border-collapse: collapse;
 }
 
 thead {
-	background-color: #de7575;
+	background-color: #7083ae;
 	color: #fff;
 }
 
@@ -99,3 +103,4 @@ input:focus, input {
 .btnArea {
 	margin-top: 20px;
 }
+
