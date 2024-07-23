@@ -2,6 +2,7 @@
 
 table, tr, td, th {
 	border-collapse: collapse;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 .tbcol > input, select {
@@ -10,7 +11,12 @@ table, tr, td, th {
 	border: none;
 	padding: 2px 4px;
 	background-color: transparent;
+	text-align: center;
 /* 	width: 100px; */
+}
+
+.tbcol > .noticeSub {
+	text-align: left;
 }
 
 .ncol1 { width: 25%; }

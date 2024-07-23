@@ -13,7 +13,7 @@
 <body>
 <form action="" name="form1" method="post">
 <div id="join">		
-	<h3>회원정보</h3>
+	<h2>회원정보</h2>
 	  <table class="signup-main">
 		<colgroup>
 		  <col style="width:220px";>
@@ -74,6 +74,34 @@
 				<input type="text" name="address2" value="${mvo.address2}" readonly="readonly">
 				<input type="hidden" id="sample6_extraAddress" >
 			</th>
+		</tr>
+		<tr>
+			<th class="col1"><img src="/images/blue_dot.gif"> 직업</th>
+			<th class="col2">
+				<select name="m_job" class="chk selector">
+					 <option value="">선택하시오.</option>
+		             <option value="회사원">회사원</option>
+					 <option value="기술사">기술사</option>
+					 <option value="연구전문직">연구전문직</option>
+					 <option value="학생">학생</option>
+					 <option value="교수">교수</option>
+					 <option value="일반자영업">일반자영업</option>
+					 <option value="공무원">공무원</option>
+					 <option value="의료인">의료인</option>
+					 <option value="전문직">전문직(법률,회계)</option>
+					 <option value="종교,언론,예술인">종교.언론/예술인</option>
+					 <option value="농,축,수산,광업인">농/축/수산/광업인</option>
+					 <option value="주부">주부</option>
+					 <option value="무직">무직</option>
+					 <option value="기타">기타</option>
+				</select>
+				<script type="text/javascript">
+					$(function(){
+						$('select[name="m_job"]').val('${mvo.m_job}')
+					})		
+				</script>
+			</th>
+			<th>&nbsp;</th>
 		</tr>
 		
 		<c:if test="${ssKey.m_role=='mem'}">

@@ -14,7 +14,7 @@
 </head>
 <body>
    <div id="productmgt">
-     <h3>상품목록</h3>
+     <h2 style="text-align: center;">상품목록</h2>
      <div align="right" class="mb-2">
        <button class="btn btn-dark">상품수: ${pcnt}</button>
      </div>
@@ -40,7 +40,7 @@
              <tr>
                 <th class="pcol pcol1">
                  <input type="text" name="p_no" value="${product.p_no}" 
-                     class="">
+                     class="" style="text-align: center;">
                  </th>
 			    <th class="pcol pcol2">
 			     <input type="text" name="p_name" value=" ${product.p_name}" 
@@ -48,15 +48,15 @@
                 </th>
 			    <th class="pcol pcol3">
 			     <input type="text" name="price" value="${product.price}" 
-                     class="num">
+                     class="num" style="text-align: center;">
 			   </th>
 			    <th class="pcol pcol4">
 			     <input type="text" name="pr_date" value=" ${product.pr_date}" 
-                     class="  ">
+                     class="" style="text-align: center;">
 			   </th>
 			    <th class="pcol pcol5">
 			     <input type="text" name="stock" value=" ${product.stock}" 
-                     class="num">
+                     class="num" style="text-align: center;">
 			    </th>
              </tr>
             </c:forEach>
@@ -66,7 +66,7 @@
      </table>
      
       <!-- 페이지  -->
-     <div align="center">
+     <div id="Pg" align="center">
      <c:if test="${pgVo.startPg>PBlock}">
 	     <font color="4c5317">
 	         <a href="/productFIX?curPg=${pgVo.startPg-PBlock}&curBl=${pgVo.curBl-1}">[이전]</a>

@@ -169,6 +169,7 @@ table {
 
 table, th, tr, td {
 	border-collapse: collapse;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 thead {
@@ -184,6 +185,7 @@ input:focus, input {
 	border: 0;
 	outline: none;
 }
+
 
 .btnBack{
     width: 355px;
@@ -204,7 +206,6 @@ input:focus, input {
     color: #fff;
     background-color: #de7575;
 }
-
 .btnArea {
 	margin-top: 20px;
 }

@@ -53,7 +53,7 @@
 			     <a href="/productList" style="color: #ce4a4a; font-weight: bold;
 					font-family: Poppins, Noto Sans KR, Arial, sans-serif !important;
 					text-decoration: none; font-size: 20px;">갤럭시</a>
-			     <ul class="sub_cate01 dropdown-content">
+			     <ul class="sub_cate01 dropdown-content-kind">
 			       <li class="noChild">
 			         <a href="/productList">갤럭시 버전</a>
 			       </li>
@@ -72,7 +72,7 @@
 			     <a href="/productList" style="color: #ce4a4a; font-weight: bold;
 					font-family: Poppins, Noto Sans KR, Arial, sans-serif !important;
 					text-decoration: none; font-size: 20px;">아이폰</a>
-			      <ul class="sub_cate01 dropdown-content">
+			      <ul class="sub_cate01 dropdown-content-kind">
 			       <li class="noChild">
 			         <a href="/productList">아이폰 버전</a>
 			       </li>

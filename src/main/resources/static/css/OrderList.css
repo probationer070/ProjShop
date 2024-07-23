@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 #productMgt .btnArea{
 	margin-top: 20px;
 	text-align: center;
@@ -18,9 +17,7 @@
 }
 
 #productMgt table{
-	margin-top: 20px;
-	margin-left: 100px;
-	width:80%;
+	width:100%;
 }
 
 /* #productMgt .pcol1{
@@ -47,10 +44,11 @@
 	vertical-align: middle;
 } */
 
-.ocol0 { width: 5%; }
+/* OrderFix */
+.ocol0 { width: 2%; }
 .ocol1 { width: 5%; }
-.ocol2 { width: 10%; }
-.ocol3 { width: 10%; }
+.ocol2 { width: 20%; }
+.ocol3 { width: 7%; }
 .ocol4 { width: 10%; }
 .ocol5 { width: 1%; }
 
@@ -71,6 +69,7 @@
 
 table, th, tr, td {
 	border-collapse: collapse;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 thead {
@@ -78,8 +77,9 @@ thead {
 	color: #fff;
 }
 
-.ocol {
+.ocol4, .o_col {
 	padding: 12px;
+	/* width: 200px; */
 } 
 
 input:focus, input {
@@ -97,6 +97,7 @@ input:focus, input {
     color: #fff;
     background-color: #de7575;
 }
+
 .ocol form {
 	margin: 10px 0;
 }

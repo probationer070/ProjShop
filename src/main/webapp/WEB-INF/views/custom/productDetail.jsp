@@ -35,14 +35,13 @@
 				</div>
 				<div class="xans-element- xans-product xans-product-detaildesign">
 					<table border="1">
-						<caption>기본 정보</caption>
 						<tbody>
 							<tr class=" xans-record-">
 								<th scope="row">
 									<span style="font-size:16px;color:#9f1414;font-weight:bold;">상품명</span>
 								</th>
 								<td>
-									<span style="font-size:16px;color:#000;font-weight:bold;">Wave of the sea</span>
+									<span style="font-size:16px;color:#000;font-weight:bold;">${product.p_name}</span>
 								</td>
 							</tr>
 							<tr class=" xans-record-">
@@ -51,7 +50,7 @@
 								</th>
 								<td>
 									<span style="font-size:16px;color:#555555;font-weight:bold;">
-										<strong id="span_product_price_text">18,000원</strong>
+										<strong id="span_product_price_text"><input class="num" style="font-weight: bold;" value="${product.price}원"></strong>
 										<input id="product_price" name="product_price" value="" type="hidden">
 									</span>
 								</td>

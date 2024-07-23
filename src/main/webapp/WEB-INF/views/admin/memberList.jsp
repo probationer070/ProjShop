@@ -15,7 +15,7 @@
 <body>
 	
 <div id="productmgt">
-	<h2>고객관리</h2>
+	<h2 style="text-align: center;">고객관리</h2>
 	<div align="right" class="mb-2">
        <button class="btn btn-dark">총 회원수 : ${memTot}</button>
     </div>
@@ -41,7 +41,7 @@
 						<tr>
 	   					<td class="tbcol mcol1">
 		   					<input type="text" name="m_name" value="${member.m_name}(${member.mem_id})"
-		    					class="mdetail" readonly="readonly">
+		    					class="mdetail" readonly="readonly" style="text-align: center;">
 		   					<input type="hidden" name="mem_id" value="${member.mem_id}" class="">
 		   					<input type="hidden" name="zipcode" value="${member.zipcode}" class="">
 		   					<input type="hidden" name="address" value="${member.address}" class="">
@@ -50,15 +50,15 @@
 	    				</td>
 		   				<td class="tbcol mcol2">
 		   					<input type="text" name="m_email" value="${member.m_email}"
-			   					class="" readonly="readonly">
+			   					class="" readonly="readonly" style="text-align: center;">
 		   				</td>
 	     				<td class="tbcol mcol3">
 	     					<input type="text" name="m_phone" value="${member.m_phone}"
-		   						class="number" readonly="readonly">
+		   						class="number" readonly="readonly" style="text-align: center;">
 		   				</td>
 		   				<td class="tbcol mcol4">
 		   					<input type="text" name="m_regdate" value="${member.m_regdate}"
-			   					class="number" readonly="readonly">
+			   					class="number" readonly="readonly" style="text-align: center;">
 		   				</td>
 		   				</tr>
 					</c:forEach> 
@@ -66,6 +66,35 @@
 			</c:choose>
 		</tbody>
 	</table>
+	<!-- 페이지  -->
+     <div id="Pg" align="center">
+     <c:if test="${pgVo.startPg>PBlock}">
+	     <font color="4c5317">
+	         <a href="/memberFIX?curPg=${pgVo.startPg-PBlock}&curBl=${pgVo.curBl-1}">[이전]</a>
+	     </font>
+     </c:if>
+     <c:forEach var="pgno" begin="${pgVo.startPg}" end="${pgVo.endPg}" step="1">
+         <c:set scope="page" var="list" 
+                  value="./memberFIX?curPg=${pgno}&curBl=${pgVo.curBl}"/> 
+         <a href="${list}" style=" text-decoration:none;">
+         <c:choose>
+             <c:when test="${pgVo.curPg==pgno}">
+                <font color="4c5317" style="font-weight: bold;">[${pgno}]</font>
+              </c:when>
+             <c:otherwise>
+               <font color="4c5317">[${pgno}]</font>
+              </c:otherwise>
+           </c:choose>
+         </a>                  
+     </c:forEach>
+      <c:if test="${pgVo.endPg<pgVo.pgCnt}">
+             <font color="4c5317">
+               <a href="./productFIX?curPg=${pgVo.startPg+PBlock}&curBl=${pgVo.curBl+1}">[다음]</a>
+             </font>
+       </c:if> 
+     </div>
+     <div style="margin-bottom: 15px;"></div>
+     <!-- 페이지 끝 -->
 	<form name="form1" method="post" action="">
 		<input type="hidden" name="mem_id" value="">
 		<input type="hidden" name="m_name" value="">

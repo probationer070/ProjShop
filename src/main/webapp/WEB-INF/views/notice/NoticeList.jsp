@@ -15,8 +15,10 @@
 <body>
 	
 <div id="noticemgt">
-	<h2>공지사항</h2>
-	<div class="totalitem" align="right">총 게시물 수 : ${noticeTot}</div>
+	<h2 >공지사항</h2>
+	<div class="totalitem" align="right">
+		<button class="btn btn-dark">총 게시물 수 : ${noticeTot}</button>
+	</div>
 	<table class="table table-hover text-center table-bordered border-dark">
 		<thead>
 			<tr>
@@ -39,24 +41,24 @@
 						<tr>
 	   						<input type="hidden" name="noti_no" value="${notice.noti_no}">
 		   					<td class="tbcol ncol1">
-			   					<input type="text" name="subject" value="${notice.subject}"
-			    					class="noticeDetail" readonly="readonly">
+			   					<input type="text" name="subject" value="&nbsp;&nbsp;${notice.subject}"
+			    					class="noticeSub noticeDetail" readonly="readonly">
 			    			</td>
 		    				<td class="tbcol ncol2">
 								<input type="text" name="writer" value="${notice.writer}"
-								     					class="noticeDetail" readonly="readonly">
+								     class="noticeDetail" readonly="readonly" >
 							</td>
 		     				<td class="tbcol ncol3">
 		     					<input type="text" name="regdate" value="${notice.regdate}"
-			   						class="number" readonly="readonly">
+			   						class="number" readonly="readonly" >
 			   				</td>
 		     				<td class="tbcol ncol4">
 		     					<input type="text" name="vdate" value="${notice.vdate}"
-			   						class="number" readonly="readonly">
+			   						class="number" readonly="readonly" >
 			   				</td>
 			   				<td class="tbcol ncol5">
 			   					<input type="text" name="readcount" value="${notice.readcount}"
-				   					class="" readonly="readonly">
+				   					class="" readonly="readonly" >
 			   				</td>
 		   				</tr>
 					</c:forEach> 
