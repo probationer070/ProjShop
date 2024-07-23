@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div id="orderMgt">
-		<h2 class="head-title">주문전체관리</h2>
+		<h2 class="head-title" style="text-align: center;">주문전체관리</h2>
 		<div align="right" class="mb-2">
 	       <button class="btn btn-dark">주문 건: ${orderTot}</button>
 	    </div>
@@ -48,7 +48,7 @@
 			    				<input type="checkbox" name="ck" value="${i.index}">
 			    			</th>
 							<th class="ocol ocol1 orderDetail">
-			    				<input type="text" name="rn" value="${order.rn}" class="num " readonly="readonly">
+			    				<input type="text" name="rn" value="${order.rn}" class="num " readonly="readonly" style="text-align: center;">
 			    			</th>
 							<th class="ocol ocol2 orderDetail">
 								<input type="text" name="p_name" value="${order.p_name}"
@@ -60,24 +60,24 @@
 			    			</th>
 			    			<th class="ocol ocol3 orderDetail">
 			    				<input type="text" name="quantity" value="${order.quantity}"
-			    					class="num " readonly="readonly">
+			    					class="num " readonly="readonly" style="text-align: center;">
 			    			</th>
 			    			<th class="ocol ocol4 orderDetail">
 			    				<input type="text" name="m_name" value="${order.m_name}(${order.mem_id})"
-			    					class="num " readonly="readonly">
+			    					class="num " readonly="readonly" style="text-align: center;">
 								<input type="hidden" name="mem_id" value="${order.mem_id}" readonly="readonly">
 			    			</th>
 			    			<th class="ocol ocol5 orderDetail">
 			    				<input type="text" name="price" value="${order.price}"
-			    					class="num " readonly="readonly">
+			    					class="num " readonly="readonly" style="text-align: center;">
 			    			</th>
 			    			<th class="ocol ocol6 orderDetail">
 			    				<input type="text" name="amount" value="${order.amount}"
-			    					class="num " readonly="readonly">
+			    					class="num " readonly="readonly" style="text-align: center;">
 			    			</th>
 			    			<th class="ocol ocol7 orderDetail">
 			    				<input type="text" name="o_regdate" value="${order.o_regdate}"
-			    					class="" readonly="readonly">
+			    					class="" readonly="readonly" style="text-align: center;">
 			    			</th>
 			    			<th class="ocol ocol8">
 			    				<select name="state" class="state${i.count} ">

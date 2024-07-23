@@ -58,7 +58,7 @@
        </div>
      </div>
      <!-- 페이지  -->
-     <div align="center">
+     <div id="Pg" align="center">
      <c:if test="${pgVo.startPg>PBlock}">
 	     <font color="4c5317">
 	         <a href="/productList?curPg=${pgVo.startPg-PBlock}&curBl=${pgVo.curBl-1}">[이전]</a>

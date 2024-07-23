@@ -15,8 +15,10 @@
 <body>
 	
 <div id="noticemgt">
-	<h2>공지사항</h2>
-	<div class="totalitem" align="right">총 게시물 수 : ${noticeTot}</div>
+	<h2 style="text-align: center;">공지사항</h2>
+	<div class="totalitem" align="right">
+		<button class="btn btn-dark">총 게시물 수 : ${noticeTot}</button>
+	</div>
 	<table class="table table-hover text-center table-bordered border-dark">
 		<thead>
 			<tr>
@@ -44,19 +46,19 @@
 			    			</td>
 		    				<td class="tbcol ncol2">
 								<input type="text" name="writer" value="${notice.writer}"
-								     					class="noticeDetail" readonly="readonly">
+								     class="noticeDetail" readonly="readonly" style="text-align: center;">
 							</td>
 		     				<td class="tbcol ncol3">
 		     					<input type="text" name="regdate" value="${notice.regdate}"
-			   						class="number" readonly="readonly">
+			   						class="number" readonly="readonly" style="text-align: center;">
 			   				</td>
 		     				<td class="tbcol ncol4">
 		     					<input type="text" name="vdate" value="${notice.vdate}"
-			   						class="number" readonly="readonly">
+			   						class="number" readonly="readonly" style="text-align: center;">
 			   				</td>
 			   				<td class="tbcol ncol5">
 			   					<input type="text" name="readcount" value="${notice.readcount}"
-				   					class="" readonly="readonly">
+				   					class="" readonly="readonly" style="text-align: center;">
 			   				</td>
 		   				</tr>
 					</c:forEach> 
