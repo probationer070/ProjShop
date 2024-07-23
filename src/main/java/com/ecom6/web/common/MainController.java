@@ -79,12 +79,12 @@ public class MainController {
 		String content = "SearchResult.jsp";
 
 		Map<String, Object> reMap = searchWrapper.SearchProc(param, pgVo);
-
+		log.info("param ===> "+param);
 		log.info("TESTING text2 =============>  "+reMap.get("search_list"));
 		model.addAttribute("p_search", reMap.get("p_search"));
 		model.addAttribute("n_search", reMap.get("n_search"));
 		model.addAttribute("search_list", reMap.get("search_list"));
-		model.addAttribute("text", param);
+		// model.addAttribute("text", param);
 		model.addAttribute("content", content);
 		return "Main";
 	}

@@ -495,7 +495,7 @@ public class OrderController {
 		  orderWrapper.DeleteOnoOrders(param);
 	  }
 	  mav.setViewName("Main");
-	  mav.addObject("content", "layouts/PayResult.jsp");
+	  mav.addObject("content", "layouts/CancelResult.jsp");
 	  mav.addObject("data", apiResult);
 	  return mav;
 	}

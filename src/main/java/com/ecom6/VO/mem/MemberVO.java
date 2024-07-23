@@ -26,6 +26,6 @@ public class MemberVO {
 	private String m_job;
 	private String m_role;
 	private LocalDate m_regdate;
-	private int startRow;
-	private int endRow;
+	private int start;
+	private int end;
 }

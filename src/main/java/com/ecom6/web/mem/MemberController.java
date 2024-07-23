@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.ecom6.VO.mem.MemberVO;
+import com.ecom6.common.vo.PageInfo;
+import com.ecom6.common.vo.PageVO;
 import com.ecom6.service.mem.MemberService;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -155,7 +157,7 @@ public class MemberController {
 	@GetMapping("/memberFIX")
 	public String memberMgt(HttpServletRequest req, 
 							HttpServletResponse res,
-							MemberVO mvo, Model model) {
+							MemberVO mvo, PageVO pgVo, Model model) {
 		String msg=null;
 		String url=null;
 		String page="Main";
@@ -164,12 +166,15 @@ public class MemberController {
 		if(ssKey!=null) {
 			if(ssKey.getM_role().equals("admin")) {
 				mvo.setM_role(ssKey.getM_role());
-				Map<String, Object> reSet = memberService.getMemberList(mvo);
+				Map<String, Object> reSet = memberService.getMemberList(mvo, pgVo);
 				msg = (String) reSet.get("msg");
 				model.addAttribute("members", reSet.get("members"));
 				model.addAttribute("memTot", reSet.get("memTot"));
 				model.addAttribute("msg", msg);
-				model.addAttribute("content", "admin/memberList.jsp");			
+				
+				model.addAttribute("content", "admin/memberList.jsp");
+				model.addAttribute("PBlock", PageInfo.PAGE_OF_BLOCK);
+				model.addAttribute("pgVo", pgVo);
 			} else {
 				session.removeAttribute("ssKey");
 				session.invalidate();
@@ -192,8 +197,8 @@ public class MemberController {
 	@PostMapping("/memberFIX")
 	public String memberMgtPost(HttpServletRequest req, 
 			HttpServletResponse res,
-			MemberVO mvo, Model model) {
-		return memberMgt(req, res, mvo, model);
+			MemberVO mvo, PageVO pgVo, Model model) {
+		return memberMgt(req, res, mvo, pgVo,model);
 	}
 	
 	@PostMapping("/customInfo")

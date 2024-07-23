@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ecom6.VO.mem.MemberVO;
 import com.ecom6.VO.notice.NoticeVO;
+import com.ecom6.VO.product.ProductVO;
 import com.ecom6.common.vo.PageVO;
 import com.ecom6.service.mem.MemberService;
 import com.ecom6.service.notice.NoticeService;
+import com.ecom6.service.product.ProductService;
 
 @RestController
 public class RestApiController {
@@ -20,6 +22,9 @@ public class RestApiController {
 	
 	@Autowired
 	NoticeService noticeService;
+	
+	@Autowired
+	ProductService productService;
 	
 	@PostMapping("idCheck")
 	@ResponseBody
@@ -35,5 +40,11 @@ public class RestApiController {
 	public List<NoticeVO> getNotice(NoticeVO nvo) {
 		List<NoticeVO> noticeList = noticeService.getNotice(nvo);
 		return noticeList;
+	}
+	
+	@PostMapping("/api/getProduct")
+	public List<ProductVO> getProduct(ProductVO pvo) {
+		List<ProductVO> productList = productService.getProduct(pvo);
+		return productList;
 	}
 }

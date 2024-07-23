@@ -67,7 +67,7 @@
 		</tbody>
 	</table>
 	<!-- 페이지  -->
-     <div id="Pg" align="center">
+     <div class="PageNation" align="center">
      <c:if test="${pgVo.startPg>PBlock}">
 	     <font color="4c5317">
 	         <a href="/memberFIX?curPg=${pgVo.startPg-PBlock}&curBl=${pgVo.curBl-1}">[이전]</a>

@@ -55,16 +55,16 @@
 					text-decoration: none; font-size: 20px;">갤럭시</a>
 			     <ul class="sub_cate01 dropdown-content-kind">
 			       <li class="noChild">
-			         <a href="/productList">갤럭시 버전</a>
+			         <a href="/productList">갤럭시 S24</a>
 			       </li>
 			       <li class="noChild">
-			         <a href="/category/Hard/29/">갤럭시 버전</a>
+			         <a href="/category/Hard/29/">갤럭시 S23</a>
 			       </li>
 			       <li class="noChild">
-			         <a href="/category/Hard/29/">갤럭시 버전</a>
+			         <a href="/category/Hard/29/">갤럭시노트 20</a>
 			       </li>
 			       <li class="noChild">
-			         <a href="/category/Hard/29/">갤럭시 버전</a>
+			         <a href="/category/Hard/29/">갤럭시Z 플립5</a>
 			       </li>
 			     </ul>
 			   </li> 
@@ -74,16 +74,16 @@
 					text-decoration: none; font-size: 20px;">아이폰</a>
 			      <ul class="sub_cate01 dropdown-content-kind">
 			       <li class="noChild">
-			         <a href="/productList">아이폰 버전</a>
+			         <a href="/productList">아이폰 14</a>
 			       </li>
 			       <li class="noChild">
-			         <a href="/category/Hard/28/">아이폰 버전</a>
+			         <a href="/category/Hard/28/">아이폰 13Pro</a>
 			       </li>
 			       <li class="noChild">
-			         <a href="/category/Hard/28/">아이폰 버전</a>
+			         <a href="/category/Hard/28/">아이폰 SE</a>
 			       </li>
 			       <li class="noChild">
-			         <a href="/category/Hard/28/">아이폰 버전</a>
+			         <a href="/category/Hard/28/">아이폰 12</a>
 			       </li>
 			     </ul>
 			   </li>
