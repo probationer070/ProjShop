@@ -289,11 +289,11 @@ div.ec-base-help .inner, .xans-myshop-couponserial .couponSerial, .xans-myshop-s
     word-wrap: break-word;
     width: 100%;
 }
-/* .titleArea h2 {
+.titleArea h2 {
     font-weight: 700;
     font-size: 32px;
     color: #1a1a1a;
-} */
+}
 @media (max-width: 1024px) {
     .titleArea h2 {
         display: inline-block;
@@ -301,9 +301,9 @@ div.ec-base-help .inner, .xans-myshop-couponserial .couponSerial, .xans-myshop-s
         font-size: 22px;
     }
 }
-/* .titleArea h2 {
+.titleArea h2 {
     font-weight: normal;
-} */
+}
 .ec-base-button {
         margin-left: 16px;
         margin-right: 16px;

@@ -1,47 +1,83 @@
-@charset "UTF-8";
-
-table, tr, td, th {
-	border-collapse: collapse;
-	border-bottom: 1px solid #e5e5e5;
+body {
+  padding:1.5em;
+  background: #f5f5f5
 }
 
-.tbcol > input, select {
-	overflow: hidden;
-	outline: none;
-	border: none;
-	padding: 2px 4px;
-	background-color: transparent;
-/* 	width: 100px; */
+table {
+  border: 1px #a39485 solid;
+  font-size: .9em;
+  box-shadow: 0 2px 5px rgba(0,0,0,.25);
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-.mcol1 { width: 15%; }
-.mcol2 { width: 25%; }
-.mcol3 { width: 25%; }
-.mcol4 { width: 25%; }
-.mcol5 { width: 5%; }
-/* .mcol6 { width: 5%; }
-.mcol7 { width: 9%; }
-.mcol8 { width: 5%; } */
-
-
-.mcol1 input{ width: 100%; }
-.mcol2 input{ width: 100%; }
-.mcol3 input{ width: 100%; }
-.mcol4 input{ width: 100%; }
-.mcol5 input{ width: 100%; }
-/* .mcol6 input{ width: 100%; }
-.mcol7 input{ width: 100%; }
-.mcol8 select{ width: 100%; } */
-
+th {
+  text-align: left;
+}
+  
 thead {
-	background-color: #de7575;
-	color: #fff;
-	height: 30px;
+  font-weight: bold;
+  color: #fff;
+  background: #de7575;
+}
+  
+ td, th {
+  padding: 1em .5em;
+  vertical-align: middle;
+}
+  
+ td {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  background: #fff;
 }
 
-.tbcol {
-	padding: 12px;
-} 
-
-
-
+a {
+  color: #73685d;
+}
+  
+ @media all and (max-width: 768px) {
+    
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
+  th {
+    text-align: right;
+  }
+  
+  table {
+    position: relative; 
+    padding-bottom: 0;
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+  }
+  
+  thead {
+    float: left;
+    white-space: nowrap;
+  }
+  
+  tbody {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    white-space: nowrap;
+  }
+  
+  tr {
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  th {
+    border-bottom: 1px solid #a39485;
+  }
+  
+  td {
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  
+  }

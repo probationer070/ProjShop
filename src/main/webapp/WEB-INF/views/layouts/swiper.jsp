@@ -42,23 +42,11 @@
 			    }
 			  }
           </style>
-           <div class="swiper mySwiper">
-		    <div class="swiper-wrapper">
-		      <div class="swiper-slide">
-		      	<img src="images/backB3.jpg">
-		      </div>
-		      <div class="swiper-slide">
-		      	<img src="images/backV1.jpg">
-		      </div>
-		      <div class="swiper-slide">
-		      	<img src="images/backV4.jpg">
-		      </div>
-		      <!-- <div class="swiper-slide">
-		      	<img src="images/backV3.jpg">
-		      </div> -->
-		    </div>
-		    <div class="swiper-pagination"></div>
-		  </div>
+        <a href="javascript:void(0)%5C;" style="cursor:default">
+            <picture>
+              <img src="images/backB3.jpg">
+            </picture>
+          </a>
         </div>
       </div>
       

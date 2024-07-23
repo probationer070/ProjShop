@@ -18,37 +18,44 @@
 	<select id="getTotalOrders" resultType="int" parameterType="ovo">
 		SELECT COUNT(mem_id) FROM ORDERT
 		<if test="mem_id!=null and m_role=='mem'">
-			WHERE MEM_ID = #{mem_id} and O_NO=#{o_no}
+			WHERE MEM_ID = #{mem_id}
 		</if>
 	</select>
 	
-	<select id="getOrders" parameterType="ovo" resultType="ovo">
-	     SELECT * FROM ( 
-	     SELECT ROWNUM RN, A.* FROM (
-		 SELECT O_NO, O.PRICE, AMOUNT, QUANTITY, TO_CHAR(O_REGDATE,'YYYY-MM-DD') O_REGDATE, STATE,
+	  <select id="getOrders" parameterType="ovo" resultType="ovo">
+        /* 조인을 이용한 방법 */
+	     SELECT * 
+	       FROM
+	      ( SELECT ROWNUM RN, A.*
+	         FROM
+	           (        /* 조인을 이용한 방법 */
+	                SELECT O_NO, O.PRICE, AMOUNT, QUANTITY, TO_CHAR(O_REGDATE,'YYYY-MM-DD') O_REGDATE, STATE,
 	                      MEM_ID, (SELECT M_NAME FROM MEMBER WHERE MEM_ID=#{mem_id}) M_NAME,  O.P_NO, 
 	                      P.IMAGE, P.STOCK, P_NAME
 	                      FROM ORDERT O INNER JOIN PRODUCT P
 	                      ON O.P_NO = P.P_NO
-	               WHERE mem_id = #{mem_id}
-	               AND O_NO = #{o_no}
+	               <!--  /* 서브쿼리 이용한 방법   
+	                 SELECT O_NO, O.PRICE, AMOUNT, QUANTITY, TO_CHAR(O_REGDATE,'YYYY-MM-DD') O_REGDATE, STATE,
+	                      MEM_ID, O.P_NO, (SELECT P_NAME FROM PRODUCT WHERE P_NO=2) P_NAME
+	                      ORDERT O*/ -->
+	               WHERE mem_id = #{mem_id} 
 	             ORDER BY O_REGDATE DESC
 	            ) A
 	       ) 
 	    <choose>
 		  <when test="start!=0 and end!=0">
 	      <![CDATA[       
-	       WHERE RN >= #{start} AND RN <= #{end}
+	       WHERE RN  >= #{start} AND RN <= #{end}
 	      ]]> 
 		  </when>
-		  <!-- <otherwise>
+		  <otherwise>
 	       <if test="p_no!=0">
 	         WHERE P_NO = #{p_no}
 	       </if>
 	       <if test="o_no!=0">
 	         AND O_NO = #{o_no}
 	       </if>          
-		  </otherwise> -->
+		  </otherwise>
 	  </choose>
    </select>
 	
@@ -99,74 +106,5 @@
 		WHERE P_NO = #{p_no} 
 		AND O_NO=#{o_no}
 		AND MEM_ID=#{mem_id}
-	</delete>
-	
-	<select id="getTotalAmount" parameterType="ovo" resultType="int">
-		SELECT SUM(AMOUNT) FROM ORDERT
-		WHERE O_NO = #{o_no}
-	</select>
-	
-	<select id="getTrandOrder" resultType="ovo" parameterType="ovo">
-		SELECT * FROM ( 
-		SELECT ROWNUM RN, A.* FROM (
-		SELECT O_NO, O.PRICE, AMOUNT, QUANTITY, O_REGDATE, STATE,
-			MEM_ID, (SELECT M_NAME FROM MEMBER WHERE MEM_ID=#{mem_id}) M_NAME,  O.P_NO, 
-			P.IMAGE, P.STOCK, P_NAME
-			FROM ORDERT O 
-			INNER JOIN PRODUCT P
-			ON O.P_NO = P.P_NO
-			WHERE mem_id = #{mem_id} 
-			ORDER BY O_REGDATE DESC ) A
-	    ) 
-	    WHERE RN = 1
-	</select>
-	
-	<insert id="createOrder" parameterType="oio">
-		INSERT INTO ORDERINFO(O_NO, MEM_ID, O_REGDATE, TOTAL_AMOUNT, TRANSACTIONID)
-		VALUES (#{o_no}, #{mem_id}, TO_DATE(#{o_regdate}, 'YYYY-MM-DD HH24:MI:SS'), #{total_amount}, #{transactionId})
-	</insert>
-	
-	<select id="getTotalMemOrders" resultType="int" parameterType="oio">
-		SELECT COUNT(MEM_ID) FROM ORDERINFO
-		<if test="mem_id!=null and m_role=='mem'">
-			WHERE MEM_ID = #{mem_id}
-		</if>
-	</select>
-	
-	<resultMap type="oio" id="oioMap">
-		<result property="o_regdate" column="O_REGDATE"/>
-	</resultMap>
-	
-	<select id="getMemOrders" parameterType="oio" resultMap="oioMap">
-		SELECT * FROM ( 
-		SELECT ROWNUM RN, A.* FROM (        
-		SELECT O_NO, MEM_ID, TO_CHAR(O_REGDATE,'YYYY-MM-DD') O_REGDATE, TOTAL_AMOUNT, TRANSACTIONID
-			FROM ORDERINFO 
-			WHERE mem_id = #{mem_id} 
-			ORDER BY O_NO DESC
-			) A
-		)
-		<choose>
-			<when test="start!=0 and end!=0">
-			   <![CDATA[       
-			    WHERE RN  >= #{start} AND RN <= #{end}
-			   ]]> 
-			</when>
-			<otherwise>
-			    <!-- <if test="p_no!=0">
-			      WHERE P_NO = #{p_no}
-			    </if> -->
-			    <if test="o_no!=0">
-			      AND O_NO = #{o_no}
-			    </if>          
-			</otherwise>
-	 	</choose>
-	</select>
-	
-	<delete id="deleteOrderMemView" parameterType="oio">
-		DELETE FROM ORDERINFO 
-		WHERE O_NO=#{o_no}
-		AND MEM_ID=#{mem_id}
-	
 	</delete>
 </mapper>

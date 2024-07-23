@@ -13,7 +13,7 @@
 <body>
 <form action="" name="form1" method="post">
 <div id="join">		
-	<h2 style="text-align: center;">회원정보</h2>
+	<h3>회원정보</h3>
 	  <table class="signup-main">
 		<colgroup>
 		  <col style="width:220px";>

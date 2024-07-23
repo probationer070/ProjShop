@@ -7,81 +7,77 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="../js/common.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/signup.css" />
 </head>
 <body>
 <form action="memUpdateProc" name="form1" method="post">
-<div id="join">		
-	<h2>회원정보 수정</h2>
 	<table class="signup-main">
-		<colgroup>
-		  <col style="width:220px";>
-		  <col style="width:auto";>
-		</colgroup>
-		<tr>
-			<th class="col1"><img src="/images/blue_dot.gif"> 아이디</th>
-			<th class="col2">
-			<div class="input-container">
-				<input type="text" name="mem_id" id="idchk" 
-				title="ID" class="chk" value="${mvo.mem_id}" >
-			</div>
-			</th>
-		</tr>
-		<c:if test="${ssKey.m_role=='mem'}">
-		<tr>
-			<th class="col1"><img src="/images/blue_dot.gif"> 패스워드</th>
-			<th class="col2">
-			<input type="password" name="m_passwd" id="check1" 
-				title="password" class="chk" value="${mvo.m_passwd}" >
-			</th>
+		<tr class="sign-title">
+			<th colspan="3">회원정보 수정</th>
 		</tr>
 		<tr>
-			<th class="col1"><img src="/images/blue_dot.gif"> 패스워드 확인</th>
+			<th class="col1">아이디</th>
+			<th class="col2">
+				<input type="text" name="mem_id"
+					title="ID" class="chk" value="${mvo.mem_id}" readonly="readonly">
+			</th>
+			<th class="input-state"><font id="warning" size="2" color="red"></font></th>
+		</tr>
+		<tr>
+			<th class="col1">패스워드</th>
+			<th class="col2"><input type="password" name="m_passwd" id="check1" 
+				title="password" class="chk" value="${mvo.m_passwd}">
+			</th>
+			<th class="input-state"><font id="check" size="2" color="green"></font></th>
+			
+		</tr>
+		<tr>
+			<th class="col1">패스워드 확인</th>
 			<th class="col2"><input type="password" name="m_repasswd" id="check2" 
 				title="passwordChk" class="chk" placeholder="PASSWORD 확인 필수">
 			</th>
 		</tr>
-		</c:if>
 		<tr>
-			<th class="col1"><img src="/images/blue_dot.gif"> 이름</th>
+			<th class="col1">이름</th>
 			<th class="col2"><input type="text" name="m_name" 
-				title="이름" class="chk" value="${mvo.m_name}" >
+				title="이름" class="chk" value="${mvo.m_name}">
 			</th>
 		</tr>
 		<tr>
-			<th class="col1"><img src="/images/blue_dot.gif"> 이메일</th>
+			<th class="col1">이메일</th>
 			<th class="col2"><input type="text" name="m_email" class="chk"
-				value="${mvo.m_email}" >
-				
+				value="${mvo.m_email}">
 			</th>
+			<th class="col3"><font class="emailNm"></font></th>
 		</tr>
 		<tr>
-			<th class="col1"><img src="/images/blue_dot.gif"> 전화번호</th>
+			<th class="col1">전화번호</th>
 			<th class="col2"><input type="text" name="m_phone"  
-				title="전화번호" class="chk" value="${mvo.m_phone}" >
+				title="전화번호" class="chk" value="${mvo.m_phone}">
 			</th>
 		</tr>
 		<tr>
-			<th class="col1"><img src="/images/blue_dot.gif"> 우편번호</th>
+			<th class="col1">우편번호</th>
 			<th class="col2"><input type="text" name="zipcode" id="sample6_postcode"
-				 title="우편번호" 
+				readonly="readonly" title="우편번호" 
 				class="chk" value="${mvo.zipcode}">
 			</th>
+			<th class="input-state col3">
+				<button class="btn-primary" type="button" onclick="zipCheck()">우편번호찾기</button>
+			</th>
 		</tr>
 		<tr>
-			<th class="col1"><img src="/images/blue_dot.gif"> 주소</th>
+			<th class="col1">주소</th>
 			<th class="col2">
 				<input type="text" name="address" 
 				class="chk" 
-				
+				readonly="readonly" id="sample6_address"
 				title="우편번호 검색" value="${mvo.address}">
-				<br>
-				<input type="text" name="address2" value="${mvo.address2}" >
+				<input type="text" name="address2" id="sample6_detailAddress" value="${mvo.address2}">
 				<input type="hidden" id="sample6_extraAddress" >
 			</th>
 		</tr>
 		<tr>
-			<th class="col1"><img src="/images/blue_dot.gif"> 직업</th>
+			<th class="col1">직업</th>
 			<th class="col2">
 				<select name="m_job" class="chk selector">
 					 <option value="">선택하시오.</option>
@@ -113,8 +109,8 @@
 		<c:if test="${ssKey.m_role=='mem'}">
 		<tr>
 			<td colspan="3">
-				<button type="button" id="submit3" class="btnJoin">정보수정</button>
-				<button type="button" id="cancel" class="btnBack">취소</button>
+				<button type="button" id="submit3" class="btn-primary">정보수정</button>
+				<button type="button" id="cancel" class="btn-primary">취소</button>
 			</td>
 		</tr>
 		</c:if>
@@ -127,7 +123,6 @@
 		</c:if>
 		</tfoot>
 	</table>
-</div>
 </form>
 </body>
 </html>

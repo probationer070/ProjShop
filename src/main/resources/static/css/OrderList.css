@@ -1,127 +1,81 @@
-@charset "UTF-8";
-#productMgt .btnArea{
-	margin-top: 20px;
-	text-align: center;
-	width:80%;
+body {
+  padding:1.5em;
+  background: #f5f5f5
 }
 
-#productMgt h2{
-	text-align: center;
-	margin-top: 10px;
-}	
-#productMgt h3{
-	color:#0e6d1d;
-	text-align: center;
-	margin-top: 10px;
-	margin-bottom: 20px;
+table {
+  border: 1px #a39485 solid;
+  font-size: .9em;
+  box-shadow: 0 2px 5px rgba(0,0,0,.25);
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-#productMgt table{
-	width:100%;
+th {
+  text-align: left;
 }
-
-/* #productMgt .pcol1{
-	width: 10%;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 3px 3px 3px; 
-}
-#productMgt .pcol2{
-	padding: 3px 3px 3px 10px;
-	text-align: left; 
-	vertical-align: middle;
-}
-#productMgt .pcol3{
-	width: 15%;
-	vertical-align: middle;
-}
-#productMgt .pcol4{
-	width: 25%;
-	vertical-align: middle;
-}
-#productMgt .pcol5{
-	width: 10%;
-	vertical-align: middle;
-} */
-
-/* OrderFix */
-.ocol0 { width: 2%; }
-.ocol1 { width: 5%; }
-.ocol2 { width: 20%; }
-.ocol3 { width: 7%; }
-.ocol4 { width: 10%; }
-.ocol5 { width: 1%; }
-
-.ocol6 { width: 10%; }
-.ocol7 { width: 10%; }
-.ocol8 { width: 10%; }
-
-.ocol0 input{ width: 100%; }
-.ocol1 input{ width: 100%; }
-.ocol2 input{ width: 100%; }
-.ocol3 input{ width: 100%; }
-.ocol4 input{ width: 100%; }
-
-/* .ocol5 input{ width: 100%; } */
-.ocol6 input{ width: 100%; }
-.ocol7 input{ width: 100%; }
-.ocol8 input{ width: 100%; }
-
-table, th, tr, td {
-	border-collapse: collapse;
-	border-bottom: 1px solid #e5e5e5;
-}
-
+  
 thead {
-	background-color: #de7575;
-	color: #fff;
+  font-weight: bold;
+  color: #fff;
+  background: #de7575;
+}
+  
+ td, th {
+  padding: 1em .5em;
+  vertical-align: middle;
+}
+  
+ td {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  background: #fff;
 }
 
-.ocol4, .o_col {
-	padding: 12px;
-	/* width: 200px; */
-} 
-
-input:focus, input {
-	border: 0;
-	outline: none;
+a {
+  color: #73685d;
 }
-
-.btnJoin{
-    width: 100px;
-    padding: 12px 12px 10px 10px;
-    border: 1px solid transparent;
-    line-height: 20px;
-    font-weight: bold;
-    text-align: center;
-    color: #fff;
-    background-color: #de7575;
-}
-
-.ocol form {
-	margin: 10px 0;
-}
-
-.btnCancel{
-    width: 100px;
-    padding: 8px 6px;
-    margin: 10px;
-    border: 1px solid transparent;
-    line-height: 20px;
-    font-weight: bold;
-    text-align: center;
-    color: #999;
-    background-color: #eee;
-}
-
-.btnArea {
-	margin-top: 20px;
-}
-
-.PageNation {
-	margin-top: 80px;
-}
-
-th.tab {
-	padding: 12px;
-}
+  
+ @media all and (max-width: 768px) {
+    
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
+  th {
+    text-align: right;
+  }
+  
+  table {
+    position: relative; 
+    padding-bottom: 0;
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+  }
+  
+  thead {
+    float: left;
+    white-space: nowrap;
+  }
+  
+  tbody {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    white-space: nowrap;
+  }
+  
+  tr {
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  th {
+    border-bottom: 1px solid #a39485;
+  }
+  
+  td {
+    border-bottom: 1px solid #e5e5e5;
+  }
+  }
