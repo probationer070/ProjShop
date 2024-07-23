@@ -17,10 +17,10 @@
 		<div class="container" style="">
 		<c:choose>
 			<c:when test="${ssKey.m_role=='admin'}">
-				<c:import url="layouts/header.jsp" />
+				<c:import url="layouts/headerPart.jsp" />
 			</c:when>
 			<c:otherwise>
-            	<c:import url="layouts/header.jsp" />
+            	<c:import url="layouts/headerPart.jsp" />
        		</c:otherwise>
 		</c:choose>
 			<div class="contents">
