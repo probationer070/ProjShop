@@ -18,7 +18,7 @@
 	<div class="container">
 		<c:import url="./header.jsp" />
 		<div class="content">
-			<c:import url="./swiper.jsp" />	
+			<c:import url="../admin/swiper.jsp" />	
 			<div class="site-desc">
 			<!-- 	<section class="site-desc-direction">
 					<div class="TwoColumn-Sec">

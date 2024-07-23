@@ -7,15 +7,20 @@ import java.util.Hashtable;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ecom6.VO.cart.CartVO;
+import com.ecom6.VO.order.OrderInfo;
 import com.ecom6.VO.order.OrderVO;
 import com.ecom6.service.cart.CartService;
 import com.ecom6.service.order.OrderService;
 import com.ecom6.service.product.ProductService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service("orderWrapper")
 public class OrderWrapper {
 	
@@ -88,12 +93,19 @@ public class OrderWrapper {
 		return reMap;
 	}
 	
-	public HashMap<String, Object> orderProc(OrderVO ovo, ArrayList<CartVO> cartList) {
+	public HashMap<String, Object> orderProc(OrderVO ovo, ArrayList<CartVO> cartList, OrderInfo oio) {
 		String url=null;
 		String msg=null;
-
 		int r = orderService.insertOrders(cartList);
+		OrderVO o_no = orderService.getTrandOrder(ovo);
+		log.info("ovo ====> "+ovo);
+		log.info("o_no ====> "+o_no);
+		oio.setO_no(o_no.getO_no());
+		oio.setMem_id(o_no.getMem_id());
+		oio.setO_regdate(o_no.getO_regdate());
+
 		if(r>0) {
+			orderService.createOrder(oio);
 			productService.updateProdStock(cartList);
 			msg="주문완료했습니다.";
 			url = "orderList";
@@ -121,5 +133,12 @@ public class OrderWrapper {
 
         return order;
     }
+
+	public void DeleteOnoOrders(HashMap<String, String> param) {
+		OrderInfo oio = new OrderInfo();
+		oio.setO_no(Integer.parseInt(param.get("o_no")));
+		oio.setMem_id(param.get("mem_id"));
+		orderService.deleteOrderMemView(oio);
+	}
 	
 }

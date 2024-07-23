@@ -42,11 +42,23 @@
 			    }
 			  }
           </style>
-        <a href="javascript:void(0)%5C;" style="cursor:default">
-            <picture>
-              <img src="../images/backB3.jpg">
-            </picture>
-          </a>
+           <div class="swiper mySwiper">
+		    <div class="swiper-wrapper">
+		      <div class="swiper-slide">
+		      	<img src="../images/backB3.jpg">
+		      </div>
+		      <div class="swiper-slide">
+		      	<img src="../images/backV1.jpg">
+		      </div>
+		      <div class="swiper-slide">
+		      	<img src="../images/backV4.jpg">
+		      </div>
+		      <!-- <div class="swiper-slide">
+		      	<img src="images/backV3.jpg">
+		      </div> -->
+		    </div>
+		    <div class="swiper-pagination"></div>
+		  </div>
         </div>
       </div>
       
@@ -56,6 +68,6 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <!-- Initialize Swiper -->
-  <script src="js/swiper.js"></script>
+  <script src="../js/swiper.js"></script>
 </body>
 </html>

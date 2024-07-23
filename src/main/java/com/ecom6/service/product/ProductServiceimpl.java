@@ -23,6 +23,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ecom6.VO.cart.CartVO;
+import com.ecom6.VO.notice.NoticeVO;
 import com.ecom6.VO.order.OrderVO;
 import com.ecom6.VO.product.ProductVO;
 import com.ecom6.common.vo.PageInfo;
@@ -199,6 +200,12 @@ public class ProductServiceimpl implements ProductService {
 	@Override
 	public int getSearch(HashMap<String, String> param) {
 		return productDao.getSearch(param.get("text"));
+	}
+
+	@Override
+	public List<ProductVO> getProduct(ProductVO pvo) {
+		List<ProductVO> productList = productDao.getProductList(pvo);
+		return productList;
 	}
 	
 }

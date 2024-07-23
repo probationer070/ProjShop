@@ -16,66 +16,46 @@
 	
 	<form action="" name="form1" method="post">
 	<div class="ArticleContentBox">
+		<h2>공지사항</h2>
 		<div class="article_header">
 			<div class="article_Title">
 				<div class="title_area">
-   					<h2>제목 : ${notice.subject}</h2>
+   					<h3 style="text-align: left;">${notice.subject}</h3>
    					<input type="hidden" name="noti_no" value="${notice.noti_no}">
    					<input name="subject" type="hidden" value="${notice.subject}">
 				</div>
 			</div>
 			<div class="WriterInfo mb-3">
-				<div class="thumb_area">
-					프로필 이미지?
-				</div>
 				<div class="profile_area">
-					<input type="hidden" name="writer" class="chk" title="작성자" value="${notice.writer}" readonly="readonly"> 
+					<span class="wname">${notice.writer}</span>
+					<ul class="date">
+						<li>
+							<span class="rdate">${notice.regdate}</span>
+						</li>
+					</ul>			
 				</div>
 			</div>
 			<div class="ArticleTools">
 			</div>
 		</div>
-		<div class="article_container mb-4">
-			<textarea class="textaread" name="content" class="chk" title="내용" type="hidden"
-			           readonly="readonly">${notice.content}</textarea>
-			<input type="date" name="vdate" title="종료일자" value="${notice.vdate}" readonly="readonly">
-			<input type="date" name="regdate" title="작성일자" value="${notice.regdate}" readonly="readonly">  
+		<div class="article_container">
+			<pre class="textaread" style="text-align: left;">
+				<textarea name="content" title="내용" class="chk Noti-contentArea" readonly="readonly">${notice.content}</textarea>
+			</pre>
+			<input type="hidden" name="writer" title="작성자" value="${notice.writer}" readonly="readonly"> 
+			<input type="hidden" name="content" title="내용" value="${notice.content}" readonly="readonly"> 
+			<input type="hidden" name="vdate" title="종료일자" value="${notice.vdate}" readonly="readonly">
+			<input type="hidden" name="regdate" title="작성일자" value="${notice.regdate}" readonly="readonly">  
 		</div>
 	</div>
-	
-   	<%-- <table>
-   		<tbody>
-			<tr>
-				<input type="hidden" name="noti_no" value="${notice.noti_no}">
-				<th class="">
-					<label>종료일자</label>
-				<input type="date" name="vdate" value="${notice.vdate}" readonly="readonly">
-					<label>작성일자</label>
-					<input type="date" name="regdate" value="${notice.regdate}" readonly="readonly"> 
-				</th>
-  			</tr>
-			<tr>
-				<th class="">
-					<label>작성자</label>
-					<input type="text" name="writer" class="chk" title="작성자" value="${notice.writer}" readonly="readonly"> 
-				</th>
-  			</tr>
-			<tr>
-				<th class="" colspan="1">
-					<label>내용</label>
-					<textarea class="textaread" rows="10" cols="50" name="content" title="내용" class="chk" title="내용" readonly="readonly">${notice.content}</textarea>
-				</th>
-  			</tr>
-   		</tbody>
-   	</table> --%>
    	<div class="btnArea mt-2" align="center">
    		<c:if test='${ssKey.m_role=="mem" or ssKey.m_role==null}'>
-   			<button type="button" class="btn-second btn-primary" onclick="location.href='/notice'">공지사항목록</button>
+   			<button type="button" class="btnJoin" onclick="location.href='/notice'">공지사항목록</button>
    		</c:if>
    		<c:if test='${ssKey.m_role=="admin"}'>
-   			<button type="button" class="btn btn-outline-dark" onclick="location.href='/noticeFIX'">공지사항목록</button>
-   			<button type="button" name="update" class="btn btn-dark notisubmit">수정</button>
-   			<button type="button" name="delete" class="btn btn-dark notisubmit">삭제</button>
+   			<button type="button" class="btnJoin" onclick="location.href='/noticeFIX'">공지사항목록</button>
+   			<button type="button" name="update" class="btnJoin notisubmit">수정</button>
+   			<button type="button" name="delete" class="btnJoin notisubmit">삭제</button>
    		</c:if>
    	</div>
 	</form>

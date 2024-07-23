@@ -32,7 +32,6 @@
 				</div>
 				<div class="xans-element- xans-product xans-product-detaildesign">
 					<table border="1">
-						<caption>기본 정보</caption>
 						<tbody>
 							<tr class=" xans-record-">
 								<th scope="row">

@@ -37,7 +37,6 @@
 				</div>
 				<div class="xans-element- xans-product xans-product-detaildesign">
 					<table border="1">
-						<caption>기본 정보</caption>
 						<tbody>
 							<tr class=" xans-record-">
 								<th scope="row">
@@ -87,13 +86,10 @@
 							<th scope="row">
 								<span style="font-size:14px;color:#c92727;font-weight:bold;">상품이미지</span>
 							</th>
-							<td>
-				                </td>
-				                <td>&nbsp;&nbsp;</td>
-					            <td>
+					        <td>
 					            <input type="file" name="image2" class="form-control" 
 					              title="이미지">
-					            <input type="text" name="image" value="${product.image}">
+					            <input type="hidden" name="image" value="${product.image}">
 				            </td>
 						</tr>
 					</table>

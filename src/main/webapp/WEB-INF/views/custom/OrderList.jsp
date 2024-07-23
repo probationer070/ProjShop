@@ -22,12 +22,12 @@
 	<table>
 		<thead>
 		<tr>
-			<th class="ocol ocol1">상품명</th>
-			<th class="ocol ocol2">주문수량</th>
-			<th class="ocol ocol3">단가</th>
-			<th class="ocol ocol4">결제금액</th>
-			<th class="ocol ocol5">결제일</th>
-			<th class="ocol ocol6">주문상태</th>
+			<th class="ocol ocol1">번호</th>
+			<th class="ocol ocol2">결제금액</th>
+			<th class="ocol ocol3">결제날짜</th>
+			<th class="ocol ocol4">거래번호</th>
+			<th class="ocol ocol5">수정</th>
+			<!-- <th class="ocol ocol6">주문상태</th> -->
 
 		</tr>
 		</thead>
@@ -36,42 +36,47 @@
 		<c:choose>
 			<c:when test="${fn:length(orders)==0}">
 				<tr>
-					<th colspan="6" align="center">주문내역이 없습니다.</th>
+					<th colspan="6" align="center" class="tab">주문내역이 없습니다.</th>
 				</tr>
 			</c:when>
 			<c:when test="${fn:length(orders)>0}">
 				<c:forEach items="${orders}" var="order">
 				<tr>
-					<th class="ocol ocol1">
-						<p>${order.p_name}</p>
-						<input type="hidden" name="p_name" value="${order.p_name}"
-	    					class="" readonly="readonly" 
-	    					onclick="javascript:orderDetail(this)">
-						<input type="hidden" name="p_no" value="${order.p_no}" readonly="readonly">
-						<input type="hidden" name="o_no" value="${order.o_no}" readonly="readonly">
+					<th class="ocol1">
 						<input type="hidden" name="mem_id" value="${order.mem_id}" readonly="readonly">
+						<input type="hidden" name="o_no" value="${order.o_no}" readonly="readonly">
+						<p>${order.rn}</p>
 	    			</th>
-	    			<th class="ocol ocol2">
-	    				<p>${order.quantity}</p>
-	    				<input type="hidden" name="quantity" value="${order.quantity}"
+	    			<th class="ocol2" onclick="orderDetail(this);">
+	    				<p>${order.total_amount}</p>
+	    				<input type="hidden" name="total_amount" value="${order.total_amount}"
 	    					class="num" readonly="readonly">
 	    			</th>
-	    			<th class="ocol ocol3">
-	    				<p>${order.price}</p>
-	    				<input type="hidden" name="price" value="${order.price}"
-	    					class="" readonly="readonly">
-	    			</th>
-	    			<th class="ocol ocol4">
-	    				<p>${order.amount}</p>
-	    				<input type="hidden" name="amount" value="${order.amount}"
-	    					class="" readonly="readonly">
-	    			</th>
-	    			<th class="ocol ocol5">
+	    			<th class="ocol3" onclick="orderDetail(this);">
 	    				<p>${order.o_regdate}</p>
 	    				<input type="hidden" name="o_regdate" value="${order.o_regdate}"
 	    					class="" readonly="readonly">
 	    			</th>
-	    			<th class="ocol ocol6">
+	    			<th class="ocol4" onclick="orderDetail(this);">
+	    				<p>${order.transactionId}</p>
+	    				
+	    			</th>
+	    			<th class="c">
+	    				<form action="cancelProc2" name="cancel" method="post">
+		    				<input type="hidden" name="transactionId" value="${order.transactionId}"
+		    					class="" readonly="readonly">
+		    				<input type="hidden" name="o_no" value="${order.o_no}">
+							<input type="hidden" name="mem_id" value="${order.mem_id}">
+		    				<input type="button" value="주문취소"
+		    					class="btnCancel PayCancel orderDetail" readonly="readonly">
+	    				</form>
+	    			</th>
+	    			<%-- <th class="ocol ocol5">
+	    				<p>${order.o_regdate}</p>
+	    				<input type="hidden" name="o_regdate" value="${order.o_regdate}"
+	    					class="" readonly="readonly">
+	    			</th> --%>
+	    			<%-- <th class="ocol ocol6">
 	    				<c:choose>
 	    					<c:when test="${order.state==1}">결재중</c:when>
 	    					<c:when test="${order.state==2}">배송준비</c:when>
@@ -79,16 +84,17 @@
 	    					<c:when test="${order.state==4}">배송완료</c:when>
 	    					<c:when test="${order.state==5}">구매확정</c:when>
 	    				</c:choose>
-	    			</th>
+	    			</th> --%>
 				</tr>
 				</c:forEach>
 			</c:when>
 		</c:choose>
 		</tbody>
+	
 	</table>
 	
 	<!-- 페이지  -->
-     <div align="center">
+     <div align="center" class="PageNation">
      <c:if test="${pgVo.startPg>PBlock}">
 	     <font color="4c5317">
 	         <a href="/orderList?curPg=${pgVo.startPg-PBlock}&curBl=${pgVo.curBl-1}">[이전]</a>
@@ -118,8 +124,7 @@
      <!-- 페이지 끝 -->
      
 	<form action="custOrderDetail" name="form1" method="post">
-		<input type="hidden" name="p_no" value="">
-		<input type="hidden" name=o_no value="">
+		<input type="hidden" name="o_no" value="">
 		<input type="hidden" name="mem_id" value="">
 	</form>
 </div>

@@ -172,6 +172,14 @@
 
 	 }) // orderChange 끝
 	 
+	 /* 결제 취소 */
+	 $('.PayCancel').on('click', function(){
+		var tid = $(this).closest('tr').find('input[name=transactionid]').val();
+		$('form[name=cancel]').attr('action', 'cancelProc2');
+		$('form[name=cancel] input[name=transactionid]').val(tid);
+		$('form[name=cancel]').submit();
+	 })
+	 
  })
  
 function validate() {
@@ -195,11 +203,13 @@ function numberWithCommas(num) {
 }
 
 function orderDetail(obj) {
-	var pno = $(obj).closest("tr").find("input[name=p_no]").val();
+	// var pno = $(obj).closest("tr").find("input[name=p_no]").val();
 	var ono = $(obj).closest("tr").find("input[name=o_no]").val();
 	var mem_id = $(obj).closest("tr").find("input[name=mem_id]").val();
+	console.log(ono);
+	console.log(mem_id);
+	// $('form[name=form1] input[name=p_no]').val(pno);
 	$('form[name=form1] input[name=o_no]').val(ono);
-	$('form[name=form1] input[name=p_no]').val(pno);
 	$('form[name=form1] input[name=mem_id]').val(mem_id);
-	// $('form[name=form1]').submit();
+	$('form[name=form1]').submit();
 }
