@@ -39,9 +39,13 @@
 			</div>
 		</div>
 		<div class="article_container">
-			<pre class="textaread" style="text-align: left;">${notice.content}</pre>
-			<%-- <input type="hidden" name="vdate" title="종료일자" value="${notice.vdate}" readonly="readonly">
-			<input type="date" name="regdate" title="작성일자" value="${notice.regdate}" readonly="readonly"> --%>  
+			<pre class="textaread" style="text-align: left;">
+				<textarea name="content" title="내용" class="chk Noti-contentArea" readonly="readonly">${notice.content}</textarea>
+			</pre>
+			<input type="hidden" name="writer" title="작성자" value="${notice.writer}" readonly="readonly"> 
+			<input type="hidden" name="content" title="내용" value="${notice.content}" readonly="readonly"> 
+			<input type="hidden" name="vdate" title="종료일자" value="${notice.vdate}" readonly="readonly">
+			<input type="hidden" name="regdate" title="작성일자" value="${notice.regdate}" readonly="readonly">  
 		</div>
 	</div>
    	<div class="btnArea mt-2" align="center">
