@@ -11,7 +11,24 @@
 <script type="text/javascript" src="./js/Search.js"></script> 
 </head>
 <body>
+	<div class="searchHead">
 	<h1>검색 결과</h1>
+	<div class="header__search-containers2 hide-phone" id="searchContainer">
+		<form name="search" class="search" role="search" action="search?bucket=1" method="get">
+			<div class="input-placeholder input-placeholder--search">
+			<label class="search__label search__floating-label screenreader" for="searchInput">Search</label>
+			<div class="search__suggested-text js-search-suggested-text screenreader"></div>
+			<input class="input search__input" id="searchInput-headerSearchDesktop" type="search" role="combobox" 
+			aria-controls="autocompleteItems" aria-owns="autocompleteItems" placeholder="Search" name="text">
+			</div>
+			<button class="search__input-button js-search btn-icon" 
+				id="searchMenuBtn" type="button" title="Search">
+				<img class="search__icon icon icon--search" src="../images/search2.svg">
+				<span class="screenreader">Search</span>
+			</button>
+		</form>
+	</div>
+	</div>
 	<div class="navbar">
 		<ul class="navbar-contain-ul">
 			<li><a href="/search?bucket=1&text=${param.text}">PRODUCT (${p_search})</a></li>	

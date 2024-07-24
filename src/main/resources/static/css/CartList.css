@@ -1316,3 +1316,59 @@ span.ec-base-help, p.ec-base-help, ul.ec-base-help li {
     text-align: left;
     background: url(//img.echosting.cafe24.com/skin/skin/common/ico_info.svg) no-repeat 0 0;
 }
+
+@media screen and (max-width: 1024px) {
+    .xans-order-basketpackage .cart-total {
+        width: 100%;
+        margin-top: 30px;
+    }
+}
+
+.ec-base-button:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+@media (max-width: 1024px) {
+    .xans-order-basketpackage .xans-order-tabinfo {
+        margin: 0 0 40px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .xans-order-basketpackage .totalSummary {
+        margin: 0 0 24px 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .ec-base-tab.typeNav .menu {
+        display: flex;
+        border-bottom: 1px solid #868686;
+    }
+}
+@media (max-width: 1024px) {
+    .ec-base-tab.typeNav .menu li {
+        flex: 1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .ec-base-tab.typeNav .menu li a {
+        height: 100%;
+        padding: 16px 8px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media (min-width: 1024px) {
+    #contents > .section {
+        max-width: 1420px;
+        width: 92%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

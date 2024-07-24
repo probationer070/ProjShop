@@ -14,7 +14,7 @@
 </head>
 <body>	
 	<div class="large-container">
-		<div class="container" style="">
+		<div class="container">
 		<c:choose>
 			<c:when test="${ssKey.m_role=='admin'}">
 				<c:import url="layouts/header.jsp" />

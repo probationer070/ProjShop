@@ -52,6 +52,20 @@ body, code {
     padding: 60px 0;
     color: #ffeded;
 }
+
+@media (max-width: 1024px) {
+    #footer .inner {
+        margin: 0 auto;
+        padding: 40px 0 0 0;
+        color: #b3b3b3;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        flex-direction: column;
+        position: relative;
+    }
+}
 div {
     display: block;
     unicode-bidi: isolate;
@@ -61,6 +75,15 @@ div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+@media (max-width: 1024px) {
+	#footer .inner .bt_top {
+	    width: 100%;
+	    display: flex;
+	    justify-content: space-between;
+	    flex-direction: column;
+	}
 }
 #footer .inner .bt_logo {
     margin-bottom: 30px;
@@ -127,11 +150,23 @@ html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form
 #footer .inner .bt_info .bt_info_list > div span:first-child {
     font-weight: 600;
 }
+
+
 #footer .inner .bt_top_right {
     display: flex;
     flex-direction: row;
     margin-left: 50px;
 }
+
+
+@media (max-width: 1024px) {
+	#footer .inner .bt_top_right {
+	    display: flex;
+	    flex-direction: column;
+	    margin-left: 0px;
+	}
+}
+
 #footer .inner .bt_cs .bt_title {
     font-size: 18px;
     color: #000;
@@ -178,11 +213,6 @@ html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form
 #footer .inner .pdr10 {
     padding-right: 10px;
 }
-#footer .inner .bt_top_right {
-    display: flex;
-    flex-direction: row;
-    margin-left: 50px;
-}
 
 #footer .inner .bt_top_right .bt_sns .bt_title {
     font-size: 18px;
@@ -203,6 +233,18 @@ html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form
     justify-content: space-between;
     margin-top: 40px;
 }
+
+@media (max-width: 1024px) {
+	
+	#footer .inner .bt_bottom {
+	    display: flex;
+	    width: 100%;
+	    justify-content: space-between;
+	    margin-top: 40px;
+	    margin-bottom: 10px;
+	}
+}
+
 #footer .inner .bt_bottom .bt_bottom_left {
     margin-right: 50px;
 }
@@ -245,6 +287,16 @@ html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form
     display: block;
     max-width: 1680px;
 }
+
+@media (max-width: 1024px) {
+    #footer .bt_util ul {
+        margin: 0 auto;
+        padding: 15px 0 20px 0;
+        font-size: 13px;
+    }
+}
+
+
 #footer .bt_util ul li {
     margin-right: 20px;
     display: inline-block;
