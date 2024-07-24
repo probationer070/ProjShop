@@ -33,5 +33,4 @@ public interface ProductService {
 	int getSearch(HashMap<String, String> param);
 
 	List<ProductVO> getProduct(ProductVO pvo);
-
 }

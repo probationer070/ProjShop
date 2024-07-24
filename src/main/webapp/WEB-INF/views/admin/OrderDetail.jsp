@@ -97,7 +97,7 @@
 								</td>
 							</tr>
 							<tr>
-							<th class="pcol1-1"style="font-size:16px;color:#c92727;font-weight:bold;">주문상태</th>
+							<th class="pcol1-1">주문상태</th>
 							<th class="pcol2-1">
 								<select name="state" class="state${i.count}">
 				                  <option value="1">결재중</option>

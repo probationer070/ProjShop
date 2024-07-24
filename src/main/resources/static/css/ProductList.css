@@ -26,6 +26,11 @@ ul{
     width: 25%;
 }
 
+@media (max-width: 1024px) {
+	.ec-base-product ul.grid4 > li {
+	    width: 100%; 
+	}
+}
 .ec-base-product .prdList .thumbnail {
     position: relative;
     margin: 0 0 10px;
@@ -90,6 +95,14 @@ ul{
     width: calc(100% - 700px);
 	padding-left: 50px;
 }
+
+@media (max-width: 1024px) {
+	.xans-product-detail .imgArea {
+	    display: inline-block;
+	    width: auto;
+		padding-left: 0px;
+	}
+}
 .xans-product-detail .infoArea {
     display: inline-block;
     top: 100px;
@@ -98,6 +111,17 @@ ul{
     font-size: 13px;
     line-height: 1;
     vertical-align: top;
+}
+@media (max-width: 1024px) {
+	.xans-product-detail .infoArea {
+	    display: block;
+	    top: 100px;
+	    width: auto;
+	    /* margin: 0 0 0 100px; */
+	    font-size: 13px;
+	    line-height: 1;
+	    vertical-align: top;
+	}
 }
 .xans-product-detail .infoArea table {
     border: 0;

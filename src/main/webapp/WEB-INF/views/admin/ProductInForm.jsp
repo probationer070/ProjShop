@@ -96,7 +96,6 @@
 		     <div class="btnArea">
 		       <button type="button"
 		        name="insert" class="btn btn-outline-primary psubmit">등록및전송</button>
-		       
 		       <button type="button"
 		         class="btn btn-outline-secondary" 
 		          onclick="javascript:location.href='/productFIX'">상품목록</button>

@@ -20,7 +20,7 @@ function getData(limit){
 		url: "/api/getProduct",
 		async : false,
 		data: {
-			"text" : text,
+			 "text" : text,
 			 "end" : nextPageLimit,
 			 "start" : beforePageLimit+1
 		},
@@ -59,7 +59,7 @@ function getData(limit){
 			beforePageLimit = beforePageLimit + limit;
 		}
 	});
-	} else if (bucket == 2){
+	} else if (bucket == 2) {
 		$.ajax({
 		type: "POST",
 		enctype: 'multipart/form-data',
