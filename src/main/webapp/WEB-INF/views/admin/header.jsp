@@ -39,7 +39,41 @@
 	       
          </div>
        </div>  
-	   <div class="top_nav_box" id="top_nav_box"> 
+	   <div class="top_nav_box" id="top_nav_box">
+	   	<div class="dropdown">
+		   <a href="/info">
+		      <button class="btn-icon" 
+				id="searchMenuBtn" type="button" title="">
+				<img class="icon" src="../images/menu.svg">
+				<span class="screenreader">Search</span>
+			  </button>
+		   </a>
+		   <div class="dropdown-content">
+		   	<c:choose>
+               <c:when test="${ssKey!=null and ssKey.m_role=='admin'}">
+					<a href="/admin/info"><li class="--nav-item dropdown">ADMINPAGE</li></a>
+					<a href="/memberFIX"><li class="--nav-item dropdown">MemberFIX</li></a>
+					<a href="/orderFIX"><li class="--nav-item dropdown">OrderFIX</li></a>
+					<a href="/productFIX"><li class="--nav-item dropdown">ProductFIX</li></a>
+					<a href="/noticeFIX"><li class="--nav-item dropdown">NoticeFIX</li></a>
+					<a href="/logoutProc"><li class="--nav-item dropdown">Logout</li></a>	
+				</c:when>
+		        <c:when test="${ssKey!=null and ssKey.m_role=='mem'}">
+					<a href="/"><li class="--nav-item dropdown">Home</li></a>
+					<a href="/cartlist"><li class="--nav-item dropdown">Cart</li></a>
+					<a href="/orderList"><li class="--nav-item dropdown">Order</li></a>
+					<a href="/info"><li class="--nav-item dropdown">MyPage</li></a>
+					<a href="/notice"><li class="--nav-item dropdown">Notice</li></a>
+					<a href="/logoutProc"><li class="--nav-item dropdown">Logout</li></a>
+				</c:when>
+			 	<%-- <c:otherwise>
+			 		<a href="/join">Join</a>
+      					<a href="/login">Login</a>
+			 	</c:otherwise> --%>
+			 </c:choose>
+			 
+            </div>
+	    </div>
 	    <div class="top_adjust">
 	     <div class="xans-element- xans-layout xans-layout-logotop top_logo ">
 		   <a href="/">
