@@ -205,6 +205,8 @@ public class ProductServiceimpl implements ProductService {
 	@Override
 	public List<ProductVO> getProduct(ProductVO pvo) {
 		List<ProductVO> productList = productDao.getProductList(pvo);
+		log.info("productList ------> "+productList);
+		log.info("pvo ------> "+pvo);
 		return productList;
 	}
 	

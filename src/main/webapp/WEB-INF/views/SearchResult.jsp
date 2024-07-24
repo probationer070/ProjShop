@@ -22,6 +22,7 @@
 	</div>
 	<div class="contents-view">
 		<input type="hidden" name="bucket" value="${param.bucket}">
+		<input type="hidden" name="text2" value="${param.text}">
 		<ul class="SearchContent">
 			<c:choose>
 				<c:when test="${param.bucket eq 1 || param.bucket eq null}">

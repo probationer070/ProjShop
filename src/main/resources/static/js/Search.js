@@ -6,7 +6,7 @@ let nextPageLimit = 0;
 let beforePageLimit = 8;	// 기본 종료값 ()
 // let beforePageLimit = 4;	// 기본 종료값 (pageInfo 변경될 때마다 변경 필요함 PageInfo.ROW_OF_PAGE)
 var bucket = 0;
-
+var text = 0;
 //데이터 가져오는 함수
 function getData(limit){
 	//다음페이지
@@ -20,6 +20,7 @@ function getData(limit){
 		url: "/api/getProduct",
 		async : false,
 		data: {
+			 "text" : text,
 			 "end" : nextPageLimit,
 			 "start" : beforePageLimit+1
 		},
@@ -58,13 +59,14 @@ function getData(limit){
 			beforePageLimit = beforePageLimit + limit;
 		}
 	});
-	} else {
+	} else if (bucket == 2) {
 		$.ajax({
 		type: "POST",
 		enctype: 'multipart/form-data',
 		url: "/api/getNotice",
 		async : false,
 		data: {
+			 "text" : text,
 			 "end" : nextPageLimit,
 			 "start" : beforePageLimit+1
 		},
@@ -114,8 +116,10 @@ $(document).scroll(function(e){
         if(documentHeight < (nowHeight + (600))){	// 기존 값 : documentHeight*0.2, 현재 값 : 600
         	//함수콜
 		getData(8);	// 증가값
-		bucket =  $('input[name=bucket]').val();
+		text = $('input[name=text2]').val();
+		bucket = $('input[name=bucket]').val();
 		console.log(bucket);
+		console.log(text);
         }
     }
 
