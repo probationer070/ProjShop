@@ -11,7 +11,10 @@
 	SELECT COUNT(NOTI_NO) FROM NOTICET	
 	WHERE TO_DATE(VDATE) >= SYSDATE
 	AND STATE = 'A' 
-	AND SUBJECT LIKE '%'||#{text}||'%'
+	<if test="text!=null and text!=''">
+		AND SUBJECT LIKE '%'||#{text}||'%'
+	</if>		 
+
 	<!-- 유효일자에 따라 지난 것은 나오지 않게 하기 -->
 </select>
 <select id="getNoticeList" parameterType="nvo" resultType="nvo">
@@ -22,14 +25,14 @@
 	  FROM NOTICET
 	  WHERE TO_DATE(VDATE) >= SYSDATE
 	    	 AND  STATE = 'A'
+		<if test="text!=null and text!=''">
+	    	AND SUBJECT LIKE '%'||#{text}||'%'
+		</if>  
 	            ) A
 	       ) 
 		<![CDATA[
 		WHERE RN >= #{start} AND RN <= #{end}
 		 ]]> 
-		<if test="text!=null and text!=''">
-	    	AND SUBJECT LIKE '%'||#{text}||'%'
-	   </if>  
 </select>
 
 <insert id="noticeProc" parameterType="nvo">

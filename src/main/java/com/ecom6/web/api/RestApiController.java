@@ -1,8 +1,10 @@
 package com.ecom6.web.api;
 
+import java.util.HashMap;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +16,10 @@ import com.ecom6.service.mem.MemberService;
 import com.ecom6.service.notice.NoticeService;
 import com.ecom6.service.product.ProductService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
+@Slf4j
 public class RestApiController {
 	
 	@Autowired
@@ -43,7 +48,10 @@ public class RestApiController {
 	}
 	
 	@PostMapping("/api/getProduct")
-	public List<ProductVO> getProduct(ProductVO pvo) {
+	public List<ProductVO> getProduct(ProductVO pvo, @RequestParam HashMap<String, String> param) {
+		log.info("param 값 출력 ------------> "+param);
+		pvo.setText(param.get("text"));
+		log.info("pvo 값 출력 ------------> "+pvo);
 		List<ProductVO> productList = productService.getProduct(pvo);
 		return productList;
 	}
