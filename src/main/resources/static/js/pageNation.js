@@ -5,6 +5,7 @@ let nowPageLimit = 0;
 let nextPageLimit = 0;
 let beforePageLimit = parseInt($('#PgInfo').val());	// 기본 종료값 ()
 // let beforePageLimit = 4;	// 기본 종료값 (pageInfo 변경될 때마다 변경 필요함 PageInfo.ROW_OF_PAGE)
+let bucket = $('input[name=bucket]').val();
 
 //데이터 가져오는 함수
 function getData(limit){

@@ -28,7 +28,6 @@
 			<div class="WriterInfo mb-3">
 				<div class="profile_area">
 					<span class="wname">${notice.writer}</span>
-					
 					<ul class="date">
 						<li>
 							<span class="rdate">${notice.regdate}</span>

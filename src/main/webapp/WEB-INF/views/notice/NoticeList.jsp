@@ -16,6 +16,7 @@
 	
 <div id="noticemgt">
 	<h2 >공지사항</h2>
+
 	<div class="totalitem" align="right">
 		<button class="btn btn-dark">총 게시물 수 : ${noticeTot}</button>
 	</div>

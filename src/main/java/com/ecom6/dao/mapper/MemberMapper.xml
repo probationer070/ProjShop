@@ -56,7 +56,7 @@
 				) A
 		)
 		<![CDATA[
-		WHERE RN >= 1 AND RN <= 6
+		WHERE RN  >= #{start} AND RN <= #{end}
 		]]>
 	</select>
 	<delete id="memDeleteProc" parameterType="mvo">
