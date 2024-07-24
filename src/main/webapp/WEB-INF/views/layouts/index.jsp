@@ -17,7 +17,9 @@
 	<div class="container">
 		<c:import url="./header.jsp" />
 		<div class="contents">
+			<div style="display: flex;">
 			<c:import url="./swiper.jsp" />	
+			</div>
 		</div>
 	</div>
 	<c:import url="./footer.jsp" />
