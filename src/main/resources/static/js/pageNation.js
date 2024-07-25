@@ -30,7 +30,7 @@ function getData(limit){
         		`<tr>
 					<input type="hidden" name="noti_no" value="${notice.noti_no}">
    					<td class="tbcol ncol1">
-	   					<input type="text" name="subject" value="${notice.subject}"
+	   					<input type="text" name="subject" value="&nbsp;&nbsp;${notice.subject}"
 	    					class="noticeSub noticeDetail" readonly="readonly">
 	    			</td>
     				<td class="tbcol ncol2">
