@@ -47,10 +47,5 @@
 		<button type="button" onclick="location.href='/orderList'" class="btnJoin2">주문내역</button>	
 		<button type="button" onclick="location.href='/info'" class="btnJoin">마이페이지</button>
 	</div>
-	<%-- <form action="/cancelProc2" method="post">
-		<input name="transactionId" value="${data.transactionId}">
-		<br>
-		<input type="submit" value="취소하기">
-	</form> --%>
 </body>
 </html>
