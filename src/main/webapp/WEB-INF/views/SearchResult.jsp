@@ -8,11 +8,12 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="./css/Search.css" />
 <script type="text/javascript" src="./js/product.js"></script> 
-<script type="text/javascript" src="./js/Search.js"></script> 
+<script type="text/javascript" src="./js/Search.js"></script>
+
 </head>
 <body>
 	<div class="searchHead">
-	<h1>검색 결과</h1>
+	<h1>'${param.text}' 검색 결과</h1>
 	<div class="header__search-containers2 hide-phone" id="searchContainer">
 		<form name="search" class="search" role="search" action="search?bucket=1" method="get">
 			<div class="input-placeholder input-placeholder--search">

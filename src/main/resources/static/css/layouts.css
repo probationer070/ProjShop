@@ -392,6 +392,11 @@ a:-webkit-any-link {
     margin-top: 100px;
 }
 
+#header .inner .top_nav_box .top_logo img {
+    max-width: 500px;
+    max-height: 70px;
+    margin-top: 100px;
+}
 
 
 @media (max-width: 1024px) {
@@ -785,8 +790,14 @@ style attribute {
 .header__search-containers2 {
     border-bottom: 1px solid #000;
     padding: 0;
-    display: block;
+    display: none;
     width: 200px;
+}
+
+@media (max-width: 1024px) {
+	.header__search-containers2 {
+	    display: block;
+	}
 }
 
 @media (max-width: 1024px) {
