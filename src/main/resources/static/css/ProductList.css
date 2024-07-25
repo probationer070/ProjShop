@@ -121,6 +121,14 @@ ul{
 		padding-left: 0px;
 	}
 }
+
+@media (max-width: 1024px) {
+	.xans-product-detail .imgArea {
+	    display: inline-block;
+	    width: auto;
+		padding-left: 0px;
+	}
+}
 .xans-product-detail .infoArea {
     display: inline-block;
     top: 100px;
