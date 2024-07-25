@@ -33,13 +33,25 @@ ul{
 }
 .ec-base-product .prdList .thumbnail {
     position: relative;
-    margin: 0 0 10px;
+    margin: 0 0 20px;
 }
 
 .ec-base-product .prdList .thumbnail a img {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+}
+
+.product-thumbnail {
+	width:100%; 
+	height: 18rem;
+}
+
+@media (max-width: 1024px) {
+	.product-thumbnail {
+		width:100%; 
+		height: 20rem;
+	}
 }
 
 /* description */
@@ -53,6 +65,12 @@ ul{
     white-space: normal;
 }
 
+@media (max-width: 1024px){
+	.ec-base-product .prdList .description {
+	    margin: 20px 0 0 0px;
+	}
+	
+}
 .ec-base-product .prdList .spec {
     margin: 10px 0 0 0;
 }
@@ -92,8 +110,8 @@ ul{
 }
 .xans-product-detail .imgArea {
     display: inline-block;
-    width: calc(100% - 700px);
-	padding-left: 50px;
+    width: calc(100% - 600px);
+	/* padding-left: 50px; */
 }
 
 @media (max-width: 1024px) {

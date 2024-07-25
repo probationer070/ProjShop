@@ -22,7 +22,7 @@
              <div class="prdList__item pDetail">
                <input type="hidden" name="p_no" value="${product.p_no}">
                <div class="thumbnail">
-                   <img src="/upload/${product.image}" alt="Sandwich" style="width:100%; height: 18rem;">
+                   <img src="/upload/${product.image}" alt="Sandwich" class="product-thumbnail">
                </div>
                <div class="description">
                  <div class="name">

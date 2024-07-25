@@ -72,15 +72,45 @@ table, th, tr, td {
 	border-bottom: 1px solid #e5e5e5;
 }
 
+
+
+@media (max-width: 1024px) {	
+	table {
+		display: block;
+		max-height: 12rem;
+		overflow-x: scroll; 
+	}
+	
+	.ocol p, .ocol p {
+		width: 100px;
+	}
+	.ocol1 p {
+		width: 200px;
+	}
+	.ocol img {
+		width: 200px;
+	}
+
+}
 thead {
 	background-color: #de7575;
 	color: #fff;
 }
 
-.ocol4, .o_col {
+.ocol4, .ocol {
 	padding: 12px;
 	/* width: 200px; */
 } 
+
+@media (max-width: 1024px) {
+	.ocol4 {
+		display: none;
+	} 
+	
+	.ocol {
+		padding: 4px;
+	} 
+}
 
 input:focus, input {
 	border: 0;
