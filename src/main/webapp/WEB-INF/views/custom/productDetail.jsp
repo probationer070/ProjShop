@@ -57,7 +57,7 @@
 							</tr>
 							<tr class="xans-record-">
 								<th scope="row">
-									<span style="font-size:14px;color:#c92727;font-weight:bold;">상품간략설명</span>
+									<span style="font-size:16px;color:#c92727;font-weight:bold;">상품설명</span>
 								</th>
 								<td>
 									<span style="font-size:14px;color:#555555;font-weight:bold;">

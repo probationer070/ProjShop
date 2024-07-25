@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ecom6.dao.product.ProductDao">
-	<select id="getProductCnt" resultType="int">
+	<select id="getProductCnt" resultType="int" parameterType="pvo">
 		SELECT COUNT(P_NO) FROM PRODUCT
+		<if test="text!=null and text!=''">
+			WHERE P_NAME LIKE '%'||#{text}||'%'
+		</if>
 	</select>
 	<select id="getSearch" resultType="int" parameterType="String">
 		SELECT COUNT(P_NO) FROM PRODUCT
@@ -15,9 +18,9 @@
 	      SELECT ROWNUM RN, A.* FROM (
 	      SELECT P_NO, STOCK, PRICE, P_NAME, DETAIL, PR_DATE, IMAGE, PATH
 			FROM PRODUCT	
-		    <if test="text!=null and text!=''">
+			<if test="text!=null and text!=''">
 			   WHERE P_NAME LIKE '%'||#{text}||'%'
-			</if>		 
+			</if>	
 			ORDER BY PR_DATE DESC
 	            ) A
 	       )

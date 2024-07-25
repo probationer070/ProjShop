@@ -65,6 +65,7 @@ public class ProductController {
 		 return page;
 	   }
 	
+	
 	// 고객전용
 	@GetMapping("/productList")
 	public String productList(HttpServletRequest req, 
@@ -73,6 +74,8 @@ public class ProductController {
 		String content=null;
 		MemberVO ssKey = null;
 		HttpSession session = req.getSession();
+		String text = (String) req.getParameter("text");
+		log.info("text --------> "+text);
 		if (session.getAttribute("ssKey") != null) {
 			ssKey = (MemberVO) session.getAttribute("ssKey");
 			// session이 있을 때 받아서 저장
@@ -85,6 +88,7 @@ public class ProductController {
 		model.addAttribute("productList", reSet.get("productList"));
 		model.addAttribute("PBlock", PageInfo.PAGE_OF_BLOCK);
 		model.addAttribute("pgVo", pgVo);
+		model.addAttribute("text", text);
 		return "Main";
 	}
 	

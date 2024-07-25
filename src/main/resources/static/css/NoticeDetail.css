@@ -66,6 +66,9 @@ table, tr, td, th {
     margin-right: 12px;
     padding-left: 1em;
 }
+.WriterInfo .profile_area label{
+    text-align: left;
+}
 .article_container .textaread{
 	padding-left: 2em;
 	padding: 10px;

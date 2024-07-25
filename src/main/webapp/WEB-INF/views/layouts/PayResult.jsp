@@ -48,10 +48,7 @@
 	<c:if test="${data.responseCode eq '0000'}" >
 		<%-- <p>${responseMsg}</p> --%>
 		<div class="success-header">
-			<h1 class="success-title">결제 성공</h1>
-			<p>결제금액 : ${data.amount}</p>
-			<p>결제수단 : ${data.cardName}</p>
-			<p>결제날짜 : ${data.authDateTime}</p>
+			<h1 class="success-title">주문이 취소 처리 되었습니다.</h1>
 			<br>
 		</div>
 		<div class="success-article">

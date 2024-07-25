@@ -13,7 +13,7 @@
 	AND STATE = 'A' 
 	<if test="text!=null and text!=''">
 		AND SUBJECT LIKE '%'||#{text}||'%'
-	</if>		 
+	</if>
 
 	<!-- 유효일자에 따라 지난 것은 나오지 않게 하기 -->
 </select>

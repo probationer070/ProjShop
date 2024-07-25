@@ -7,60 +7,65 @@
 <head>
 <meta charset="UTF-8">
 <title>상품 등록</title>
-<link rel="stylesheet" type="text/css" href="/css/notice.css" />
+<link rel="stylesheet" type="text/css" href="./css/NoticeDetail.css" />
 <script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
-<script type="text/javascript" src="./js/notice.js"></script>
+<script type="text/javascript" src="../js/notice.js"></script>
 </head>
 <body>
-<div id="Notice">
+<div id="Notice" align="center">
 	<c:if test='${ssKey.m_role}'></c:if>
-   	<h2>공지사항 등록</h2>
-	<form action="" name="form1" method="post">
-   	<table>
-   		<tbody>
-			<tr>
-				<th class="ncol1d">제목</th>
-				<th class="ncol2d">
-					<input type="text" name="subject" class="chk" title="제목" placeholder="제목 입력"> 
-				</th>
-				
-  			</tr>
-			<tr>
-				<th class="ncol1d">작성자</th>
-				<th class="ncol2d">
-					<input type="text" name="writer" class="chk" title="작성자" placeholder="작성자 입력"> 
-				</th>
-				
-  			</tr>
-			<tr>
-				<th class="ncol1d">내용</th>
-				<th class="ncol2d">
-					<textarea rows="10" cols="50" name="content" title="내용" class="chk" title="내용"></textarea>
-				</th>
-				
-  			</tr>
-			<tr>
-				<th class="ncol1d">작성일자</th>
-				<th class="ncol2d">
-					<input type="date" name="regdate" title="작성일자" placeholder=""> 
-				</th>
-				
-  			</tr>
-  			<tr>
-				<th class="ncol1d">종료일자</th>
-				<th class="ncol2d">
-					<input type="date" name="vdate" class="chk" title="종료일자" placeholder=""> 
-				</th>
-				
-  			</tr>
-   		</tbody>
-   	</table>
-   	<div class="btnArea" align="center">
-   		<button type="button" class="btn-primary notisubmit1">등록</button>
-   		<button type="button" class="btn-second btn-primary" onclick="location.href='/admin/noticeFIX'">공지사항목록</button>
-   		<!-- <button type="button" name="update" class="btn-primary psubmit">수정</button> -->
+		<h2>공지사항 등록</h2>
+	  <form action="" name="form1" method="post">
+	<div class="ArticleContentBox">
+		<div class="article_header">
+			<div class="article_Title">
+				<div class="title_area">
+   					<h3 style="text-align: left;">
+   					<span class="sname" style="font-size: 18px;">
+						<label>제목 | </label>
+						<input type="text" name="subject" title="제목"  > 
+					</span>
+   					</h3>
+   					<!-- <input type="hidden" name="noti_no" >
+ -->					
+				</div>
+			</div>
+			<div class="WriterInfo mb-3">
+				<div class="profile_area">
+			
+					<span class="wname" style="font-size: 18px;">
+						<label>작성자 | </label>
+						<input type="text" name="writer" title="작성자"> 
+					</span>
+					<ul class="date">
+						<li>
+							<span class="rdate">
+								<label>작성일자 | </label>
+								<input type="date" name="regdate" title="작성일자">
+							</span>
+							<span class="rdate">
+								&nbsp;&nbsp;&nbsp;
+								<label>종료일자 | </label>
+								<input type="date" name="vdate" title="종료일자">							
+							</span>
+							
+						</li>
+					</ul>			
+				</div>
+			</div>
+			<div class="ArticleTools">
+			</div>
+		</div>
+		<div class="article_container">
+			<pre class="textaread" style="text-align: left;">
+				<textarea name="content" title="내용" class="chk Noti-contentArea"></textarea>
+			</pre>
+		</div>
+	</div>
+   	<div class="btnArea mt-2" align="center">
+   			<button type="button" name="update" class="btnJoin notisubmit1">등록및전송</button>
+   			<button type="button" name="delete" class="btnJoin notisubmit">취소</button>
    	</div>
-	</form>
+	  </form>
 </div>
-</body>
 </html>

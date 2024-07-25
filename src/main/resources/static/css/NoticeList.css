@@ -47,6 +47,17 @@ thead {
 .tbcol {
 	padding: 5px;
 } 
+.WriterInfo mb-3{
+	margin: 0;
+}
+.tbcol > input, select {
+	overflow: hidden;
+	outline: none;
+	border: none;
+	padding: 2px 4px;
+	background-color: transparent;
+/* 	width: 100px; */
+}
 
 .btnJoin{
     width: 100px;
@@ -61,4 +72,49 @@ thead {
 
 .btnArea {
 	margin-top: 20px;
+}
+
+.article_header {
+	border-bottom: 1px solid #ccc;
+}
+
+.WriterInfo .thumb_area {
+    float: left;
+    margin-right: 10px;
+}
+.title_area h3{
+	border-top: 1px solid #ccc;
+	padding: 15px;
+}
+.WriterInfo .profile_area {
+	padding-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+.profile_area .wname{
+    margin-right: 12px;
+    padding-left: 1em;
+}
+.article_container .textaread{
+	padding-left: 2em;
+	padding: 10px;
+	display: flex;
+}
+.Noti-contentArea {
+	width: 100%;
+	height: 800px;
+	resize: none;
+	padding: 20px;
+	border: 1px solid #ccc !important;
+}
+.btnCancel{
+    width: 120px;
+    padding: 12px 12px 10px 10px;
+    margin: 10px;
+    border: 1px solid transparent;
+    line-height: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #999;
+    background-color: #eee;
 }
