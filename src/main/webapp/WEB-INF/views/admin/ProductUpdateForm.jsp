@@ -78,8 +78,8 @@
 								<span style="font-size:14px;color:#c92727;font-weight:bold;">상품간략설명</span>
 							</th>
 							<td>
-								 <%-- <span style="font-size:13px;">${product.detail}</span> --%>
-								 <input type="text" name="detail" class="form-control" title="상품설명" value="${product.detail}" >
+								 <span style="font-size:13px;">${product.detail}</span>
+								 <input type="hidden" name="detail" class="form-control" title="상품설명" value="${product.detail}" >
 							</td>
 						</tr>
 						<tr>

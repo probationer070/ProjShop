@@ -81,7 +81,7 @@
 
 	$('button[name=delete]').on('click', function(){
 		var pno= $('input[name=p_no]').val();
-		if(confirm('정말 삭제하시겠습니까?'))
+		if(confirm('정말 삭제하시겠습니다?'))
 			location.href = '/productDelete?p_no='+pno;
 		else return false;
 	});

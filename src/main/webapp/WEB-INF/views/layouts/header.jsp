@@ -8,6 +8,7 @@
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="../js/zipCheck.js"></script>
 <script type="text/javascript" src="../js/member.js"></script>
+<script type="text/javascript" src="../js/layout.js"></script>
 
 <!-- <input type="text" id="sample6_postcode" placeholder="우편번호">
 <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
@@ -146,7 +147,7 @@
 						aria-controls="autocompleteItems" aria-owns="autocompleteItems" placeholder="Search" name="text">
 						</div>
 						<button class="search__input-button js-search btn-icon" 
-							id="searchMenuBtn" type="button" title="Search">
+							id="searchMenuBtn" type="submit" title="Search">
 							<img class="search__icon icon icon--search" src="../images/search2.svg">
 							<span class="screenreader">Search</span>
 						</button>
