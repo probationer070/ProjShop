@@ -46,6 +46,7 @@
 				<tr>
 					<th class="ocol ocol1">
 						<img name="image" src="upload/${order.image}">
+						<p>
 	    			</th>
 					<th class="ocol ocol1">
 						<p>${order.p_name}</p>
@@ -78,11 +79,11 @@
 	    			</th>
 	    			<th class="ocol ocol6">
 	    				<c:choose>
-	    					<c:when test="${order.state==1}">결재중</c:when>
-	    					<c:when test="${order.state==2}">배송준비</c:when>
-	    					<c:when test="${order.state==3}">배송중</c:when>
-	    					<c:when test="${order.state==4}">배송완료</c:when>
-	    					<c:when test="${order.state==5}">구매확정</c:when>
+	    					<c:when test="${order.state==1}"><p>결재중</p></c:when>
+	    					<c:when test="${order.state==2}"><p>배송준비</p></c:when>
+	    					<c:when test="${order.state==3}"><p>배송중</p></c:when>
+	    					<c:when test="${order.state==4}"><p>배송완료</p></c:when>
+	    					<c:when test="${order.state==5}"><p>구매확정</p></c:when>
 	    				</c:choose>
 	    			</th>
 				</tr>

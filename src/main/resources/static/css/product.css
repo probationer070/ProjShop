@@ -359,3 +359,6 @@ th, td {
     --Button_Color: var(--Color_White);
 }
 
+.thumbnail {
+	margin-bottom: 20px;
+}

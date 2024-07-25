@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login</title>
 <link rel="stylesheet" href="/css/common.css"> 
 <link rel="stylesheet" href="/css/tabMenu.css">
@@ -12,7 +13,11 @@
 </head>
 <body onload="document.getElementById('t1').click();">
   <h1 style="text-align: center">
-    <a href="/">Home</a>
+    <div class="xans-element- xans-layout xans-layout-logotop top_logo ">
+	   <a href="/">
+	     <img class="logo" src="../images/logo-header-background.svg" style="max-width: 500px; max-height: 70px; margin-top: 100px;">
+	   </a>
+     </div>
   </h1>
   <div class="tabmenu">
     <ul>
@@ -42,7 +47,7 @@
           </div>
       </li>
       <li id="tab2" class="btnCon">
-        <a class="btn first" href="#tab2">비밀번호 찾기</a>
+        <a class="btn first" href="#tab2">비밀번호 변경</a>
           <div class="tabCon">
             <div id="large_login_box">
               <form action="searchProc" method="post" name="tabForm2">

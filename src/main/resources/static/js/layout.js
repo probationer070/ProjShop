@@ -23,4 +23,9 @@ $(function() {
 		$("form[name=search]").attr('action', "search?bucket=1&text="+text)
 		$("form[name=search]").submit();
 	})
+	
 })
+
+function openSearch() {
+	$('.header__search-containers').toggle('slow');
+}

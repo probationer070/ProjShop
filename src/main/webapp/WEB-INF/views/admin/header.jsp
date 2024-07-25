@@ -40,6 +40,50 @@
          </div>
        </div>  
 	   <div class="top_nav_box" id="top_nav_box"> 
+	   	<div class="dropdown-menu">
+		   <a>
+		      <button class="btn-icon" 
+				id="searchMenuBtn" type="button" title="">
+				<img class="icon" src="../images/menu.svg">
+				<span class="screenreader">Search</span>
+			  </button>
+		   </a>
+		   <div class="dropdown-content-menu">
+		   	<c:choose>
+		        <c:when test="${ssKey!=null}">
+					<a href="/"><li class="--nav-item menu">Home</li></a>
+					<a onclick="openSearch();"><li class="--nav-item menu search">Search
+					</li></a>
+					<div class="header__search-containers hide-phone" id="searchContainer">
+						<form name="search" class="search" role="search" action="search?bucket=1" method="get">
+							<div class="input-placeholder input-placeholder--search">
+							<label class="search__label search__floating-label screenreader" for="searchInput">Search</label>
+							<div class="search__suggested-text js-search-suggested-text screenreader"></div>
+							<input class="input search__input" id="searchInput-headerSearchDesktop" type="search" role="combobox" 
+							aria-controls="autocompleteItems" aria-owns="autocompleteItems" placeholder="Search" name="text">
+							</div>
+							<button class="search__input-button js-search btn-icon" 
+								id="searchMenuBtn" type="button" title="Search">
+								<img class="search__icon icon icon--search" src="../images/search2.svg">
+								<span class="screenreader">Search</span>
+							</button>
+						</form>
+					</div>
+					<a href="/productList"><li class="--nav-item menu">CASE</li></a>
+					<a href="/orderList"><li class="--nav-item menu">Order</li></a>
+					<a href="/info"><li class="--nav-item menu">MyPage</li></a>
+					<a href="/notice"><li class="--nav-item menu">Notice</li></a>
+					<a href="/logoutProc"><li class="--nav-item menu">Logout</li></a>
+				</c:when>
+				<c:otherwise>
+			 		<a href="/join"><li class="--nav-item menu">Join</li></a>
+      				<a href="/login"><li class="--nav-item menu">Login</li></a>
+					<a href="/notice"><li class="--nav-item menu">Notice</li></a>
+			 	</c:otherwise>
+			 </c:choose>
+			 
+            </div>
+	    </div>
 	    <div class="top_adjust">
 	     <div class="xans-element- xans-layout xans-layout-logotop top_logo ">
 		   <a href="/">

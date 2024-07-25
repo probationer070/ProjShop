@@ -18,7 +18,7 @@
 	  <col style="width:auto";>
 	</colgroup>
 	<tr>
-      <th class="col1"><img src="/images/blue_dot.gif"> 아이디</th>
+      <th class="col1"><img src="/images/blue_dot.gif">아이디</th>
       <th class="col2">
       <div class="input-container">
 	      <input type="text"  name="mem_id" id="idchk" title="아이디" class="chk form-control">
@@ -28,7 +28,7 @@
       <th class="col3">&nbsp;<font id="warning" size="2" color="red"></font></th>
     </tr>
     <tr>
-      <th class="col1"><img src="/images/blue_dot.gif"> 패스워드</th>
+      <th class="col1"><img src="/images/blue_dot.gif">패스워드</th>
       <th class="col2">
       	<div class="input-container">
 	        <input type="password" name="m_passwd" id="check1" title="패스워드" class="chk form-control">
@@ -38,7 +38,7 @@
       <th class="col3">&nbsp;<font id="check" size="2" color="green"></font></th>
     </tr>
     <tr>
-      <th class="col1"><img src="/images/blue_dot.gif"> 패스워드 확인</th>
+      <th class="col1"><img src="/images/blue_dot.gif">패스워드확인</th>
       <th class="col2">
       	<div class="input-container">
       	  <input type="password"  name="m_repasswd" id="check2" title="패스워드 확인" class="chk form-control">
@@ -47,7 +47,7 @@
       <th class="col3">&nbsp;</th>
     </tr>
      <tr>
-       <th class="col1"><img src="/images/blue_dot.gif"> 이름</th>
+       <th class="col1"><img src="/images/blue_dot.gif">이름</th>
        <th class="col2">
          <div class="input-container">
            <input type="text" name="m_name" class="chk form-control" title="이름" placeholder="홍길동">
@@ -56,7 +56,7 @@
        <td class="col3">&nbsp;</td>
       </tr>
       <tr>
-       <th class="col1"><img src="/images/blue_dot.gif"> 이메일</th>
+       <th class="col1"><img src="/images/blue_dot.gif">이메일</th>
        <td class="col2">
        	 <div class="input-container">	
            <input type="text" name="m_email" class ="form-control" placeholder="user123@naver.com">
@@ -65,7 +65,7 @@
 	  <td class="col3"><font class="emailNm" size="2"></font></td>
       </tr>
       <tr>
-       <th class="col1"><img src="/images/blue_dot.gif"> 전화번호</th>
+       <th class="col1"><img src="/images/blue_dot.gif">전화번호</th>
        <td class="col2">
          <div style="float: left">  
            <select id="mobile1" fw-filter="isNumber&isFill" fw-label="휴대전화" fw-alone="N">
@@ -86,7 +86,7 @@
         <td class="col3">&nbsp;</td>
       </tr>
       <tr>
-        <th class="col1"><img src="/images/blue_dot.gif"> 주소</th>
+        <th class="col1"><img src="/images/blue_dot.gif">주소</th>
         <td class="col2">
           <div class="input-container">
           	<div>
@@ -104,7 +104,7 @@
         <td class="col3"></td>
       </tr>
       <tr>
-			<th class="col1"><img src="/images/blue_dot.gif"> 직업</th>
+			<th class="col1"><img src="/images/blue_dot.gif">직업</th>
 			<th class="col2">
 				<select name="m_job" class="chk selector">
 					 <option value="">선택하시오.</option>

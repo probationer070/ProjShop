@@ -25,7 +25,7 @@
 	            ) A
 	       )
 		  <![CDATA[       
-	       WHERE RN  >= #{start} AND RN <= #{end}
+	       WHERE RN >= #{start} AND RN <= #{end}
 	      ]]>
 	</select>
 	

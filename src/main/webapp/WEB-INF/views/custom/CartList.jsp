@@ -221,7 +221,7 @@ class="xans-element- xans-order xans-order-basketpackage section ">
 							<div class="title">
 								<h5>[기본배송]</h5>
 							</div>
-							<div class="contents">
+							<div>
 							<c:choose>
 								<c:when test="${cartTot != 0}">
 									<span class="label">
@@ -273,7 +273,7 @@ class="xans-element- xans-order xans-order-basketpackage section ">
 						</div>
 					</div>
 					<div class="xans-element- xans-order xans-order-selectorder ec-base-button typeMulti ">
-						<div class="gLeft ">
+						<div class="gLeft">
 							<a href="#none" class="btnNormal sizeS"
 							id="product_select_all" data-status="off">전체선택</a>
 							<a href="#none" onclick="Basket.deleteBasket()"
@@ -296,6 +296,8 @@ class="xans-element- xans-order xans-order-basketpackage section ">
 				</div>
 			</div>
 		</div>
+		
+		
 		<div class="cart-total">
 			<div class="sticky">
 				<!-- 총 주문금액 : 국내배송상품 -->
@@ -471,10 +473,6 @@ class="xans-element- xans-order xans-order-basketpackage section ">
 		</div>
 	</div>
 </div>
-
-		
-
-
 <div data-ez="contents-126sre5-1" 
 class="xans-element- xans-order xans-order-basketguide section ec-base-help">
 	<h3>이용안내</h3>
@@ -500,8 +498,5 @@ class="xans-element- xans-order xans-order-basketguide section ec-base-help">
 		</ul>
 	</div>
 </div>
-
-	
-			
 </body>
 </html>

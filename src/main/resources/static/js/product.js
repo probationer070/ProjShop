@@ -41,36 +41,6 @@
 		}	
 	})
 	
-	$('.psubmit2').on('click', function() {
-		var nm = this.name;
-
-		if(nm=='insert') {
-			$('form[name=form1]').attr("action", "productMgtProc?flag=insert");
-		} else if(nm=='updatePro') {
-			$('form[name=form1]').attr("action", "productMgtProc?flag=update");
-		} else if(nm=='stateUpdate') {
-			$('.inNum, .num').each(function(){
-				var valWithoutComma = $(this).val().replace(/[,]/g, "");
-				$(this).val(valWithoutComma);
-			});
-			$("form[name=form1]").submit();
-		} else if(nm=='Orderdelete') {
-			$('.inNum, .num').each(function(){
-				var valWithoutComma = $(this).val().replace(/[,]/g, "");
-				$(this).val(valWithoutComma);
-			});
-			$('form[name=form1]').attr("action", "orderDelete");
-			$("form[name=form1]").submit();
-		}
-		if(validate()){
-			$('.inNum, .num').each(function(){
-				var valWithoutComma = $(this).val().replace(/[,]/g, "");
-				$(this).val(valWithoutComma);
-			});
-			$("form[name=form1]").submit();
-		}	
-	})
-	
 	$('.inNum').on('keyup change propertychange input paste',function(){
 		var nlen = $('.inNum').length;
 		for(var i=0; i<nlen; i++) {
@@ -111,7 +81,7 @@
 
 	$('button[name=delete]').on('click', function(){
 		var pno= $('input[name=p_no]').val();
-		if(confirm('정말 삭제하시겠습니다?'))
+		if(confirm('정말 삭제하시겠습니까?'))
 			location.href = '/productDelete?p_no='+pno;
 		else return false;
 	});

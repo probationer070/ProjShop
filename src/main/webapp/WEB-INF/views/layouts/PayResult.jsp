@@ -17,38 +17,14 @@
 <link rel="stylesheet" type="text/css" href="./css/PayRes.css" />
 </head>
 <body>
-	<!-- <table>
-		<thead>
-			<tr>
-			<th>orderNumber</th>
-			<th>amount</th>
-			<th>cardName</th>
-			<th>authNumber</th>
-			<th>authDateTime</th>
-			<th>thansactionId</th>
-			<th>responseCode</th>
-			<th>responseMsg</th>
-			</tr>
-		</thead>	
-		<tbody>
-			<tr>
-			<th>${data.orderNumber}</th>
-			<th>${data.amount}</th>
-			<th>${data.cardName}</th>
-			<th>${data.authNumber}</th>
-			<th>${data.authDateTime}</th>
-			<th>${data.transactionId}</th>
-			<th>${data.responseCode}</th>
-			<th>${data.responseMsg}</th>
-			</tr>
-		</tbody>
 	
-	</table> -->
-	<%-- <p>${data}</p> --%>
 	<c:if test="${data.responseCode eq '0000'}" >
 		<%-- <p>${responseMsg}</p> --%>
 		<div class="success-header">
-			<h1 class="success-title">주문이 취소 처리 되었습니다.</h1>
+			class="success-title">결제 성공</h1>
+			<p>결제금액 : ${data.amount}</p>
+			<p>결제수단 : ${data.cardName}</p>
+			<p>결제날짜 : ${data.authDateTime}</p>
 			<br>
 		</div>
 		<div class="success-article">
@@ -76,10 +52,6 @@
 		<button type="button" onclick="location.href='/orderList'" class="btnJoin2">주문내역</button>	
 		<button type="button" onclick="location.href='/info'" class="btnJoin">마이페이지</button>
 	</div>
-	<%-- <form action="/cancelProc2" method="post">
-		<input name="transactionId" value="${data.transactionId}">
-		<br>
-		<input type="submit" value="취소하기">
-	</form> --%>
+	
 </body>
 </html>

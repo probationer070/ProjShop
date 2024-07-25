@@ -20,14 +20,13 @@
 					<div class="prdImg">
 						<div class="thumbnail">
 							<input type="hidden" name="p_no" value="${product.p_no}">
-	                   			<img src="/upload/${product.image}" alt="Sandwich" style="width:380px; height: 23rem;" class="pDetail">
+	                   			<img src="/upload/${product.image}" alt="Sandwich" style="width:380px; height: 25rem;" class="pDetail">
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="infoArea" data-ez-role="ez-discount-tag">
 				<div class="headingArea">
-					<div class="icon"></div>
 					<h1>${product.p_name}</h1>
 				</div>
 				<div class="topLogo displaynone">
@@ -51,7 +50,7 @@
 								<td>
 									<span style="font-size:16px;color:#555555;font-weight:bold;">
 										<strong id="span_product_price_text"><input class="num" style="font-weight: bold;" value="${product.price}원"></strong>
-										<input id="product_price" name="product_price" value="" type="hidden">
+										<input id="product_price" name="product_price" value="${product.price}" type="hidden">
 									</span>
 								</td>
 							</tr>
@@ -99,9 +98,9 @@
 					</table>
 					<form action="cartProc?flag=add" name="form1" method="post">
 						<input type="hidden" name="p_no" title="상품명" value="${product.p_no}" readonly="readonly"> 
-						<input type="hidden" name="stock" class="chk num" title="재고수량" value="${product.stock}" readonly="readonly"> 
-						<input type="hidden" name="quantity" class="chk inNum" title="구매수량" value="1"> 
-						<input type="hidden" name="price" class="chk inNum" title="구매수량" value="${product.price}"> 
+						<input type="hidden" name="stock" class="chk" title="재고수량" value="${product.stock}" readonly="readonly"> 
+						<input type="hidden" name="quantity" class="chk" title="구매수량" value="1"> 
+						<input type="hidden" name="price" class="chk" title="구매수량" value="${product.price}"> 
 						<div class="prd-ProductContent_Buy">
 							<div class="prd-DetailForm_Buttons">
 								<button type="submit" name="add" class="prd-DetailForm_Button btn-Button btn-Button-primary btn-Button-fullWidth fz-13_18" data-ajaxadd-button="">
@@ -115,16 +114,15 @@
 				</div>
 			</div>
 			<div id="detail" class="cboth">
-			 ::after
 			</div>
 			<div class="detail_tab ">
 				<ul class="cboth title_detail">
 					<li class="tab_open">
 						<strong>상세정보</strong>
-							<li class="tab_open1"><img src="/upload/${product.image}" alt="image1" style="width:700px; height: 38rem;"></li>
-							<li class="tab_open2"><img src="/upload/${product.image}" alt="image2" style="width:700px; height: 38rem;"></li>
-							<li class="tab_open3"><img src="/upload/${product.image}" alt="image3" style="width:700px; height: 38rem;"></li>
-							<li class="tab_open4"><img src="/upload/${product.image}" alt="image4" style="width:700px; height: 38rem;"></li>
+							<li class="tab_open1"><img src="/upload/${product.image}" alt="image1" style="width:700px; "></li>
+							<li class="tab_open2"><img src="/upload/${product.image}" alt="image2" style="width:700px; "></li>
+							<li class="tab_open3"><img src="/upload/${product.image}" alt="image3" style="width:700px; "></li>
+							<li class="tab_open4"><img src="/upload/${product.image}" alt="image4" style="width:700px; "></li>
 					</li>
 				</ul>
 			</div>

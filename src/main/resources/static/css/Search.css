@@ -33,12 +33,20 @@ a:focus, a:hover, a:visited, a:link {
 	margin-top: 40px;
 }
 
+
 .Search-total {
 	display: flex;
 }
 
+@media (max-width: 1024px) {
+	.Search-total {
+		display: flex;
+		flex-wrap:wrap;
+	}
+}
+
 .search-content-img {
-	width: 30%;
+	width: 50%;
 }
 
 .search-content-detail h3 {
@@ -51,10 +59,27 @@ a:focus, a:hover, a:visited, a:link {
 	margin-top: 5px;
 }
 
+@media (max-width: 1024px) {
+	.search-content-detail h3 {
+		font-size: 22px;
+		margin-bottom: 10px;
+	}
+	
+	.search-content-detail p {
+		font-size: 14px;
+		margin-top: 5px;
+	}
+}
+
 .search-content-detail .subject {
 	overflow: hidden;
 }
 
 .search-content-detail input.subject {
-	width: 600px;
+	width: 400px;
+}
+
+.searchHead {
+	display: flex;
+	justify-content: space-between;
 }
