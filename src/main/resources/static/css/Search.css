@@ -33,8 +33,16 @@ a:focus, a:hover, a:visited, a:link {
 	margin-top: 40px;
 }
 
+
 .Search-total {
 	display: flex;
+}
+
+@media (max-width: 1024px) {
+	.Search-total {
+		display: flex;
+		flex-wrap:wrap;
+	}
 }
 
 .search-content-img {
@@ -49,6 +57,18 @@ a:focus, a:hover, a:visited, a:link {
 .search-content-detail p {
 	font-size: 20px;
 	margin-top: 5px;
+}
+
+@media (max-width: 1024px) {
+	.search-content-detail h3 {
+		font-size: 22px;
+		margin-bottom: 10px;
+	}
+	
+	.search-content-detail p {
+		font-size: 14px;
+		margin-top: 5px;
+	}
 }
 
 .search-content-detail .subject {

@@ -20,14 +20,13 @@
 					<div class="prdImg">
 						<div class="thumbnail">
 							<input type="hidden" name="p_no" value="${product.p_no}">
-	                   			<img src="/upload/${product.image}" alt="Sandwich" style="width:380px; height: 23rem;" class="pDetail">
+	                   			<img src="/upload/${product.image}" alt="Sandwich" style="width:380px; height: 25rem;" class="pDetail">
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="infoArea" data-ez-role="ez-discount-tag">
 				<div class="headingArea">
-					<div class="icon"></div>
 					<h1>${product.p_name}</h1>
 				</div>
 				<div class="topLogo displaynone">
@@ -120,10 +119,10 @@
 				<ul class="cboth title_detail">
 					<li class="tab_open">
 						<strong>상세정보</strong>
-							<li class="tab_open1"><img src="/upload/${product.image}" alt="image1" style="width:700px; height: 38rem;"></li>
-							<li class="tab_open2"><img src="/upload/${product.image}" alt="image2" style="width:700px; height: 38rem;"></li>
-							<li class="tab_open3"><img src="/upload/${product.image}" alt="image3" style="width:700px; height: 38rem;"></li>
-							<li class="tab_open4"><img src="/upload/${product.image}" alt="image4" style="width:700px; height: 38rem;"></li>
+							<li class="tab_open1"><img src="/upload/${product.image}" alt="image1" style="width:700px; "></li>
+							<li class="tab_open2"><img src="/upload/${product.image}" alt="image2" style="width:700px; "></li>
+							<li class="tab_open3"><img src="/upload/${product.image}" alt="image3" style="width:700px; "></li>
+							<li class="tab_open4"><img src="/upload/${product.image}" alt="image4" style="width:700px; "></li>
 					</li>
 				</ul>
 			</div>

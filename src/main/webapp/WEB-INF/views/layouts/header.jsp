@@ -69,7 +69,7 @@
 							</button>
 						</form>
 					</div>
-					<a href="/productList"><li class="--nav-item menu">CASE</li></a>
+					<a href="/productList"><li class="--nav-item menu">Case</li></a>
 					<a href="/orderList"><li class="--nav-item menu">Order</li></a>
 					<a href="/info"><li class="--nav-item menu">MyPage</li></a>
 					<a href="/notice"><li class="--nav-item menu">Notice</li></a>
