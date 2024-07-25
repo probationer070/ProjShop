@@ -17,7 +17,6 @@
 <link rel="stylesheet" type="text/css" href="./css/PayRes.css" />
 </head>
 <body>
-	
 	<c:if test="${data.responseCode eq '0000'}" >
 		<%-- <p>${responseMsg}</p> --%>
 		<div class="success-header">
@@ -52,6 +51,5 @@
 		<button type="button" onclick="location.href='/orderList'" class="btnJoin2">주문내역</button>	
 		<button type="button" onclick="location.href='/info'" class="btnJoin">마이페이지</button>
 	</div>
-	
 </body>
 </html>
