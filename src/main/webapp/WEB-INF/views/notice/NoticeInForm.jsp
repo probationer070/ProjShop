@@ -63,8 +63,8 @@
 		</div>
 	</div>
    	<div class="btnArea mt-2" align="center">
-   			<button type="button" name="update" class="btnJoin notisubmit1">등록및전송</button>
-   			<button type="button" name="delete" class="btnJoin notisubmit">취소</button>
+   			<button type="button" class="btnJoin notisubmit1">등록및전송</button>
+   			<button type="button"class="btnJoin " onclick="location.href='/noticeFIX'">취소</button>
    	</div>
 	  </form>
 </div>
