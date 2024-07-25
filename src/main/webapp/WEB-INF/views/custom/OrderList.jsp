@@ -22,7 +22,7 @@
 	<table>
 		<thead>
 		<tr>
-			<th class="ocol ocol1">번호</th>
+			<th class="ocol ocol0">번호</th>
 			<th class="ocol ocol2">결제금액</th>
 			<th class="ocol ocol3">결제날짜</th>
 			<th class="ocol ocol4">거래번호</th>
@@ -42,7 +42,7 @@
 			<c:when test="${fn:length(orders)>0}">
 				<c:forEach items="${orders}" var="order">
 				<tr>
-					<th class="ocol1">
+					<th class="ocol0">
 						<input type="hidden" name="mem_id" value="${order.mem_id}" readonly="readonly">
 						<input type="hidden" name="o_no" value="${order.o_no}" readonly="readonly">
 						<p>${order.rn}</p>
