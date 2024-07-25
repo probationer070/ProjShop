@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login</title>
 <link rel="stylesheet" type="text/css" href="css/aloneLogin.css" />
 <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
