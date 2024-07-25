@@ -392,11 +392,6 @@ a:-webkit-any-link {
     margin-top: 100px;
 }
 
-#header .inner .top_nav_box .top_logo img {
-    max-width: 500px;
-    max-height: 70px;
-    margin-top: 100px;
-}
 
 
 @media (max-width: 1024px) {

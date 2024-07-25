@@ -10,9 +10,10 @@
 <script type="text/javascript" src="../js/zipCheck.js"></script>
 <script type="text/javascript" src="../js/member.js"></script>
 <script type="text/javascript" src="../js/layout.js"></script>
-<title>폰케이스</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>폰케이스</title>
+
 </head>
 <body>
 <div class="large-container">
