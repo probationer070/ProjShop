@@ -2,11 +2,13 @@ package com.ecom6.web.api;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.HashMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ecom6.VO.mem.MemberVO;
 import com.ecom6.VO.notice.NoticeVO;

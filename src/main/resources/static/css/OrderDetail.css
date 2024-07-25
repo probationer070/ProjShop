@@ -267,9 +267,9 @@ input, select, textarea {
         padding-top: 0px;
     }
 }
-#mCafe24Order.typeHeader {
+/* #mCafe24Order.typeHeader {
     padding-top: 122px;
-}
+} */
 #mCafe24Order {
     overflow: hidden;
     padding: 73px 0 0;

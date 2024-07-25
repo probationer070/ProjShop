@@ -44,7 +44,7 @@ public class ProductServiceimpl implements ProductService {
 	@Override
 	public Map<String, Object> getProductsList(ProductVO pvo, PageVO pgVo) {
 		Map<String, Object> reSet = new HashMap<String, Object>();
-		int cnt = productDao.getProductCnt();
+		int cnt = productDao.getProductCnt(pvo);
 		
 		// 페이지 계산로직
 		if(pgVo.getCurBl()<=0) pgVo.setCurBl(1);
@@ -74,6 +74,7 @@ public class ProductServiceimpl implements ProductService {
 		pgVo.setStartPg(startPg);
 		pgVo.setEndPg(endPg);
 		log.info("pvo logging =====> "+pvo);
+		log.info("pcnt logging =====> "+cnt);
 		
 		List<ProductVO> productList = productDao.getProductList(pvo);
 		

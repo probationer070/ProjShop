@@ -94,12 +94,12 @@
 		   <div class="xans-element- xans-layout xans-layout-category top_category">
 		     <ul>
 			   <li class="dropdown">
-			     <a href="/productList" style="color: #ce4a4a; font-weight: bold;
+			     <a href="/productList?text=galaxy" style="color: #ce4a4a; font-weight: bold;
 					font-family: Poppins, Noto Sans KR, Arial, sans-serif !important;
 					text-decoration: none; font-size: 20px;">갤럭시</a>
 			     <ul class="sub_cate01 dropdown-content-kind">
 			       <li class="noChild">
-			         <a href="/productList">갤럭시 S24</a>
+			         <a href="/productList?text=galaxy S24">갤럭시 S24</a>
 			       </li>
 			       <li class="noChild">
 			         <a href="/category/Hard/29/">갤럭시 S23</a>
@@ -113,12 +113,12 @@
 			     </ul>
 			   </li> 
 			   <li class="dropdown">
-			     <a href="/productList" style="color: #ce4a4a; font-weight: bold;
+			     <a href="/productList?text=iphone" style="color: #ce4a4a; font-weight: bold;
 					font-family: Poppins, Noto Sans KR, Arial, sans-serif !important;
 					text-decoration: none; font-size: 20px;">아이폰</a>
 			      <ul class="sub_cate01 dropdown-content-kind">
 			       <li class="noChild">
-			         <a href="/productList">아이폰 14</a>
+			         <a href="/productList?text=iphone 14">아이폰 14</a>
 			       </li>
 			       <li class="noChild">
 			         <a href="/category/Hard/28/">아이폰 13Pro</a>

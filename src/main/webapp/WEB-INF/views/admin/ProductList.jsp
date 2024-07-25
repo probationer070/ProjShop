@@ -64,17 +64,17 @@
         </c:choose>
        </tbody>
      </table>
-     
+    
       <!-- 페이지  -->
      <div id="Pg" align="center">
      <c:if test="${pgVo.startPg>PBlock}">
 	     <font color="4c5317">
-	         <a href="/productFIX?curPg=${pgVo.startPg-PBlock}&curBl=${pgVo.curBl-1}">[이전]</a>
+	         <a href="/productFIX?curPg=${pgVo.startPg-PBlock}&curBl=${pgVo.curBl-1}&text=${text}">[이전]</a>
 	     </font>
      </c:if>
      <c:forEach var="pgno" begin="${pgVo.startPg}" end="${pgVo.endPg}" step="1">
          <c:set scope="page" var="list" 
-                  value="./productFIX?curPg=${pgno}&curBl=${pgVo.curBl}"/> 
+                  value="./productFIX?curPg=${pgno}&curBl=${pgVo.curBl}&text=${text}"/> 
          <a href="${list}" style=" text-decoration:none;">
          <c:choose>
              <c:when test="${pgVo.curPg==pgno}">
@@ -88,7 +88,7 @@
      </c:forEach>
       <c:if test="${pgVo.endPg<pgVo.pgCnt}">
              <font color="4c5317">
-               <a href="./productFIX?curPg=${pgVo.startPg+PBlock}&curBl=${pgVo.curBl+1}">[다음]</a>
+               <a href="./productFIX?curPg=${pgVo.startPg+PBlock}&curBl=${pgVo.curBl+1}&text=${text}">[다음]</a>
              </font>
        </c:if> 
      </div>

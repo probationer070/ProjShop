@@ -13,7 +13,7 @@ import com.ecom6.common.vo.PageVO;
 @Mapper
 public interface ProductDao {
 
-	int getProductCnt();
+	int getProductCnt(ProductVO pvo);
 
 	List<ProductVO> getProductList(ProductVO pvo);
 
