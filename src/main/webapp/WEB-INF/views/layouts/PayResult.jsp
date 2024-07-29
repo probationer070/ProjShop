@@ -20,13 +20,14 @@
 <body>
 	<c:if test="${data.responseCode eq '0000'}" >
 		<div class="success-header">
+
 			<h1 class="success-title">결제가 정상적으로 진행되었습니다.<br> 감사합니다.</h1>
 		</div>
 	<div class="success-container">
 		<div class="success-article" style="font-size: 18px; font-weight: bold;">
 			<p>주문번호 : ${data.transactionId}</p>
-		    <p>결제날짜 : ${data.authDateTime}</p>
-			<p >결제금액 : <input class="num d_amount" style="font-weight: bold; border: none;" value="${data.amount}원"></p>
+		  <p>결제날짜 : ${data.authDateTime}</p>
+			<p>결제금액 : <input class="num d_amount" style="font-weight: bold; border: none;" value="${data.amount}원"></p>
 			<p>결제수단 : ${data.cardName}</p>
 			<br>
 		</div>

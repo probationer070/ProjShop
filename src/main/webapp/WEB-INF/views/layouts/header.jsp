@@ -8,6 +8,7 @@
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="../js/zipCheck.js"></script>
 <script type="text/javascript" src="../js/member.js"></script>
+<script type="text/javascript" src="../js/layout.js"></script>
 
 <body class="theme03" data-ez-theme="theme03" monica-locale="ko" monica-version="5.8.0" monica-id=
       "ofpnmcalabcbjgholdjcjblkibolbppb">
@@ -139,7 +140,7 @@
 						aria-controls="autocompleteItems" aria-owns="autocompleteItems" placeholder="Search" name="text">
 						</div>
 						<button class="search__input-button js-search btn-icon" 
-							id="searchMenuBtn" type="button" title="Search">
+							id="searchMenuBtn" type="submit" title="Search">
 							<img class="search__icon icon icon--search" src="../images/search2.svg">
 							<span class="screenreader">Search</span>
 						</button>

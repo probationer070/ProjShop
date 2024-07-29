@@ -8,7 +8,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="./css/Search.css" />
 <script type="text/javascript" src="./js/product.js"></script> 
-<script type="text/javascript" src="./js/Search.js"></script> 
+<script type="text/javascript" src="./js/Search.js"></script>
+
 </head>
 <body>
 	<div class="searchHead">
