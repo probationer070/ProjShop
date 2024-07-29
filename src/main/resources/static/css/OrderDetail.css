@@ -935,6 +935,7 @@ input, select, textarea {
 }
 .ec-base-table tr:first-child {
     border-top: 1px solid #e5e5e5;
+    padding-top: 10px;
 }
 #mCafe24Order .ec-base-button + .helpArea {
     padding: 30px 16px;
@@ -975,9 +976,7 @@ caption {
 #mCafe24Order .ec-base-table .right {
     text-align: right;
 }
-#mCafe24Order .segment .ec-base-table tbody tr:first-child th, #mCafe24Order .segment .ec-base-table tbody tr:first-child td {
-    padding: 0 0 5px 0;
-}
+
 #mCafe24Order .segment .ec-base-table tbody th, #mCafe24Order .segment .ec-base-table tbody td {
     font-size: 16px;
     padding: 5px 0;
@@ -1218,32 +1217,16 @@ caption {
     color: #bcbcbc;
 }
 
-
-/* .tbcol > input, select {
-	overflow: hidden;
-	outline: none;
-	border: none;
-	padding: 2px 4px;
-	background-color: transparent;
-	width: 100px;
+.inputPrice[type="text"] {
+	border: none !important;
+	padding: 0 !important;
+	font-style: '맑은 고딕';
+	font-weight: bold !important;
 }
 
-.adcol0 { width: 3%; align-content: center; }	checkBox
-.adcol1 { width: 3%; }
-.adcol2 { width: 20%; }
-.adcol3 { width: 5%; }
-.adcol4 { width: 10%; }
-.adcol5 { width: 5%; }
-.adcol6 { width: 5%; }
-.adcol7 { width: 9%; }
-.adcol8 { width: 5%; }
-
-
-.adcol1 input{ width: 100%; }
-.adcol2 input{ width: 100%; }
-.adcol3 input{ width: 100%; }
-.adcol4 input{ width: 100%; }
-.adcol5 input{ width: 100%; }
-.adcol6 input{ width: 100%; }
-.adcol7 input{ width: 100%; }
-.adcol8 select{ width: 100%; } */
+.inputTot {
+	border: none !important;
+	padding: 0 !important;
+	text-align: right !important;
+	font-weight: bold !important;
+}
