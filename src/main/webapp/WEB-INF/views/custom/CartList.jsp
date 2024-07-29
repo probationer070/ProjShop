@@ -7,7 +7,6 @@
 <head>
 <meta charset="UTF-8">
 <title>쇼핑몰</title>
-<!-- <link rel="stylesheet" type="text/css" href="./css/ProductList.css" /> -->
 <link rel="stylesheet" type="text/css" href="../css/CartList.css" />
 <script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
 <script src="../js/product.js" defer="defer"></script>
@@ -424,23 +423,6 @@ class="xans-element- xans-order xans-order-basketpackage section ">
 					</c:choose>
 				</div>
 			</div>
-			
-			<%-- <form action="/orderDetail">
-			<div class="cart__summary">
-				<div class="cart__subtotal">
-					<span class="cart__total-label">Subtotal:</span>
-					<span class="cart__total-value">
-						<strong class="total_price"></strong>원
-						<input type="text" class="num" name="amount" value="">
-						<input type="hidden" name="itemName" value="test">
-						<input type="hidden" name="userName" value="${ssKey.mem_id}">
-					</span>
-				</div>
-				<p class="cart__total-note">Shipping &amp; taxes calculated at checkoutIncl. VAT, Free shipping and handling.</p>
-				<input class="btn btn-dark" type="submit" value="주문하기">
-				<input class="btn btn-dark" type="button" onclick="javascript:location.href='productList'" value="상품목록으로">
-			</div>
-			</form> --%>
 
 			<form action="/orderDetail" id="orderDetail">
 			<div id="orderFixItem" 
@@ -451,8 +433,6 @@ class="xans-element- xans-order xans-order-basketpackage section ">
 					<input type="hidden" name="itemName" value="test">
 					<input type="hidden" name="userName" value="${ssKey.mem_id}">
 					<input class="btnSubmit gFull sizeL" type="button" value="전체상품주문" id="order">
-					<!-- <a onclick="javascript:location.href='orderDetail'" 
-					class="btnSubmit gFull sizeL  ">전체상품주문</a> -->
 					<a href="#none" onclick="Basket.orderSelectBasket(this)" 
 					link-order="/order/orderform.html?basket_type=all_buy" 
 					link-login="/member/login.html" 

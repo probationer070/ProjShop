@@ -48,7 +48,6 @@ function getData(limit){
         		`;
    				
 				$(".SearchContent").append(html);
-				// 	$(window).scrollTop(currentScroll-60);
 			});
 			
 		},
@@ -89,7 +88,6 @@ function getData(limit){
         		`;
    				
 				$(".SearchContent").append(html);
-				// 	$(window).scrollTop(currentScroll-60);
 			});
 			
 		},
@@ -118,13 +116,10 @@ $(document).scroll(function(e){
 		getData(8);	// 증가값
 		text = $('input[name=text2]').val();
 		bucket = $('input[name=bucket]').val();
-		console.log(bucket);
-		console.log(text);
         }
     }
 
     //현재위치 최신화
     lastScroll = currentScroll;
-    // console.log(lastScroll);
 
 });

@@ -60,8 +60,7 @@ $(function(){
 	})
 	
 	
-});	// ready to close;
-
+});	
 function confirmPw() {
 	var pw = prompt('비밀번호를 입력하시오.');
 	var passwd = $("input[name=passwd]").val();

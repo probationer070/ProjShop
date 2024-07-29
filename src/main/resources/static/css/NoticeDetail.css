@@ -16,7 +16,6 @@ table, tr, td, th {
 	border: none;
 	padding: 2px 4px;
 	background-color: transparent;
-/* 	width: 100px; */
 }
 
 .ncol1 { width: 25%; }
@@ -24,9 +23,6 @@ table, tr, td, th {
 .ncol3 { width: 5%; }
 .ncol4 { width: 5%; }
 .ncol5 { width: 5%; }
-/* .ncol6 { width: 5%; }
-.ncol7 { width: 9%; }
-.ncol8 { width: 5%; } */
 
 
 .ncol1 input{ width: 100%; }
@@ -34,14 +30,9 @@ table, tr, td, th {
 .ncol3 input{ width: 100%; }
 .ncol4 input{ width: 100%; }
 .ncol5 input{ width: 100%; }
-/* .ncol6 input{ width: 100%; }
-.ncol7 input{ width: 100%; }
-.ncol8 select{ width: 100%; } */
 
 .ArticleContentBox .article_header {
     position: relative;
-    /* margin-bottom: 20px; */
-   /*  padding: 30px 0; */
     border-bottom: 1px solid #ccc;
 }
 
@@ -77,7 +68,6 @@ table, tr, td, th {
 .ArticleContentBox {
     padding: 29px 29px 0;
     border-bottom: 1px solid #ccc;
-    /* border-radius: 6px; */
 }
 .btnJoin{
     width: 120px;

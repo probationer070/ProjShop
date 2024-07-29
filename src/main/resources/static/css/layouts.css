@@ -52,8 +52,8 @@ div.contents {	/* Mobile 기준 */
 .theme03, .theme03 input, .theme03 select, .theme03 textarea, .theme03 code, .theme03 button {
 font-family: "Poppins", "Noto Sans KR",
               Arial,sans-serif !important;
-    
-    border: none;
+    /* 
+    border: none; */
 }
 .btn{
 	background-color: #ffeded;
@@ -90,11 +90,6 @@ html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form
     margin: 0;
     padding: 0;
 }
-/* div {
-    display: block;
-    unicode-bidi: isolate;
-    margin-bottom: 5px;
-} */
 #header.fixed {
     position: fixed;
     top: 0;
@@ -418,20 +413,6 @@ img, fieldset {
     vertical-align: top;
 }
 
-/* ???	 */
-/* @media (min-width: 1024px) {
-    #header.layout03 .inner .top_nav_box div[data-ez-module='menu-main/1'] {
-        order: 3;
-        flex-basis: auto;
-    }
-} */
-
-/* @media (min-width: 1024px) {
-    #header.layout03 .inner .top_nav_box .top_category {
-        margin: 0;
-    }
-} */
-
 #header .inner .top_nav_box .top_category {
     margin: 0 50px 0 50px;
     display: block;
@@ -585,8 +566,6 @@ a {
         flex-shrink: 0;
         align-items: center;
         position: relative;
-        /* top: 60px;
-        right: 30px; */
         justify-content: flex-end;
 	}
 }

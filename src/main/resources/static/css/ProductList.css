@@ -100,7 +100,6 @@ ul{
 }
 .xans-product-detail {
     max-width: 1280px !important;
-    /* margin-bottom: 80px; */
 }
 @media (min-width: 1025px) {
     .xans-product-detail .imgArea .prdImg img {
@@ -111,15 +110,6 @@ ul{
 .xans-product-detail .imgArea {
     display: inline-block;
     width: calc(100% - 600px);
-	/* padding-left: 50px; */
-}
-
-@media (max-width: 1024px) {
-	.xans-product-detail .imgArea {
-	    display: inline-block;
-	    width: auto;
-		padding-left: 0px;
-	}
 }
 
 @media (max-width: 1024px) {
@@ -133,7 +123,6 @@ ul{
     display: inline-block;
     top: 100px;
     width: 600px;
-    /* margin: 0 0 0 100px; */
     font-size: 13px;
     line-height: 1;
     vertical-align: top;

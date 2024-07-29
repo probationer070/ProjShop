@@ -1,11 +1,5 @@
 $().ready(function(){
 	
-	// admin 아이템 상세 페이지에서 뒤로가기 누르면 메인으로 이동
-	/*history.pushState(null, document.title, window.location.href);
-	history.replaceState(null, document.title, '/');
-	window.addEventListener('popstate', (e) => {
-		location.replace('/');
-	});*/
 	
 	$('.submit2').on('click', function(){
 		var choice = this.name;

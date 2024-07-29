@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="./js/product.js"></script> 
 <meta charset="UTF-8">
 <title>PAY RESULT</title>
 <style>
@@ -18,19 +19,19 @@
 </head>
 <body>
 	<c:if test="${data.responseCode eq '0000'}" >
-		<%-- <p>${responseMsg}</p> --%>
 		<div class="success-header">
-			<h1 class="success-title">결제 성공</h1>
-			<p>결제금액 : ${data.amount}</p>
+
+			<h1 class="success-title">결제가 정상적으로 진행되었습니다.<br> 감사합니다.</h1>
+		</div>
+	<div class="success-container">
+		<div class="success-article" style="font-size: 18px; font-weight: bold;">
+			<p>주문번호 : ${data.transactionId}</p>
+		  <p>결제날짜 : ${data.authDateTime}</p>
+			<p>결제금액 : <input class="num d_amount" style="font-weight: bold; border: none;" value="${data.amount}원"></p>
 			<p>결제수단 : ${data.cardName}</p>
-			<p>결제날짜 : ${data.authDateTime}</p>
 			<br>
 		</div>
-		<div class="success-article">
-			<p>
-			
-			</p>
-		</div>
+	</div>	
 
 	</c:if>
 	<!-- 'ne' == '!=' -->

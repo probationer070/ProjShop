@@ -52,7 +52,6 @@ function getData(limit){
    				</tr>`;
    				
 				$("tbody").append(html);
-				// 	$(window).scrollTop(currentScroll-60);
 			});
 			
 		},
@@ -83,6 +82,5 @@ $(document).scroll(function(e){
 
     //현재위치 최신화
     lastScroll = currentScroll;
-    // console.log(lastScroll);
 
 });

@@ -1,9 +1,12 @@
 package com.ecom6.web.order;
 
 import java.security.NoSuchAlgorithmException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -57,33 +60,7 @@ public class OrderController {
 	@Autowired
 	OrderService orderService;
 	
-//	@GetMapping("/orderProc")
-//	public String orderProc(HttpServletRequest req,
-//						   HttpServletResponse res,
-//						   OrderVO ovo,PageVO pgVo,
-//						   Model model) {
-//		HttpSession session = req.getSession();
-//		String msg = null;
-//		String url = null;
-//		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
-//		if(ssKey!=null) {
-//			Map<String, Object> reSet = cartService.getCartItemList(ssKey.getMem_id());
-//			ArrayList<CartVO> CartList = (ArrayList<CartVO>) reSet.get("cartList");
-//		
-//			HashMap<String, Object> reMap = 
-//					orderWrapper.orderProc(ovo, CartList);
-//			msg = (String) reMap.get("msg");
-//			url = (String) reMap.get("url");
-//			// 주문하고 재고는 하나 줄고
-//		} else {
-//			msg = "로그인이 필요합니다.";
-//			url = "/login";
-//		}
-//		model.addAttribute("url", url);
-//		model.addAttribute("msg", msg);
-//		session.setAttribute("ssKey", ssKey);
-//		return "MsgPage";
-//	}
+
 	
 	
 	@PostMapping("/custOrderDetail")
@@ -298,7 +275,6 @@ public class OrderController {
 		HttpSession session = req.getSession();
 		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
 		if(ssKey!=null) {
-//			session.setAttribute("ssKey", ssKey);
 			if(ssKey.getM_role().equals("admin")) {
 				ovo.setM_role(ssKey.getM_role());
 				Map<String, Object> reSet = orderService.getOrderList(ovo,pgVo);
@@ -328,36 +304,7 @@ public class OrderController {
 			  }
 		return page;
 	}
-//	@GetMapping("/orderDetail")
-//	public String getorderDetail(HttpServletRequest req, 
-//							HttpServletResponse res, 
-//							Model model) {
-//		HttpSession session = req.getSession();
-//		String page = null;
-//		String url = null;
-//		String msg = null;
-//		MemberVO ssKey = (MemberVO) session.getAttribute("ssKey");
-//		if(ssKey!=null) {
-//			session.setAttribute("ssKey", ssKey);
-//			Map<String, Object> reSet = cartService.getCartItemList(ssKey.getMem_id());
-//			// 주문하고 재고는 하나 줄고
-//			model.addAttribute("subTotal", req.getAttribute("subTotal"));
-//			model.addAttribute("content", "custom/OrderDetail.jsp");
-//			model.addAttribute("cart", reSet.get("cartList"));
-//			model.addAttribute("SubTot", reSet.get("subTotal"));	
-//			model.addAttribute("url", url);
-//			page = "Main";
-//		} else {
-//			session.removeAttribute("ssKey");
-//			session.invalidate();
-//			msg="세션이 종료되었습니다.\\n 재로그인 필요합니다.";
-//		    url = "/login";
-//		    page="MsgPage";
-//		    model.addAttribute("msg", msg);
-//		    model.addAttribute("url", url);
-//		}
-//		return page;
-//	}
+
 
 	@RequestMapping("/orderDetail")
 	public ModelAndView orderProc(HttpServletRequest req, 
@@ -380,15 +327,11 @@ public class OrderController {
 
 			String orderNumber = UUID.randomUUID().toString().substring(0,8).replace("-", "").toUpperCase();
 			apiMap.put("orderNumber", orderNumber);
-
-			// String amount = "100000";
+			
 			String amount = param.get("amount");
 			String merchantId = "himedia";
 			String apiCertKey = "ac805b30517f4fd08e3e80490e559f8e";
 
-//			apiMap.put("amount", amount);
-//			apiMap.put("itemName", "Test");
-//			apiMap.put("userName", "Testor");
 			Iterator<String> keys = param.keySet().iterator();
 			while (keys.hasNext()) {
 				String key = keys.next();
@@ -433,11 +376,6 @@ public class OrderController {
 								HttpServletRequest req, OrderVO ovo, OrderInfo oio) throws NoSuchAlgorithmException {
 		ModelAndView mav =  new ModelAndView();
 
-//		System.out.println("trace input 내용 : "+param.toString());
-//		System.out.println(param.get("cardNo"));
-//		System.out.println(param.get("expireYear"));
-//		log.info("param CHECK2 : ===> "+param);
-
 		String url = "https://api.testpayup.co.kr/ap/api/payment/"+param.get("ordr_idxx")+"/pay";
 		Map<String, String> apiMap = new HashMap<String, String>();
 		Map<String, Object> apiResult = new HashMap<String, Object>();
@@ -461,7 +399,6 @@ public class OrderController {
 			oio.setTransactionId((String) apiResult.get("transactionId"));
 			Map<String, Object> reSet = cartService.getCartItemList(ssKey.getMem_id());
 			ArrayList<CartVO> CartList = (ArrayList<CartVO>) reSet.get("cartList");
-			// log.info("transactionId -------------> "+apiResult.get("transactionId"));
 			HashMap<String, Object> reMap = 
 					orderWrapper.orderProc(ovo, CartList, oio);
 			session.setAttribute("ssKey", ssKey);
@@ -472,6 +409,7 @@ public class OrderController {
 
 		return mav;
 	}
+	
 	
 	@RequestMapping("/cancelProc2")
 	public ModelAndView cancelProc2(@RequestParam HashMap<String, String> param) throws NoSuchAlgorithmException {
@@ -490,7 +428,6 @@ public class OrderController {
 	  apiResult = apiService.JsonApi(url, apiMap);
 	  
 	  System.out.println("API 통신 값 취소요청2: "+apiResult);
-	  log.info("param ------------> "+param);
 	  if ("0000".equals(apiResult.get("responseCode"))) {
 		  orderWrapper.DeleteOnoOrders(param);
 	  }
@@ -500,11 +437,5 @@ public class OrderController {
 	  return mav;
 	}
 	
-	@GetMapping("Res")
-	public ModelAndView Res() {
-		ModelAndView mav =  new ModelAndView();
-		mav.setViewName("Main");
-		mav.addObject("content","layouts/PayResult.jsp");
-		return mav;
-	}
+
 }

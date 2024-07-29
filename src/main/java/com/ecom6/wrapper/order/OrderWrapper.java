@@ -34,31 +34,6 @@ public class OrderWrapper {
 	private CartService cartService;
 
 	
-//	@Transactional
-//	public HashMap<String, Object> orderProc(OrderVO ovo, 
-//											 Hashtable<Integer, OrderVO> hCartList) {
-//		
-//		String url;
-//		String msg;
-//		int r = orderService.insertOrders(CartList);
-//		if (r>0) {
-//			productService.updateStocks(hCartList);
-//			msg = "주문완료했습니다.";
-//			url = "orderlist";
-//			hCartList.clear();
-//			cartService.deleteCart(ovo.getMem_id());
-//		} else {
-//			msg = "주문 실패.";
-//			url = "cartList";
-//		}
-//		HashMap<String, Object> reMap = new HashMap<>();
-//		reMap.put("msg", msg);
-//		reMap.put("url", url);
-//		reMap.put("hCartList", hCartList);
-//		
-//		return reMap;
-//	}
-	
 	@Transactional
 	public Map<String, Object> orderDelete(OrderVO ovo) {
 		// 삭제 가능여부 확인(1,2) 나머지 삭제 불가능. 반품로직으로 이동
@@ -98,8 +73,6 @@ public class OrderWrapper {
 		String msg=null;
 		int r = orderService.insertOrders(cartList);
 		OrderVO o_no = orderService.getTrandOrder(ovo);
-		log.info("ovo ====> "+ovo);
-		log.info("o_no ====> "+o_no);
 		oio.setO_no(o_no.getO_no());
 		oio.setMem_id(o_no.getMem_id());
 		oio.setO_regdate(o_no.getO_regdate());

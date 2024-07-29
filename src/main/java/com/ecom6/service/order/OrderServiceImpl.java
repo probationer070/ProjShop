@@ -68,7 +68,7 @@ public class OrderServiceImpl implements OrderService {
 			list.add(ovo);
 		}
 		orderDao.orderStateUpdate(list);
-		// log.info("list ===> "+list);
+	
 	}
 
 	@Override

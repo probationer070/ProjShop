@@ -4,6 +4,15 @@
 	margin: 0;
 	padding: 0;
 }
+.success-container{
+	display: flex;
+}
+.success-article .d_amount:focus{
+	outline: none;
+}
+.success-article p{
+	margin-top: 10px;
+}
 
 .fail-article {
 	color: #aaa;
@@ -16,6 +25,10 @@
 .fail-header, .success-header {
 	border-bottom: 1px solid #aaa;
 	margin-bottom: 10px;
+	margin-top: 10px;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
 }
 
 .btnArea {

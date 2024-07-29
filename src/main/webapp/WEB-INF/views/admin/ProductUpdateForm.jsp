@@ -99,9 +99,6 @@
 				   	</div>
 				</div>
 			</div>
-			<div id="detail" class="cboth">
-			 ::after
-			</div>
 		</div>
 	</div>
 	</form>

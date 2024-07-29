@@ -26,6 +26,7 @@
 				title="ID" class="chk" value="${mvo.mem_id}" >
 			</div>
 			</th>
+			<th class="col3">&nbsp;<font id="warning" size="2" color="red"></font></th>
 		</tr>
 		<c:if test="${ssKey.m_role=='mem'}">
 		<tr>
@@ -34,6 +35,7 @@
 			<input type="password" name="m_passwd" id="check1" 
 				title="password" class="chk" value="${mvo.m_passwd}" >
 			</th>
+			 <th class="col3">&nbsp;<font id="check" size="2" color="green"></font></th>
 		</tr>
 		<tr>
 			<th class="col1"><img src="/images/blue_dot.gif"> 패스워드 확인</th>
@@ -52,8 +54,8 @@
 			<th class="col1"><img src="/images/blue_dot.gif"> 이메일</th>
 			<th class="col2"><input type="text" name="m_email" class="chk"
 				value="${mvo.m_email}" >
-				
 			</th>
+			<td><font class="emailNm" size="2"></font></td>
 		</tr>
 		<tr>
 			<th class="col1"><img src="/images/blue_dot.gif"> 전화번호</th>
@@ -66,6 +68,7 @@
 			<th class="col2"><input type="text" name="zipcode" id="sample6_postcode"
 				 title="우편번호" 
 				class="chk" value="${mvo.zipcode}">
+				<button class="btn" type="button" onclick="zipCheck()">우편번호</button>
 			</th>
 		</tr>
 		<tr>

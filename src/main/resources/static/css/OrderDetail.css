@@ -267,9 +267,6 @@ input, select, textarea {
         padding-top: 0px;
     }
 }
-/* #mCafe24Order.typeHeader {
-    padding-top: 122px;
-} */
 #mCafe24Order {
     overflow: hidden;
     padding: 73px 0 0;
@@ -1219,31 +1216,3 @@ caption {
 }
 
 
-/* .tbcol > input, select {
-	overflow: hidden;
-	outline: none;
-	border: none;
-	padding: 2px 4px;
-	background-color: transparent;
-	width: 100px;
-}
-
-.adcol0 { width: 3%; align-content: center; }	checkBox
-.adcol1 { width: 3%; }
-.adcol2 { width: 20%; }
-.adcol3 { width: 5%; }
-.adcol4 { width: 10%; }
-.adcol5 { width: 5%; }
-.adcol6 { width: 5%; }
-.adcol7 { width: 9%; }
-.adcol8 { width: 5%; }
-
-
-.adcol1 input{ width: 100%; }
-.adcol2 input{ width: 100%; }
-.adcol3 input{ width: 100%; }
-.adcol4 input{ width: 100%; }
-.adcol5 input{ width: 100%; }
-.adcol6 input{ width: 100%; }
-.adcol7 input{ width: 100%; }
-.adcol8 select{ width: 100%; } */

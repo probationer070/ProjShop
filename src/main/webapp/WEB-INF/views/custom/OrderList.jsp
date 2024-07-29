@@ -27,8 +27,6 @@
 			<th class="ocol ocol3">결제날짜</th>
 			<th class="ocol ocol4">거래번호</th>
 			<th class="ocol ocol5">수정</th>
-			<!-- <th class="ocol ocol6">주문상태</th> -->
-
 		</tr>
 		</thead>
 		<tbody>
@@ -71,20 +69,6 @@
 		    					class="btnCancel PayCancel orderDetail" readonly="readonly">
 	    				</form>
 	    			</th>
-	    			<%-- <th class="ocol ocol5">
-	    				<p>${order.o_regdate}</p>
-	    				<input type="hidden" name="o_regdate" value="${order.o_regdate}"
-	    					class="" readonly="readonly">
-	    			</th> --%>
-	    			<%-- <th class="ocol ocol6">
-	    				<c:choose>
-	    					<c:when test="${order.state==1}">결재중</c:when>
-	    					<c:when test="${order.state==2}">배송준비</c:when>
-	    					<c:when test="${order.state==3}">배송중</c:when>
-	    					<c:when test="${order.state==4}">배송완료</c:when>
-	    					<c:when test="${order.state==5}">구매확정</c:when>
-	    				</c:choose>
-	    			</th> --%>
 				</tr>
 				</c:forEach>
 			</c:when>
