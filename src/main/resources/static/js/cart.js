@@ -136,7 +136,6 @@ function m_Completepayment(FormOrJson, closeEvent) {
 		/*
 		(인증실패) 인증 실패 처리 진행
 		 */
-		// alert("[" + frm.res_cd.value + "] " + frm.res_msg.value);
 		closeEvent();
 	}
 }

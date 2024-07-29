@@ -131,13 +131,6 @@
 	     <div class="btnArea" align="right">
 		     <input name="s" type="button" class="btnJoin orderChange" value="상태수정">
 	     </div>
-		<!-- <table style="text-align: center">
-			<tr>
-				<th colspan="9">
-					<input name="s" type="button" class="orderChange" value="상태수정">
-				</th>
-			</tr>
-		</table> -->
 		<form action="OrDetailMgt" name="form1" method="post">
 			<input type="hidden" name="p_no" value="">
 			<input type="hidden" name=o_no value="">

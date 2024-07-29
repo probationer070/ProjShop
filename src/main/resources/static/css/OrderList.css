@@ -20,29 +20,6 @@
 	width:100%;
 }
 
-/* #productMgt .pcol1{
-	width: 10%;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 3px 3px 3px; 
-}
-#productMgt .pcol2{
-	padding: 3px 3px 3px 10px;
-	text-align: left; 
-	vertical-align: middle;
-}
-#productMgt .pcol3{
-	width: 15%;
-	vertical-align: middle;
-}
-#productMgt .pcol4{
-	width: 25%;
-	vertical-align: middle;
-}
-#productMgt .pcol5{
-	width: 10%;
-	vertical-align: middle;
-} */
 
 /* OrderFix */
 .ocol0 { width: 2%; }
@@ -62,7 +39,6 @@
 .ocol3 input{ width: 100%; }
 .ocol4 input{ width: 100%; }
 
-/* .ocol5 input{ width: 100%; } */
 .ocol6 input{ width: 100%; }
 .ocol7 input{ width: 100%; }
 .ocol8 input{ width: 100%; }

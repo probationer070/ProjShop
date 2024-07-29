@@ -105,7 +105,6 @@
 		$('form[name=form1] input[name=p_no]').val(pno);
 		$('form[name=form1] input[name=mem_id]').val(mid);
 		$('form[name=form1]').submit();
-		// alert(pno+"::::"+ono+"::::"+mid);
 	 })
 	
 	// 전체 선택을 하면 모두 참, 해제시 모두 해제
@@ -145,7 +144,6 @@
 			var ono = tr.find(th).find("input[name=o_no]").val();
 			var memid = tr.find(th).find("input[name=mem_id]").val();
 			var state = tr.find(th).find("select[name=state]").val();
-			// alert(pno+" "+ono+" "+memid+" "+state);
 			// 가져온 값을 배열에 저장
 			tdArr.push("o_no:"+ono);
 			tdArr.push("p_no:"+pno);
@@ -203,12 +201,10 @@ function numberWithCommas(num) {
 }
 
 function orderDetail(obj) {
-	// var pno = $(obj).closest("tr").find("input[name=p_no]").val();
 	var ono = $(obj).closest("tr").find("input[name=o_no]").val();
 	var mem_id = $(obj).closest("tr").find("input[name=mem_id]").val();
 	console.log(ono);
 	console.log(mem_id);
-	// $('form[name=form1] input[name=p_no]').val(pno);
 	$('form[name=form1] input[name=o_no]').val(ono);
 	$('form[name=form1] input[name=mem_id]').val(mem_id);
 	$('form[name=form1]').submit();

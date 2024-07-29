@@ -99,8 +99,6 @@
 		       <button type="button"
 		         class="btn btn-outline-secondary" 
 		          onclick="javascript:location.href='/productFIX'">상품목록</button>
-		<!--        <button type="button" -->
-		<!--         name="update" class="btn btn-outline-primary psubmit">상품수정</button> -->
 		</div>
 		</div>
 		</div>

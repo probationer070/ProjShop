@@ -45,7 +45,7 @@
 					  <span style="font-size:12px;color:#555555;">판매가</span>
 					  " :"
 					</strong>
-					${product.price}원
+					<input class="num" style="font-weight: bold; color:#862323" value="${product.price}원">
 					<input type="hidden" name="price" value="${product.price}원" class="form-control-plaintext alignRight num">
 			       </li>
                  </ul>

@@ -9,12 +9,6 @@
 <script type="text/javascript" src="../js/zipCheck.js"></script>
 <script type="text/javascript" src="../js/member.js"></script>
 
-<!-- <input type="text" id="sample6_postcode" placeholder="우편번호">
-<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-<input type="text" id="sample6_address" placeholder="주소"><br>
-<input type="text" id="sample6_detailAddress" placeholder="상세주소">
-<input type="hidden" id="sample6_extraAddress" placeholder="참고항목"> -->
-
 <body class="theme03" data-ez-theme="theme03" monica-locale="ko" monica-version="5.8.0" monica-id=
       "ofpnmcalabcbjgholdjcjblkibolbppb">
   <div class="large-container">  
@@ -136,7 +130,6 @@
 		 </div>
 		 </div>
 		 <div class="top_mypage">
-			  <!--  <a href="javascript:;" class="eSearch"> -->
 			    <div class="header__search-container hide-phone" id="searchContainer">
 					<form name="search" class="search" role="search" action="search?bucket=1" method="get">
 						<div class="input-placeholder input-placeholder--search">
@@ -181,21 +174,12 @@
 							<a href="/notice"><li class="--nav-item dropdown">Notice</li></a>
 							<a href="/logoutProc"><li class="--nav-item dropdown">Logout</li></a>
 						</c:when>
-					 	<%-- <c:otherwise>
-					 		<a href="/join">Join</a>
-	       					<a href="/login">Login</a>
-					 	</c:otherwise> --%>
 					 </c:choose>
-					 
 		            </div>
 			    </div>
 			    <div class="header__cart-btn-wrapper">   	 
 				   <a class="header__cart-btn btn btn-icon" href="/cartlist" aria-label="0 item(s) in your bag">
 				     <img class="cart-icon icon" src="../images/cart2.svg">
-				     
-				     <!-- <span class="count displaynone EC-Layout_Basket-count-display">
-				       <span class="EC-Layout-Basket-count">0</span>
-				     </span> -->
 				   </a>
 			    </div>
 			</div>

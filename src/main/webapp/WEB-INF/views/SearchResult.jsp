@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div class="searchHead">
-	<h1>검색 결과</h1>
+	<h1>'${param.text}' 검색 결과</h1>
 	<div class="header__search-containers2 hide-phone" id="searchContainer">
 		<form name="search" class="search" role="search" action="search?bucket=1" method="get">
 			<div class="input-placeholder input-placeholder--search">
@@ -33,8 +33,6 @@
 		<ul class="navbar-contain-ul">
 			<li><a href="/search?bucket=1&text=${param.text}">PRODUCT (${p_search})</a></li>	
 			<li><a href="/search?bucket=2&text=${param.text}">NOTICE (${n_search})</a></li>	
-			<%-- <li><a href="/search?bucket=3&text=${param.text}">TEST1</a></li>	
-			<li><a href="/search?bucket=4&text=${param.text}">TEST1</a></li>	 --%>
 		</ul>
 	</div>
 	<div class="contents-view">
@@ -75,7 +73,6 @@
 						</li>
 					</c:forEach>
 				</c:when>
-			
 			</c:choose>
 			
 		</ul>

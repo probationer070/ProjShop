@@ -75,7 +75,6 @@ public class ProductController {
 		MemberVO ssKey = null;
 		HttpSession session = req.getSession();
 		String text = (String) req.getParameter("text");
-		log.info("text --------> "+text);
 		if (session.getAttribute("ssKey") != null) {
 			ssKey = (MemberVO) session.getAttribute("ssKey");
 			// session이 있을 때 받아서 저장
@@ -198,9 +197,6 @@ public class ProductController {
 				page ="Main";
 			}
 		} else {
-//			page = "MsgPage";
-//			model.addAttribute("url", "login");
-//			model.addAttribute("msg", "로그인");
 			model.addAttribute("content", "custom/productDetail.jsp");
 			page ="Main";
 		}

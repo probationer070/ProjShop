@@ -25,12 +25,7 @@ public Map<String,Object> JsonApi(String url, Map<String,String> map) {
 
 		Map<String,Object> returnMap = new HashMap<>();
 
-		//api 통신 서비스 만들기
-		//http 통신
-
-		//1. 자바 기본 라이브러리 만들수있다. (X)
-		// 쉽게 만들 예정 ( 외부 라이브러리 사용 하여)
-		// okhttp라는 라이브러리를 사용할예정.
+		
 
 		OkHttpClient client = new OkHttpClient();
 
@@ -44,7 +39,6 @@ public Map<String,Object> JsonApi(String url, Map<String,String> map) {
 			jsonBody = objectMapper.writeValueAsString(map);
 
 		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

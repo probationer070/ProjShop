@@ -56,10 +56,7 @@ public class NoticeServiceImpl implements NoticeService {
 					pgCnt : pgVo.getCurBl()*PageInfo.PAGE_OF_BLOCK;
 		pgVo.setStartPg(startPg);
 		pgVo.setEndPg(endPg);
-//		log.info("pgCnt =====> "+pgCnt);
-//		log.info("blCnt =====> "+blCnt);
-//		log.info("endPg =====> "+endPg);
-//		log.info("startPg =====> "+startPg);
+
 		
 		List<NoticeVO> NoticeList = noticeDao.getNoticeList(nvo);
 		
@@ -107,9 +104,5 @@ public class NoticeServiceImpl implements NoticeService {
 		return noticeDao.getSearch(param.get("text"));
 	}
 
-//	@Override
-//	public int noticeDelProc(NoticeVO nvo) {
-//		return noticeDao.noticeDelProc(nvo);
-//	}
 
 }
