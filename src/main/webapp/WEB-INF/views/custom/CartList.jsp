@@ -94,12 +94,9 @@ class="xans-element- xans-order xans-order-basketpackage section ">
 										</strong>
 										<ul class="price">
 											<li id>
-												₩
 												<strong>
-													${cart.price}
+													<input type="text" name="price" value="${cart.price}원" class="num" readonly="readonly">
 												</strong>
-												<input type="hidden" name="price" value="${cart.price}" class="number" readonly="readonly">
-												원 
 												<span class="displaynone">
 													<span></span>
 												</span>
@@ -114,18 +111,11 @@ class="xans-element- xans-order xans-order-basketpackage section ">
 											<li>
 											배송 : 
 												<span class>
-													₩3,000원
+													3,000원
 													<span class="refer displaynone">
 													</span>
 												</span>
 												 [조건] / 기본배송 
-											</li>
-											<li class="displaynone">
-											배송주기 
-												<span class="txtEm"></span>
-											</li>
-											<li title="적립금" id="product_mileage0" class="mileage">
-											-
 											</li>
 											<li class="displaynone">
 											상품중량: 
@@ -194,8 +184,8 @@ class="xans-element- xans-order xans-order-basketpackage section ">
 										<span class="label">
 										주문금액
 										</span>
-											₩&nbsp;
-										<strong class="total">
+											&nbsp;
+										<strong class="total_price">
 											${cart.price * cart.quantity}
 										</strong>원
 										<input type="hidden" name="total" value="${cart.price * cart.quantity}" class="number" readonly="readonly">
@@ -224,9 +214,8 @@ class="xans-element- xans-order xans-order-basketpackage section ">
 							<c:choose>
 								<c:when test="${cartTot != 0}">
 									<span class="label">
-										상품주문금액
+										상품주문금액:
 										</span>
-											₩&nbsp;
 										<strong class="total_price">
 										</strong>원
 									<span class="displaynone">()</span>
@@ -236,8 +225,8 @@ class="xans-element- xans-order xans-order-basketpackage section ">
 									<strong></strong>
 									<span class="displaynone"></span>
 									</span>
-									+ 배송비 ₩
-									<strong id="normal_normal_ship_fee" class="num">3,000
+									+ 배송비 
+									<strong id="normal_normal_ship_fee" class="num">3,000원
 									</strong>
 									<span class="displaynone"></span>
 									<span id="normal_normal_benefit_price_area"
@@ -248,10 +237,10 @@ class="xans-element- xans-order xans-order-basketpackage section ">
 										</strong>
 									</span>
 									<span class="total">
-									합계 : ₩
+									합계 : 
 										<strong id="normal_normal_ship_fee_sum" class="total_price_d">
 										</strong>
-										<input type="hidden" name="total" value="${cart.price * cart.quantity}" class="number" readonly="readonly">
+										<input type="hidden" name="total" value="${cart.price * cart.quantity}" class="number" readonly="readonly">원
 										<span class="displaynone"></span>
 									</span>
 								</c:when>
@@ -307,7 +296,7 @@ class="xans-element- xans-order xans-order-basketpackage section ">
 						<div class="heading">
 							<h4 class="title">총 상품금액</h4>
 							<div class="data">
-                                ₩
+                                
                                	<strong class="total_price">
                                	</strong>
                                	원 
@@ -330,7 +319,7 @@ class="xans-element- xans-order xans-order-basketpackage section ">
 								<h5 class="title">부가세</h5>
 								<div class="data">
 									<span class="total_product_vat_price_front_mobile">
-									₩0원
+									0원
 									</span>
 								</div>								
 							</div>
@@ -340,10 +329,10 @@ class="xans-element- xans-order xans-order-basketpackage section ">
 						<div class="heading">
 							<h4 class="title">총 배송비</h4>
 							<div class="data">
-							₩
+							
 								<strong id="total_delv_price_front">
 									<span class="total_delv_price_front">
-									3,000
+									3,000&nbsp;원
 									</span>
 								</strong>
 								<span class="refer displaynone">
@@ -407,7 +396,6 @@ class="xans-element- xans-order xans-order-basketpackage section ">
 						<c:when test="${cartTot != 0}">
 							<h3 class="title">결제예정금액</h3>
 							<div class="paymentPrice">
-							₩
 								<strong id="normal_normal_ship_fee_sum" class="total_price_d">
 								</strong>
 								<input type="hidden" name="total" value="${cart.price * cart.quantity}" class="number" readonly="readonly">

@@ -365,7 +365,11 @@ function jsf__pay() {
 					                            <div class="proPrice">
 					                                <span class="displaynone"></span>
 					                                <span class="display">
-					                                    <span id="">₩${cart.price}원</span>
+					                                    <span id="">
+					                                    <p>
+					                                    	<input type="text" value="${cart.price}원" class="num inputPrice" readonly="readonly">
+					                                    </p>
+					                                    </span>
 					                                     <span class="displaynone">()</span>
 					                                </span>
 					                            </div>
@@ -381,7 +385,7 @@ function jsf__pay() {
 				            <div class="totalPrice ">
 				                <div class="title">
 				                    <h3>배송비</h3>
-				                    <span class="deliveryFee">₩<span id="domestic_ship_fee">3,000</span>원</span>
+				                    <span class="deliveryFee"><span id="domestic_ship_fee">3,000</span>원</span>
 				                </div>
 				            </div>
 				        <!-- app tag -->
@@ -410,12 +414,14 @@ function jsf__pay() {
 					<tbody>
 					<tr>
 					<th scope="row">주문상품</th>
-					                        <td class="right"><span id="total_product_base_price_id" class="price">₩${SubTot}원</span></td>
+					                        <td class="right"><span id="total_product_base_price_id" class="price">
+					                     	${SubTot}원
+					                        </span></td>
 					                    </tr>
 					<tr class="">
 					<th scope="row">배송비 <span class="displaynone info">(착불 상품 포함)</span>
 					</th>
-					                        <td class="right"><span class="price"><span id="total_ship_price_id">₩3,000원</span></span></td>
+					                        <td class="right"><span class="price"><span id="total_ship_price_id">3,000원</span></span></td>
 					                    </tr>
 					<tr id="ec-shop-payment_discount_list_view" class="paymentList" style="display: none;">
 					<td colspan="2">
@@ -428,7 +434,7 @@ function jsf__pay() {
 			        <div class="totalPay paymentPrice">
 			            <h3 class="heading">최종 결제 금액</h3>
 			            <strong class="txtStrong">
-			                ₩<strong id="payment_total_order_sale_price_view" class="total_price_d"></strong>원
+			                <strong id="payment_total_order_sale_price_view" class="total_price_d"></strong>원
 			            </strong>
 			            <input type="hidden" name="total" value="${SubTot}" class="number" readonly="readonly">
 			            <span class="displaynone"></span>
@@ -507,7 +513,7 @@ function jsf__pay() {
 					<input type="hidden" name="currency" value="WON" />
 
 	   		    	<button type="button" class="btnSubmit" id="btn_payment" onclick="javascript:jsf__pay();" value="결제하기">
-	   		    		₩<strong id="total_order_sale_price_view" class="total_price_d">
+	   		    		<strong id="total_order_sale_price_view" class="total_price_d">
 	
 	   		    		</strong>원
 						결제하기

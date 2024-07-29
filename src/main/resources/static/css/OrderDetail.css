@@ -932,6 +932,7 @@ input, select, textarea {
 }
 .ec-base-table tr:first-child {
     border-top: 1px solid #e5e5e5;
+    padding-top: 10px;
 }
 #mCafe24Order .ec-base-button + .helpArea {
     padding: 30px 16px;
@@ -972,9 +973,7 @@ caption {
 #mCafe24Order .ec-base-table .right {
     text-align: right;
 }
-#mCafe24Order .segment .ec-base-table tbody tr:first-child th, #mCafe24Order .segment .ec-base-table tbody tr:first-child td {
-    padding: 0 0 5px 0;
-}
+
 #mCafe24Order .segment .ec-base-table tbody th, #mCafe24Order .segment .ec-base-table tbody td {
     font-size: 16px;
     padding: 5px 0;
@@ -1215,4 +1214,17 @@ caption {
     color: #bcbcbc;
 }
 
+.inputPrice[type="text"] {
+	border: none !important;
+	padding: 0 !important;
+	font-style: '맑은 고딕';
+	font-weight: bold !important;
+}
+
+.inputTot {
+	border: none !important;
+	padding: 0 !important;
+	text-align: right !important;
+	font-weight: bold !important;
+}
 
