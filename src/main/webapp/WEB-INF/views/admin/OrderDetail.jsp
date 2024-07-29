@@ -69,8 +69,8 @@
 								</th>
 								<td>
 									<span style="font-size:16px;color:#555555;font-weight:bold;">
-										<strong id="span_product_price_text">${order.price}원</strong>
-										<input id="order_price" name="order_price" value="${order.price}" type="hidden">
+										<strong id="span_product_price_text"><input id="order_price" class="num " style="font-size:16px;color:#555555;font-weight:bold; name="order_price" 
+										value="${order.price}원" type="text"></strong>
 									</span>
 								</td>
 							</tr>
@@ -87,12 +87,14 @@
 							</tr>
 							<tr class=" xans-record-">
 								<th scope="row">
-									<span style="font-size:16px;color:#c92727;font-weight:bold;">결재금액</span>
+									<span style="font-size:16px;color:#c92727;font-weight:bold;">결제금액</span>
 								</th>
 								<td>
 									<span style="font-size:16px;color:#555555;font-weight:bold;">
-										<strong id="span_product_price_text">${order.amount}원</strong>
-										<input id="order_amount" name="order_amount" value="${order.amount}" type="hidden">
+										<strong id="span_product_price_text" >
+											<input id="order_amount" class="num " style="font-size:16px;color:#555555;font-weight:bold;
+											name="order_amount" value="${order.amount}원" type="text">
+										</strong>
 									</span>
 								</td>
 							</tr>

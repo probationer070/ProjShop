@@ -72,7 +72,7 @@
 			    					class="num " readonly="readonly" style="text-align: center;">
 			    			</th>
 			    			<th class="ocol ocol6 orderDetail">
-			    				<input type="text" name="amount" value="${order.amount}"
+			    				<input type="text" name="order_amount" value="${order.amount}"
 			    					class="num " readonly="readonly" style="text-align: center;">
 			    			</th>
 			    			<th class="ocol ocol7 orderDetail">
