@@ -102,5 +102,3 @@ function getTotal() {
 	/*alert(total);*/
 	$('strong[class=total_price]').text(numberWithCommas(total));
 }
-
-

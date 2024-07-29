@@ -4,6 +4,10 @@
 	margin: 0;
 	padding: 0;
 }
+	
+input {
+	border: none;	
+}
 
 a {
 	text-decoration: none !important;
@@ -77,6 +81,7 @@ a:focus, a:hover, a:visited, a:link {
 
 .search-content-detail input.subject {
 	width: 400px;
+	border: none;
 }
 
 .searchHead {

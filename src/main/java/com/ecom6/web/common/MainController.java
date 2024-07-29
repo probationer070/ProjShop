@@ -42,8 +42,7 @@ public class MainController {
 		} else {
 			page = "layouts/index";
 		}
-//		String content = "custom/productList.jsp";
-//		model.addAttribute("content", content);
+
 		return page;
 	}
 	
@@ -84,7 +83,6 @@ public class MainController {
 		model.addAttribute("p_search", reMap.get("p_search"));
 		model.addAttribute("n_search", reMap.get("n_search"));
 		model.addAttribute("search_list", reMap.get("search_list"));
-		// model.addAttribute("text", param);
 		model.addAttribute("content", content);
 		return "Main";
 	}

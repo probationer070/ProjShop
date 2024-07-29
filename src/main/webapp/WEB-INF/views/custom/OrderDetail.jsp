@@ -8,7 +8,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>쇼핑몰</title>
-<!-- <link rel="stylesheet" type="text/css" href="./css/ProductList.css" /> -->
 <link rel="stylesheet" type="text/css" href="../css/OrderDetail.css" />
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
@@ -113,15 +112,6 @@ function jsf__pay() {
 	
 <div>
 		<br>
-
-		<%-- <p>responseCode : ${data.responseCode }</p>
-		<p>responseMsg : ${data.responseMsg }</p>
-		<p>good_mny : ${data.good_mny }</p>
-		<p>site_cd : ${data.site_cd }</p>
-		<p>Ret_URL : ${data.Ret_URL }</p>
-		<p>buyr_name : ${data.buyr_name }</p>
-		<p>ordr_idxx : ${data.ordr_idxx }</p>
-		<p>good_name : ${data.good_name }</p> --%>
 		<c:forEach var="cart" items="${cart}">	
 			<input type="hidden" name="price" value="${cart.price}" class="num" readonly="readonly">
 			<input type="hidden" name="quantity" class="num" value="${cart.quantity}">
@@ -486,17 +476,7 @@ function jsf__pay() {
    		    		</div>
    		    	</div>
    		    </div>
-   		   <%--  <p>responseCode : ${data.responseCode }</p>
-			<p>responseMsg : ${data.responseMsg }</p>
-			<p>good_mny : ${data.good_mny }</p>
-			<p>site_cd : ${data.site_cd }</p>
-			<p>Ret_URL : ${data.Ret_URL }</p>
-			<p>buyr_name : ${data.buyr_name }</p>
-			<p>ordr_idxx : ${data.ordr_idxx }</p>
-			<p>good_name : ${data.good_name }</p> --%>
 			
-	
-				
 	   		<div class="ec-base-button gFull" id="orderFixItem">
 	   		<form name="kcp_order_info" id="kcp_order_info" action="/authPay" method="post" accept-charset="euc-kr">
 					<input type="hidden" name="ordr_idxx" value="${data.ordr_idxx }"> 
@@ -531,11 +511,6 @@ function jsf__pay() {
 					<input type="hidden" name="module_type" value="01" />
 					<!-- 필수 항목 : 결제 금액/화폐단위 -->
 					<input type="hidden" name="currency" value="WON" />
-					<%-- <p>총계 : ${SubTot}</p> --%>
-					<!-- <div>
-						<input type="button" onclick="javascript:jsf__pay();" value="결제하기">
-					</div> -->
-		   		    
 
 	   		    	<button type="button" class="btnSubmit" id="btn_payment" onclick="javascript:jsf__pay();" value="결제하기">
 	   		    		<strong id="total_order_sale_price_view" class="total_price_d">

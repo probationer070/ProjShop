@@ -12,7 +12,6 @@ table, tr, td, th {
 	padding: 2px 4px;
 	background-color: transparent;
 	text-align: center;
-/* 	width: 100px; */
 }
 
 .tbcol > .noticeSub {
@@ -24,9 +23,6 @@ table, tr, td, th {
 .ncol3 { width: 5%; }
 .ncol4 { width: 5%; }
 .ncol5 { width: 5%; }
-/* .ncol6 { width: 5%; }
-.ncol7 { width: 9%; }
-.ncol8 { width: 5%; } */
 
 
 .ncol1 input{ width: 100%; }
@@ -34,9 +30,6 @@ table, tr, td, th {
 .ncol3 input{ width: 100%; }
 .ncol4 input{ width: 100%; }
 .ncol5 input{ width: 100%; }
-/* .ncol6 input{ width: 100%; }
-.ncol7 input{ width: 100%; }
-.ncol8 select{ width: 100%; } */
 
 thead {
 	background-color: #de7575;
@@ -56,7 +49,6 @@ thead {
 	border: none;
 	padding: 2px 4px;
 	background-color: transparent;
-/* 	width: 100px; */
 }
 
 .btnJoin{

@@ -26,8 +26,6 @@
 	}
 	
 	table.popupTable tr, td, th {
-/* 		border: 1px solid #000;
-		border-collapse: collapse; */
 		font-style: 20px;
 	}
 	

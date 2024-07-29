@@ -92,12 +92,6 @@
 		</c:choose>
 		</tbody>
 	</table>
-     
-	<!-- <form action="custOrderDetail" name="form1" method="post">
-		<input type="hidden" name="p_no" value="">
-		<input type="hidden" name=o_no value="">
-		<input type="hidden" name="mem_id" value="">
-	</form> -->
 </div>
 <div class="btnArea" align="center">
 	<button type="button" class="btnJoin" onclick="location.href='/orderList'">주문목록</button>

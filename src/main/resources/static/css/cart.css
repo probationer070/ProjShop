@@ -1,26 +1,6 @@
 @charset "UTF-8";
 
 
-/* .cart-item-img{
-	display: flex;
-    justify-content: left;
-}
-.cart-item-name{
-	text-align: center;
-}
-.cart-item-price{
-	text-align: center;
-}
-.cart-item-price{
-	text-align: center;
-}
-.cart-item-qty{
-	text-align: center;
-}
-.cart-item-subtotal{
-	text-align: center;
-} */
-
 .cart-list {
     padding: 0 15px;
     border: 1px solid #babab4;

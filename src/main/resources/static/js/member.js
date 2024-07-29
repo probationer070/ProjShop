@@ -43,7 +43,6 @@ $().ready(function(){
 		$('form[name=form1] input[name=m_regdate]').val(regDate);
 		$("form[name=form1]").attr('action', 'customInfo?m_id='+mid);
 		$('form[name=form1]').submit();
-		// alert(pno+"::::"+ono+"::::"+mid);
 	 })
 	
 	$('#submit1').on('click', function(){

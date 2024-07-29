@@ -17,7 +17,6 @@ public interface NoticeService {
 
 	int noticeUpProc(NoticeVO nvo);
 
-	// int noticeDelProc(NoticeVO nvo);
 
 	int deleteNotice(NoticeVO nvo);
 

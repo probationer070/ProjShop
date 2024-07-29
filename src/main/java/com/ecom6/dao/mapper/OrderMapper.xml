@@ -41,14 +41,7 @@
 	       WHERE RN >= #{start} AND RN <= #{end}
 	      ]]> 
 		  </when>
-		  <!-- <otherwise>
-	       <if test="p_no!=0">
-	         WHERE P_NO = #{p_no}
-	       </if>
-	       <if test="o_no!=0">
-	         AND O_NO = #{o_no}
-	       </if>          
-		  </otherwise> -->
+		
 	  </choose>
    </select>
 	
@@ -153,9 +146,7 @@
 			   ]]> 
 			</when>
 			<otherwise>
-			    <!-- <if test="p_no!=0">
-			      WHERE P_NO = #{p_no}
-			    </if> -->
+			    
 			    <if test="o_no!=0">
 			      AND O_NO = #{o_no}
 			    </if>          

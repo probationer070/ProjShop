@@ -26,8 +26,6 @@
 						<input type="text" name="subject" title="제목"  > 
 					</span>
    					</h3>
-   					<!-- <input type="hidden" name="noti_no" >
- -->					
 				</div>
 			</div>
 			<div class="WriterInfo mb-3">

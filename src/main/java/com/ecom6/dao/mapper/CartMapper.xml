@@ -12,11 +12,7 @@
 	</select>
 
 	<select id="getCartItemList" resultType="cvo" parameterType="String">
-<!-- 	SELECT CNO, STOCK, C_PRICE, C_QUANTITY, P_NO, P.P_NAME, MEM_ID
-		FROM CART C
-		INNER JOIN PRODUCT P
-		ON C.P_NO = P.P_NO
-		WHERE MEM_ID = #{String} -->
+
 
 		SELECT * FROM (
 		SELECT ROWNUM RN, A.* FROM (

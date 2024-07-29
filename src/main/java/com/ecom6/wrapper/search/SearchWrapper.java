@@ -32,7 +32,6 @@ public class SearchWrapper {
 
 		int p_search = productService.getSearch(param);
 		int n_search = noticeService.getSearch(param);
-		log.info("TEST BUCKET ======> "+param.get("bucket"));
 		if (param.get("bucket")!=null) {
 			if (Integer.parseInt(param.get("bucket")) == 1) {
 				ProductVO pvo = new ProductVO();
@@ -55,8 +54,6 @@ public class SearchWrapper {
 			reSet.put("search_list", (List<Object>) search_item.get("productList"));
 		}
 
-		log.info("찾은 아이템 항목 수 PRODUCT: "+p_search);
-		log.info("찾은 아이템 항목 수 NOTICET: "+n_search);
 		reSet.put("p_search", p_search);
 		reSet.put("n_search", n_search);
 

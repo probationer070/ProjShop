@@ -87,21 +87,7 @@ public class ProductServiceimpl implements ProductService {
 
 	@Override
 	public int insertProduct(ProductVO pvo, MultipartFile file) {
-//		String originalFileNm = file.getOriginalFilename();
-//		File destinationFile;
-//		if (originalFileNm==null || originalFileNm.length()==0) {
-//			pvo.setImage("ready.gif");
-//		} else {
-//			pvo.setImage(originalFileNm);
-//			destinationFile = new File(pvo.getPath()+originalFileNm);
-//			// 실제 파일 전송
-//			try {
-//				file.transferTo(destinationFile);
-//			} catch (IllegalStateException | IOException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//		return productDao.insertProduct(pvo);
+
 		
 		String originalFileNm = file.getOriginalFilename();
         String webpFileName = originalFileNm.substring(0, originalFileNm.lastIndexOf(".")) + ".webp";
@@ -175,13 +161,7 @@ public class ProductServiceimpl implements ProductService {
 		return r;
 	}
 
-//	@Override
-//	public int updateStock(int p_no, int stock) {
-//		ProductVO pvo = new ProductVO();
-//		pvo.setP_no(p_no);
-//		pvo.setStock(stock);
-//		return productDao.updateStock(pvo);
-//	}
+
 
 	@Override
 	public int updateStock(OrderVO ovo) {

@@ -2,10 +2,6 @@
 
 :root {
   --swiper-theme-color: #2d2d2f;
-  /*
-  --swiper-preloader-color: var(--swiper-theme-color);
-  --swiper-wrapper-transition-timing-function: initial;
-  */
 }
 
 .swiper {

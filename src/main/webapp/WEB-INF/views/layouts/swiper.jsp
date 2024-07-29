@@ -53,9 +53,6 @@
 		      <div class="swiper-slide">
 		      	<img src="images/backV4.jpg">
 		      </div>
-		      <!-- <div class="swiper-slide">
-		      	<img src="images/backV3.jpg">
-		      </div> -->
 		    </div>
 		    <div class="swiper-pagination"></div>
 		  </div>

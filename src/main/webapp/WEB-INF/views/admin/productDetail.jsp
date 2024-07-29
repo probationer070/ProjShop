@@ -48,9 +48,8 @@
 								<td>
 									<span style="font-size:16px;color:#555555;font-weight:bold;">
 										<strong id="span_product_price_text">
-										<input id="product_price" style="font-size:16px;color:#555555;font-weight:bold;" 
-										name="product_price" value="${product.price}원" type="text" class="num">
-										</strong>
+										<input class="num" style="font-weight: bold;" value="${product.price}원"></strong>
+										<input id="product_price" name="product_price" value="" type="hidden">
 									</span>
 								</td>
 							</tr>

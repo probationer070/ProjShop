@@ -58,7 +58,6 @@
    	<div class="btnArea" align="center">
    		<button type="button" class="btnJoin notisubmit2">수정완료</button>
    		<button type="button" class="btnCancel" onclick="location.href='/noticeFIX'">공지사항목록</button>
-   		<!-- <button type="button" name="update" class="btn-primary psubmit">수정</button> -->
    	</div>
 	</form>
 	</c:if>

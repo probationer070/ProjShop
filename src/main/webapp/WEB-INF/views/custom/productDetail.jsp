@@ -20,7 +20,7 @@
 					<div class="prdImg">
 						<div class="thumbnail">
 							<input type="hidden" name="p_no" value="${product.p_no}">
-	                   			<img src="/upload/${product.image}" alt="Sandwich" style="width:380px; height: 25rem;" class="pDetail">
+	                   			<img src="/upload/${product.image}" alt="Sandwich" style="width:380px; height: 25rem;">
 						</div>
 					</div>
 				</div>
